@@ -1,0 +1,2102 @@
+2016-10-17 19:42:05 [::1][-][-][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'yii\web\Request::cookieValidationKey must be configured with a secret key.' in E:\xampp\htdocs\basic\vendor\yiisoft\yii2\web\Request.php:1232
+Stack trace:
+#0 E:\xampp\htdocs\basic\vendor\yiisoft\yii2\web\Request.php(1214): yii\web\Request->loadCookies()
+#1 E:\xampp\htdocs\basic\vendor\yiisoft\yii2\web\Request.php(1299): yii\web\Request->getCookies()
+#2 E:\xampp\htdocs\basic\vendor\yiisoft\yii2\web\Request.php(1278): yii\web\Request->loadCsrfToken()
+#3 E:\xampp\htdocs\basic\vendor\yiisoft\yii2\helpers\BaseHtml.php(295): yii\web\Request->getCsrfToken()
+#4 E:\xampp\htdocs\basic\views\layouts\main.php(20): yii\helpers\BaseHtml::csrfMetaTags()
+#5 E:\xampp\htdocs\basic\vendor\yiisoft\yii2\base\View.php(325): require('E:\\xampp\\htdocs...')
+#6 E:\xampp\htdocs\basic\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('E:\\xampp\\htdocs...', Array)
+#7 E:\xampp\htdocs\basic\vendor\yiisoft\yii2\base\Controller.php(393): yii\base\View->renderFile('E:\\xampp\\htdocs...', Array, Object(app\controllers\SiteController))
+#8 E:\xampp\htdocs\basic\vendor\yiisoft\yii2\base\Controller.php(379): yii\base\Controller->renderContent('<div class="sit...')
+#9 E:\xampp\htdocs\basic\controllers\SiteController.php(63): yii\base\Controller->render('index')
+#10 [internal function]: app\controllers\SiteController->actionIndex()
+#11 E:\xampp\htdocs\basic\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#12 E:\xampp\htdocs\basic\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#13 E:\xampp\htdocs\basic\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('', Array)
+#14 E:\xampp\htdocs\basic\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('', Array)
+#15 E:\xampp\htdocs\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 E:\xampp\htdocs\basic\web\index.php(12): yii\base\Application->run()
+#17 {main}
+2016-10-17 19:42:04 [::1][-][-][info][application] $_SERVER = [
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_ACCEPT' => 'text/html, application/xhtml+xml, image/jxr, */*'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'Keep-Alive'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/basic/web/index.php'
+    'REMOTE_PORT' => '51452'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/basic/web/'
+    'SCRIPT_NAME' => '/basic/web/index.php'
+    'PHP_SELF' => '/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1476726124.774
+    'REQUEST_TIME' => 1476726124
+]
+2016-10-24 20:50:07 [::1][-][oduosjc3odajkedoilq4839cn0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "demo".' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('demo', Array)
+#1 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php:99
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-10-24 20:50:07 [::1][-][oduosjc3odajkedoilq4839cn0][info][application] $_COOKIE = [
+    '_csrf' => 'ac1cc51ff776a3ed75cad17a67707639e884263895b6ead0589914fef0bad444a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"upKwENtNj81esr00amJZXZ6U_RbvpLLY\";}'
+    'PHPSESSID' => 'oduosjc3odajkedoilq4839cn0'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=ac1cc51ff776a3ed75cad17a67707639e884263895b6ead0589914fef0bad444a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22upKwENtNj81esr00amJZXZ6U_RbvpLLY%22%3B%7D; PHPSESSID=oduosjc3odajkedoilq4839cn0'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51300'
+    'REDIRECT_URL' => '/yii2/basic/web/portal'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/portal'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477335007.496
+    'REQUEST_TIME' => 1477335007
+]
+2016-10-25 18:15:27 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "demo".' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('demo', Array)
+#1 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php:99
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-10-25 18:15:27 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51413'
+    'REDIRECT_URL' => '/yii2/basic/web/portal'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/portal'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477412127.649
+    'REQUEST_TIME' => 1477412127
+]
+2016-10-25 18:15:38 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "demo".' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('demo', Array)
+#1 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php:99
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-10-25 18:15:38 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51419'
+    'REDIRECT_URL' => '/yii2/basic/web/demo'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/demo'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477412138.026
+    'REQUEST_TIME' => 1477412138
+]
+2016-10-25 18:15:56 [::1][-][-][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: E:\xampp\htdocs\yii2\basic\modules\demo\views\demo\index.php' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\View.php:226
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('E:\\xampp\\htdocs...', Array, Object(app\modules\demo\controllers\DemoController))
+#1 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('index', Array, Object(app\modules\demo\controllers\DemoController))
+#2 E:\xampp\htdocs\yii2\basic\modules\demo\controllers\DemoController.php(63): yii\base\Controller->render('index')
+#3 [internal function]: app\modules\demo\controllers\DemoController->actionIndex()
+#4 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#6 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('', Array)
+#7 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('demo/demo', Array)
+#8 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#10 {main}
+2016-10-25 18:15:56 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51426'
+    'REDIRECT_URL' => '/yii2/basic/web/demo/demo'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/demo/demo'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477412156.26
+    'REQUEST_TIME' => 1477412156
+]
+2016-10-25 18:16:08 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "demo".' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('demo', Array)
+#1 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php:99
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-10-25 18:16:08 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51429'
+    'REDIRECT_URL' => '/yii2/basic/web/demo'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/demo'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477412168.757
+    'REQUEST_TIME' => 1477412168
+]
+2016-10-25 18:18:43 [::1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected 'string' (T_STRING), expecting variable (T_VARIABLE)' in E:\xampp\htdocs\yii2\basic\modules\demo\Module.php:7
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-10-25 18:18:43 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51457'
+    'REDIRECT_URL' => '/yii2/basic/web/demo'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/demo'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477412323.853
+    'REQUEST_TIME' => 1477412323
+]
+2016-10-25 18:19:02 [::1][-][-][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: E:\xampp\htdocs\yii2\basic\modules\demo\views\demo\index.php' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\View.php:226
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('E:\\xampp\\htdocs...', Array, Object(app\modules\demo\controllers\DemoController))
+#1 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('index', Array, Object(app\modules\demo\controllers\DemoController))
+#2 E:\xampp\htdocs\yii2\basic\modules\demo\controllers\DemoController.php(63): yii\base\Controller->render('index')
+#3 [internal function]: app\modules\demo\controllers\DemoController->actionIndex()
+#4 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#5 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#6 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('', Array)
+#7 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('demo', Array)
+#8 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#9 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#10 {main}
+2016-10-25 18:19:02 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51459'
+    'REDIRECT_URL' => '/yii2/basic/web/demo'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/demo'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477412342.351
+    'REQUEST_TIME' => 1477412342
+]
+2016-10-25 18:21:22 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "portal/about".' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('portal/about', Array)
+#1 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php:99
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-10-25 18:21:22 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/yii2/basic/web/demo'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51484'
+    'REDIRECT_URL' => '/yii2/basic/web/portal/about'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/portal/about'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477412482.221
+    'REQUEST_TIME' => 1477412482
+]
+2016-10-25 18:21:25 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "portal/index".' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('portal/index', Array)
+#1 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php:99
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-10-25 18:21:25 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/yii2/basic/web/portal/about'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51484'
+    'REDIRECT_URL' => '/yii2/basic/web/portal/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/portal/index'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477412485.617
+    'REQUEST_TIME' => 1477412485
+]
+2016-10-25 18:22:19 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "portal/index".' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('portal/index', Array)
+#1 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php:99
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-10-25 18:22:19 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/yii2/basic/web/portal/about'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51490'
+    'REDIRECT_URL' => '/yii2/basic/web/portal/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/portal/index'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477412539.543
+    'REQUEST_TIME' => 1477412539
+]
+2016-10-25 18:22:20 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "portal/index".' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('portal/index', Array)
+#1 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php:99
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-10-25 18:22:20 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/yii2/basic/web/portal/about'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51490'
+    'REDIRECT_URL' => '/yii2/basic/web/portal/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/portal/index'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477412540.891
+    'REQUEST_TIME' => 1477412540
+]
+2016-10-25 18:22:21 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "portal/index".' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('portal/index', Array)
+#1 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php:99
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-10-25 18:22:21 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/yii2/basic/web/portal/about'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51494'
+    'REDIRECT_URL' => '/yii2/basic/web/portal/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/portal/index'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477412541.094
+    'REQUEST_TIME' => 1477412541
+]
+2016-10-25 18:22:21 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "portal/index".' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('portal/index', Array)
+#1 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php:99
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-10-25 18:22:21 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/yii2/basic/web/portal/about'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51491'
+    'REDIRECT_URL' => '/yii2/basic/web/portal/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/portal/index'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477412541.282
+    'REQUEST_TIME' => 1477412541
+]
+2016-10-25 18:22:21 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "portal/index".' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('portal/index', Array)
+#1 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php:99
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-10-25 18:22:21 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/yii2/basic/web/portal/about'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51492'
+    'REDIRECT_URL' => '/yii2/basic/web/portal/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/portal/index'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477412541.452
+    'REQUEST_TIME' => 1477412541
+]
+2016-10-25 18:24:48 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "portal/index".' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('portal/index', Array)
+#1 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php:99
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-10-25 18:24:48 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/yii2/basic/web/portal/about'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51569'
+    'REDIRECT_URL' => '/yii2/basic/web/portal/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/portal/index'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477412688.458
+    'REQUEST_TIME' => 1477412688
+]
+2016-10-25 18:24:49 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "portal/index".' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('portal/index', Array)
+#1 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php:99
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-10-25 18:24:49 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/yii2/basic/web/portal/about'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51569'
+    'REDIRECT_URL' => '/yii2/basic/web/portal/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/portal/index'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477412689.277
+    'REQUEST_TIME' => 1477412689
+]
+2016-10-25 18:24:49 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "portal/index".' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('portal/index', Array)
+#1 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php:99
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-10-25 18:24:49 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/yii2/basic/web/portal/about'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51569'
+    'REDIRECT_URL' => '/yii2/basic/web/portal/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/portal/index'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477412689.931
+    'REQUEST_TIME' => 1477412689
+]
+2016-10-25 18:26:00 [::1][-][-][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'yii\web\Request::cookieValidationKey must be configured with a secret key.' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Request.php:1232
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Request.php(1214): yii\web\Request->loadCookies()
+#1 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Request.php(1299): yii\web\Request->getCookies()
+#2 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Request.php(1278): yii\web\Request->loadCsrfToken()
+#3 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\helpers\BaseHtml.php(295): yii\web\Request->getCsrfToken()
+#4 E:\xampp\htdocs\yii2\basic\views\layouts\main.php(20): yii\helpers\BaseHtml::csrfMetaTags()
+#5 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\View.php(325): require('E:\\xampp\\htdocs...')
+#6 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('E:\\xampp\\htdocs...', Array)
+#7 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Controller.php(393): yii\base\View->renderFile('E:\\xampp\\htdocs...', Array, Object(app\controllers\SiteController))
+#8 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Controller.php(379): yii\base\Controller->renderContent('<div class="sit...')
+#9 E:\xampp\htdocs\yii2\basic\controllers\SiteController.php(63): yii\base\Controller->render('index')
+#10 [internal function]: app\controllers\SiteController->actionIndex()
+#11 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#12 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#13 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('', Array)
+#14 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('', Array)
+#15 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#17 {main}
+2016-10-25 18:26:00 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/yii2/basic/web/portal/index'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51582'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477412760.897
+    'REQUEST_TIME' => 1477412760
+]
+2016-10-25 18:34:46 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "portal/index".' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('portal/index', Array)
+#1 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php:99
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-10-25 18:34:45 [::1][-][-][info][application] $_GET = [
+    'r' => 'portal/index'
+]
+
+$_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/yii2/basic/web/'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51603'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=portal%2Findex'
+    'REQUEST_URI' => '/yii2/basic/web/index.php?r=portal%2Findex'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477413285.986
+    'REQUEST_TIME' => 1477413285
+]
+2016-10-25 18:34:47 [::1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "portal/about".' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Module.php:460
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('portal/about', Array)
+#1 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php:99
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2016-10-25 18:34:47 [::1][-][-][info][application] $_GET = [
+    'r' => 'portal/about'
+]
+
+$_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/yii2/basic/web/index.php?r=portal%2Findex'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51603'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=portal%2Fabout'
+    'REQUEST_URI' => '/yii2/basic/web/index.php?r=portal%2Fabout'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477413287.431
+    'REQUEST_TIME' => 1477413287
+]
+2016-10-25 18:52:31 [::1][-][-][error][yii\base\UnknownMethodException] exception 'yii\base\UnknownMethodException' with message 'Calling unknown method: app\controllers\SiteController::renderText()' in E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Component.php:285
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\controllers\SiteController.php(131): yii\base\Component->__call('renderText', Array)
+#1 E:\xampp\htdocs\yii2\basic\controllers\SiteController.php(131): app\controllers\SiteController->renderText('Aplicaci\xC3\xB3n en ...')
+#2 [internal function]: app\controllers\SiteController->actionApagado()
+#3 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#5 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('apagado', Array)
+#6 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('site/apagado', Array)
+#7 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#9 {main}
+2016-10-25 18:52:31 [::1][-][-][info][application] $_GET = [
+    'r' => 'site/apagado'
+]
+
+$_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/yii2/basic/web/'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51654'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Fapagado'
+    'REQUEST_URI' => '/yii2/basic/web/index.php?r=site%2Fapagado'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477414351.762
+    'REQUEST_TIME' => 1477414351
+]
+2016-10-25 19:43:36 [::1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'app\controllers\Clientes' not found' in E:\xampp\htdocs\yii2\basic\controllers\SiteController.php:137
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-10-25 19:43:36 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+    'PHPSESSID' => 'nckapfsbsr0oc1efmr4c64k855'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D; PHPSESSID=nckapfsbsr0oc1efmr4c64k855'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51946'
+    'REDIRECT_URL' => '/yii2/basic/web/site/datos'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/site/datos'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477417416.871
+    'REQUEST_TIME' => 1477417416
+]
+2016-10-25 19:44:06 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Array to string conversion' in E:\xampp\htdocs\yii2\basic\controllers\SiteController.php:140
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\controllers\SiteController.php(140): yii\base\ErrorHandler->handleError(8, 'Array to string...', 'E:\\xampp\\htdocs...', 140, Array)
+#1 [internal function]: app\controllers\SiteController->actionDatos()
+#2 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#4 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('datos', Array)
+#5 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('site/datos', Array)
+#6 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#8 {main}
+2016-10-25 19:44:06 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+    'PHPSESSID' => 'nckapfsbsr0oc1efmr4c64k855'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D; PHPSESSID=nckapfsbsr0oc1efmr4c64k855'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51949'
+    'REDIRECT_URL' => '/yii2/basic/web/site/datos'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/site/datos'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477417446.754
+    'REQUEST_TIME' => 1477417446
+]
+2016-10-25 19:49:26 [::1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to a member function toArray() on string' in E:\xampp\htdocs\yii2\basic\controllers\SiteController.php:140
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-10-25 19:49:26 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+    'PHPSESSID' => 'nckapfsbsr0oc1efmr4c64k855'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D; PHPSESSID=nckapfsbsr0oc1efmr4c64k855'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51978'
+    'REDIRECT_URL' => '/yii2/basic/web/site/datos'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/site/datos'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477417766.661
+    'REQUEST_TIME' => 1477417766
+]
+2016-10-25 19:50:34 [::1][-][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: clientes' in E:\xampp\htdocs\yii2\basic\controllers\SiteController.php:139
+Stack trace:
+#0 E:\xampp\htdocs\yii2\basic\controllers\SiteController.php(139): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'E:\\xampp\\htdocs...', 139, Array)
+#1 [internal function]: app\controllers\SiteController->actionDatos()
+#2 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#4 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('datos', Array)
+#5 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('site/datos', Array)
+#6 E:\xampp\htdocs\yii2\basic\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#8 {main}
+2016-10-25 19:50:34 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+    'PHPSESSID' => 'nckapfsbsr0oc1efmr4c64k855'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D; PHPSESSID=nckapfsbsr0oc1efmr4c64k855'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51981'
+    'REDIRECT_URL' => '/yii2/basic/web/site/datos'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/site/datos'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477417834.222
+    'REQUEST_TIME' => 1477417834
+]
+2016-10-25 19:51:52 [::1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to undefined method app\models\Clientes::findByCifnif()' in E:\xampp\htdocs\yii2\basic\controllers\SiteController.php:139
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-10-25 19:51:52 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+    'PHPSESSID' => 'nckapfsbsr0oc1efmr4c64k855'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D; PHPSESSID=nckapfsbsr0oc1efmr4c64k855'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51992'
+    'REDIRECT_URL' => '/yii2/basic/web/site/datos'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/site/datos'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477417912.434
+    'REQUEST_TIME' => 1477417912
+]
+2016-10-25 19:52:13 [::1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to undefined method app\models\Clientes::findByPk()' in E:\xampp\htdocs\yii2\basic\controllers\SiteController.php:139
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-10-25 19:52:13 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"3ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh\";}'
+    'PHPSESSID' => 'nckapfsbsr0oc1efmr4c64k855'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_csrf=6ba41032c1b7f67d5b7a18a100f47c5875c41226bcad4e79c8260c2afc57c904a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223ijFr7Vg4WwHnDNX1x0NUBZM8AxEhUzh%22%3B%7D; PHPSESSID=nckapfsbsr0oc1efmr4c64k855'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '51994'
+    'REDIRECT_URL' => '/yii2/basic/web/site/datos'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/site/datos'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477417933.445
+    'REQUEST_TIME' => 1477417933
+]
+2016-10-25 20:39:14 [::1][-][-][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The file or directory to be published does not exist: E:\xampp\htdocs\yii2\basic\vendor\bower/jquery/dist' in E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\AssetManager.php:452
+Stack trace:
+#0 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\AssetBundle.php(183): yii\web\AssetManager->publish('E:\\xampp\\htdocs...', Array)
+#1 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\AssetManager.php(266): yii\web\AssetBundle->publish(Object(yii\web\AssetManager))
+#2 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\AssetManager.php(237): yii\web\AssetManager->loadBundle('yii\\web\\JqueryA...', Array, true)
+#3 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\View.php(284): yii\web\AssetManager->getBundle('yii\\web\\JqueryA...')
+#4 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\View.php(289): yii\web\View->registerAssetBundle('yii\\web\\JqueryA...', NULL)
+#5 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\View.php(289): yii\web\View->registerAssetBundle('yii\\web\\YiiAsse...', NULL)
+#6 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\AssetBundle.php(123): yii\web\View->registerAssetBundle('yii\\grid\\GridVi...')
+#7 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\grid\GridView.php(286): yii\web\AssetBundle::register(Object(yii\web\View))
+#8 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\Widget.php(102): yii\grid\GridView->run()
+#9 E:\xampp\htdocs\yii2\basic\views\clientes\index.php(36): yii\base\Widget::widget(Array)
+#10 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\View.php(325): require('E:\\xampp\\htdocs...')
+#11 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('E:\\xampp\\htdocs...', Array)
+#12 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('E:\\xampp\\htdocs...', Array, Object(app\controllers\ClientesController))
+#13 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('index', Array, Object(app\controllers\ClientesController))
+#14 E:\xampp\htdocs\yii2\basic\controllers\ClientesController.php(44): yii\base\Controller->render('index', Array)
+#15 [internal function]: app\controllers\ClientesController->actionIndex()
+#16 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#17 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#18 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('index', Array)
+#19 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('clientes/index', Array)
+#20 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#21 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#22 {main}
+2016-10-25 20:39:13 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => 'd6dfdaa26bdfa282968257bac4c61b8261acaf549604fc7f8d187f8e8fedf595a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"sDcT1pnb0x_BvE_9c4Qrhb0L8R4BCAm6\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_ACCEPT' => 'text/html, application/xhtml+xml, image/jxr, */*'
+    'HTTP_REFERER' => 'http://localhost/yii2/basic/web/clientes/view?id=ZA000004'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'Keep-Alive'
+    'HTTP_COOKIE' => '_csrf=d6dfdaa26bdfa282968257bac4c61b8261acaf549604fc7f8d187f8e8fedf595a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22sDcT1pnb0x_BvE_9c4Qrhb0L8R4BCAm6%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '52469'
+    'REDIRECT_URL' => '/yii2/basic/web/clientes/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/clientes/index'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477420753.661
+    'REQUEST_TIME' => 1477420753
+]
+2016-10-25 20:43:36 [::1][-][-][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The file or directory to be published does not exist: E:\xampp\htdocs\yii2\bower/jquery/dist' in E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\AssetManager.php:452
+Stack trace:
+#0 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\AssetBundle.php(183): yii\web\AssetManager->publish('E:\\xampp\\htdocs...', Array)
+#1 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\AssetManager.php(266): yii\web\AssetBundle->publish(Object(yii\web\AssetManager))
+#2 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\AssetManager.php(237): yii\web\AssetManager->loadBundle('yii\\web\\JqueryA...', Array, true)
+#3 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\View.php(284): yii\web\AssetManager->getBundle('yii\\web\\JqueryA...')
+#4 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\View.php(289): yii\web\View->registerAssetBundle('yii\\web\\JqueryA...', NULL)
+#5 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\View.php(289): yii\web\View->registerAssetBundle('yii\\web\\YiiAsse...', NULL)
+#6 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\AssetBundle.php(123): yii\web\View->registerAssetBundle('yii\\grid\\GridVi...')
+#7 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\grid\GridView.php(286): yii\web\AssetBundle::register(Object(yii\web\View))
+#8 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\Widget.php(102): yii\grid\GridView->run()
+#9 E:\xampp\htdocs\yii2\basic\views\clientes\index.php(36): yii\base\Widget::widget(Array)
+#10 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\View.php(325): require('E:\\xampp\\htdocs...')
+#11 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('E:\\xampp\\htdocs...', Array)
+#12 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('E:\\xampp\\htdocs...', Array, Object(app\controllers\ClientesController))
+#13 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('index', Array, Object(app\controllers\ClientesController))
+#14 E:\xampp\htdocs\yii2\basic\controllers\ClientesController.php(44): yii\base\Controller->render('index', Array)
+#15 [internal function]: app\controllers\ClientesController->actionIndex()
+#16 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#17 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#18 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('index', Array)
+#19 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('clientes/index', Array)
+#20 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#21 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#22 {main}
+2016-10-25 20:43:36 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => 'd6dfdaa26bdfa282968257bac4c61b8261acaf549604fc7f8d187f8e8fedf595a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"sDcT1pnb0x_BvE_9c4Qrhb0L8R4BCAm6\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_ACCEPT' => 'text/html, application/xhtml+xml, image/jxr, */*'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'Keep-Alive'
+    'HTTP_COOKIE' => '_csrf=d6dfdaa26bdfa282968257bac4c61b8261acaf549604fc7f8d187f8e8fedf595a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22sDcT1pnb0x_BvE_9c4Qrhb0L8R4BCAm6%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '52552'
+    'REDIRECT_URL' => '/yii2/basic/web/clientes/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/clientes/index'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477421016.325
+    'REQUEST_TIME' => 1477421016
+]
+2016-10-25 20:43:53 [::1][-][-][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The file or directory to be published does not exist: E:\xampp\htdocs\yii2vendor\bower/jquery/dist' in E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\AssetManager.php:452
+Stack trace:
+#0 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\AssetBundle.php(183): yii\web\AssetManager->publish('E:\\xampp\\htdocs...', Array)
+#1 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\AssetManager.php(266): yii\web\AssetBundle->publish(Object(yii\web\AssetManager))
+#2 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\AssetManager.php(237): yii\web\AssetManager->loadBundle('yii\\web\\JqueryA...', Array, true)
+#3 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\View.php(284): yii\web\AssetManager->getBundle('yii\\web\\JqueryA...')
+#4 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\View.php(289): yii\web\View->registerAssetBundle('yii\\web\\JqueryA...', NULL)
+#5 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\View.php(289): yii\web\View->registerAssetBundle('yii\\web\\YiiAsse...', NULL)
+#6 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\AssetBundle.php(123): yii\web\View->registerAssetBundle('yii\\grid\\GridVi...')
+#7 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\grid\GridView.php(286): yii\web\AssetBundle::register(Object(yii\web\View))
+#8 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\Widget.php(102): yii\grid\GridView->run()
+#9 E:\xampp\htdocs\yii2\basic\views\clientes\index.php(36): yii\base\Widget::widget(Array)
+#10 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\View.php(325): require('E:\\xampp\\htdocs...')
+#11 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('E:\\xampp\\htdocs...', Array)
+#12 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('E:\\xampp\\htdocs...', Array, Object(app\controllers\ClientesController))
+#13 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\Controller.php(378): yii\base\View->render('index', Array, Object(app\controllers\ClientesController))
+#14 E:\xampp\htdocs\yii2\basic\controllers\ClientesController.php(44): yii\base\Controller->render('index', Array)
+#15 [internal function]: app\controllers\ClientesController->actionIndex()
+#16 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#17 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#18 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\Module.php(454): yii\base\Controller->runAction('index', Array)
+#19 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\web\Application.php(87): yii\base\Module->runAction('clientes/index', Array)
+#20 E:\xampp\htdocs\yii2\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#21 E:\xampp\htdocs\yii2\basic\web\index.php(12): yii\base\Application->run()
+#22 {main}
+2016-10-25 20:43:53 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => 'd6dfdaa26bdfa282968257bac4c61b8261acaf549604fc7f8d187f8e8fedf595a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"sDcT1pnb0x_BvE_9c4Qrhb0L8R4BCAm6\";}'
+]
+
+$_SERVER = [
+    'REDIRECT_MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'REDIRECT_MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'REDIRECT_OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'REDIRECT_PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'REDIRECT_PHPRC' => '\\xampp\\php'
+    'REDIRECT_TMP' => '\\xampp\\tmp'
+    'REDIRECT_STATUS' => '200'
+    'MIBDIRS' => 'E:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'E:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_ACCEPT' => 'text/html, application/xhtml+xml, image/jxr, */*'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'Keep-Alive'
+    'HTTP_COOKIE' => '_csrf=d6dfdaa26bdfa282968257bac4c61b8261acaf549604fc7f8d187f8e8fedf595a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22sDcT1pnb0x_BvE_9c4Qrhb0L8R4BCAm6%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files (x86)\\Autodesk\\Backburner\\;C:\\Program Files\\MATLAB\\R2014b\\bin;C:\\Program Files\\TortoiseSVN\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24 Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.23 (Win32) OpenSSL/1.0.2h PHP/5.6.24'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/xampp/htdocs'
+    'SERVER_ADMIN' => 'postmaster@localhost'
+    'SCRIPT_FILENAME' => 'E:/xampp/htdocs/yii2/basic/web/index.php'
+    'REMOTE_PORT' => '52554'
+    'REDIRECT_URL' => '/yii2/basic/web/clientes/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/yii2/basic/web/clientes/index'
+    'SCRIPT_NAME' => '/yii2/basic/web/index.php'
+    'PHP_SELF' => '/yii2/basic/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1477421033.579
+    'REQUEST_TIME' => 1477421033
+]
