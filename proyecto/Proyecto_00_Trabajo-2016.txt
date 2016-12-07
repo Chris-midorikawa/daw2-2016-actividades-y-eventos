@@ -1,0 +1,150 @@
+-----------------------------------------------------------------------------	
+Portal para la Publicación y Difusión de Actividades y Eventos.
+-----------------------------------------------------------------------------
+Parte Pública / Externa
+-----------------------------------------------------------------------------
+  - Portada "1": sencilla, con zona de acceso, sin mostrar información hasta 
+    que no se inicie sesión por parte del usuario.
+  - portada "2": más completa, con información de eventos que nos puedan interesar,
+    menu lateral de categorias, buscador, ...
+  
+  - Zona de Entrada (Login) / Registro (acceso) / Desconectar
+    - Perfil de Usuario:
+      Nombre, eMail, Password, Imagen, URL facebook, Ciudad, ...
+  - Barra de Navegacion Publica
+  - Presentación (Imagen / Video / Fondo / Frase del Día)
+  - Buscador (Simple / Avanzado)
+  - Vista de actividades recomendadas
+  - Vista de actividades más próximas / más nuevas / más visitadas / ...
+  - Vista con Categorias más buscadas.
+  - Vista abreviada de una actividad
+  - Menú lateral de categorías (para buscar eventos por categoria seleccionada)
+  - Pie de Página: Mapa Web / Avisos Legales / ...
+  * Patrocinadores más relevantes.
+  
+  - Vista de Actividad completa
+    - Título, Descripción, Notas
+    - Fechas(inicio,fin), 
+    - Lugar (direccion / ubicacion),
+    - Foto / Foto asociada a la Categoría
+    - Edad recomendada,
+    - Aforo, Margen reserva,
+    - Participantes vinculados.
+    - Estado de la actividad (visible, activa, terminada, suspendida).
+    - Estado del administrador (bloqueada, motivo)
+    - Información adicional (...)
+    - Apartado de Historico de la actividad, ...
+    - Comentarios de la actividad.
+    * Chat en linea de la actividad?
+    * URL relacionada con la actividad?
+    * Patrocinadores más relevantes de la actividad.
+    * Patrocinadores concretos/específicos de la actividad.
+
+  * Hazte Patrocinador...?
+  
+  - Opciones de Usuario (Participante y superiores)
+    - Mi Perfil:
+      - Ficha de Registro con/sin datos adicionales.
+      - Cambio de Contraseña y/o cuenta de correo.
+      - Solicitar Baja (si queremos).
+      - Comunicar con Moderador (enviar mensaje a moderador/administrador).
+    - Avisos:
+      - Configurar opciones de recepción (si se ve necesario)
+      - Ver avisos, Marcar/Desmarcar como leído, ...
+    - Actividades:
+      - Administrar las actividades creadas por el usuario (Crear, Modificar, Eliminar, Consultar, Listar/filtrar)
+      - Administrar todas las actividades de una zona (moderadores de zona)
+      - Administrar todas las actividades (administradores)
+      
+      - Gestión de una actividad (creadas por usuario, moderador y superiores)
+        - Configurar actividad.
+        - Eliminar actividad (si no hay participantes o siempre con avisos?).
+        - Cancelar/Suspender actividad y Motivo de la cancelación/suspensión.
+        - Bloquear actividad (moderador y superiores) y Motivo del bloqueo.
+        - Participantes de una actividad:
+          - Ver lista de participantes, poder mantenerla en caso de necesidad, ...
+        *** Cambios en la actividad -> Aviso a los participantes.
+          - Avisos por correo.
+          - Avisos por sistema de propio de Notificaciones (tabla?).
+      
+      - Actividades a las que se ha apuntado para participar.
+      - Historial de Actividades en las que ha participado.
+    
+     
+
+  - Servicios Web:
+      - Permitir realizar las tareas propias de la gestión del portal mediante 
+        un API propio, el cual pueda ser usado desde aplicaciones externas o
+        desde una aplicación web tipo SPI compilada para dispositivos móviles.
+-----------------------------------------------------------------------------
+	Gestión de Actividades y Eventos
+	Información de Actividades con la posibilidad de agrupar participantes.
+	Actividades Publicas?
+	
+	Actividades por Categorías (predefinidas), ...
+		"Sistema de Etiquetas para seleccionar"
+	Clasificacion por Lugares, Ubicaciones, ...
+	
+	Calendario de Eventos ...
+	
+	Usuarios.
+	Perfiles: 
+		Invitados, Participantes, 
+		Comentadores, Colaboradores, Redactores, 
+		Moderadores, Creadores de Eventos,
+		Administrador del Sitio,
+		Administrador del Sistema.
+		
+	Usuarios en Grupos de Actividades.
+	
+	Notificación de Cambios en las Actividades y Eventos.
+	Patrocinadores (Oficiales, Privados, Empresas, ...)
+
+	Mapas de los lugares de los eventos...
+
+	Administración/Moderación de Actividades sin Categorías para
+	poder dar de alta nuevas.
+	
+	Enlace con redes sociales existentes...
+	
+	Puntuación de Usuarios participantes... 
+	
+	Otras Ideas:
+		Torneos...
+		Reuniones...
+		Citas...
+		...quien sabe...
+		Publicidad, Patrocinios, Donaciones, Apoyo a la causa, ...
+
+-----------------------------------------------------------------------------
+Objetos de Información:
+	- Actividades
+	- Usuarios / Perfiles
+	- Categorías
+	- Grupos / Participantes
+	- Patrocinadores
+	- Contribuciones
+	
+
+-----------------------------------------------------------------------------
+Proyecto:
+-----------------------------------------------------------------------------
+Requisitos Generales
+
+
+Requisitos Funcionales
+  -Parte Publica
+  
+  -Parte Privada (según Roles y/o Perfiles)
+  *** Funciones basicas de Alta, Modificación, Baja, Consulta, Búsquedas/Filtrado
+      -Mantenimiento de Roles (si se fija en código)
+      -Mantenimiento de Usuarios
+      -Mantenimiento de ...
+      
+Requisitos de Información / Datos
+  
+Boceto del Diseño del Portal Público
+
+Boceto del Diseño del Portal Privado
+
+
