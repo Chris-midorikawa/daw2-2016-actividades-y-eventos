@@ -13,13 +13,14 @@ foreach( $servidores as $server_id => $config_id) {
   }//if
 }//foreach
 
+//Asegurar que los archivos que se creen son utilizables por apache, etc...
+umask(0);
+//Establecer el TimeZone para los servidores que no lo tienen configurado.
+date_default_timezone_set( 'Europe/Madrid');
+
 if (($config_file !== false) && is_readable($config_file)) {
   //Devolver la configuracion del fichero localizado.
 //print_r('CONFIGURACION LOCALIZADA - '); print_r($config_file); phpinfo(); exit(0);
-  //Asegurar que los archivos que se creen son utilizables por apache, etc...
-  umask(0);
-  //Establecer el TimeZone para los servidores que no lo tienen configurado.
-  date_default_timezone_set( 'Europe/Madrid');
   return require_once( $config_file);
 } else {
   //Devolver la configuracion por defecto de desarrollo.
