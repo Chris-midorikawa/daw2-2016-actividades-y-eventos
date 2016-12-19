@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\base\Model;
 
 /**
  * This is the model class for table "articulos".
@@ -60,4 +61,5 @@ class Articulos extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Pedidoslin::className(), ['refArt' => 'referencia']);
     }
+
 }

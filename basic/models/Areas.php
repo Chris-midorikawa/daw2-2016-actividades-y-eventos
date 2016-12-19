@@ -35,6 +35,21 @@ class Areas extends \yii\db\ActiveRecord
         ];
     }
 
+    public static function getArrayTipoAreas()
+    {
+        return [
+            '0' => 'Planeta',
+            '1' => 'Continente',
+            '2' => 'Pais',
+            '3' => 'Estado',
+            '4' => 'Region',
+            '5' => 'Provincia',
+            '6' => 'Poblacion',
+            '7' => 'Barrio',
+            '8' => 'Zona',
+        ];
+    }
+
     /**
      * @inheritdoc
      */
