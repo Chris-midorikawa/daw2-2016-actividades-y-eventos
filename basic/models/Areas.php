@@ -35,7 +35,8 @@ class Areas extends \yii\db\ActiveRecord
         ];
     }
 
-    public static function getArrayTipoAreas()
+    /*Función que devuelve la lista fija de clases de áreas*/
+    public static function getClasesAreas()
     {
         return [
             '0' => 'Planeta',
@@ -48,6 +49,17 @@ class Areas extends \yii\db\ActiveRecord
             '7' => 'Barrio',
             '8' => 'Zona',
         ];
+    }
+
+    /*Función que, a partir de un id de clase de área, devuelve el nombre de la clase*/
+    public static function getClaseArea($id_clase_area)
+    {
+        $clases_area = self::getClasesAreas();
+        if (isset($clases_area)){
+            return $clases_area[$id_clase_area];
+        } else {
+            return false;
+        }
     }
 
     /**
