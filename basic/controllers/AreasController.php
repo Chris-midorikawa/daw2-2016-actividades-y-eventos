@@ -44,6 +44,9 @@ class AreasController extends Controller
             $params['clase_area_id'] = 1;
         }
         $dataProvider = $searchModel->search(['AreasSearch'=>['clase_area_id'=>$params['clase_area_id']]]);
+        $dataProvider->setPagination([
+            'pageSize' => 2,
+        ]);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -104,11 +107,15 @@ class AreasController extends Controller
     {
         $model = $this->findModel($id);
 
+        //SE CREA EL BREADCRUMB A MOSTRAR EN LA VISTA CON LA CADENA DE "PADRES"
+        $breadcrumb_actual = $model->areasPadres;
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
+                'breadcrumb_actual' => $breadcrumb_actual,
             ]);
         }
     }

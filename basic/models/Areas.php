@@ -42,11 +42,11 @@ class Areas extends \yii\db\ActiveRecord
         return [
             '0' => 'Planeta',
             '1' => 'Continente',
-            '2' => 'Pais',
+            '2' => 'País',
             '3' => 'Estado',
-            '4' => 'Region',
+            '4' => 'Región',
             '5' => 'Provincia',
-            '6' => 'Poblacion',
+            '6' => 'Población',
             '7' => 'Barrio',
             '8' => 'Zona',
         ];
@@ -58,6 +58,17 @@ class Areas extends \yii\db\ActiveRecord
         $clases_area = self::getClasesAreas();
         if (isset($clases_area)){
             return $clases_area[$id_clase_area];
+        } else {
+            return false;
+        }
+    }
+
+    /*Función que devuelve el nombre de la clase de área de la instancia actual*/
+    public function getClaseAreaInstancia()
+    {
+        $clases_area = self::getClasesAreas();
+        if (isset($clases_area)){
+            return $clases_area[$this->clase_area_id];
         } else {
             return false;
         }
@@ -80,6 +91,7 @@ class Areas extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Areas::className(), ['id' => 'area_id']);
     }
+
 
     public function getAreasPadres()
     {
