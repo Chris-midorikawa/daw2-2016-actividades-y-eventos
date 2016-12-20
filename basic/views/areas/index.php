@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\AreasSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Areas';
+$this->title = 'Áreas';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="areas-index">

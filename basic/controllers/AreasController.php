@@ -35,8 +35,15 @@ class AreasController extends Controller
      */
     public function actionIndex()
     {
+        //SE CREA UN AreasSearch PARA UTILIZAR EN LA VISTA
         $searchModel = new AreasSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        //SE COMPRUEBA SI VIENE EN LA URL clase_area_id PARA SABER QUE PROFUNDIDAD MOSTRAR (País, Región, etc)
+        $params = Yii::$app->request->queryParams;
+        if (!isset($params['clase_area_id'])) {
+            $params['clase_area_id'] = 1;
+        }
+        $dataProvider = $searchModel->search(['AreasSearch'=>['clase_area_id'=>$params['clase_area_id']]]);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -51,8 +58,21 @@ class AreasController extends Controller
      */
     public function actionView($id)
     {
+        //SE RECUPERA EL MODELO ACTUAL DE LA VISTA Y SU SEARCHMODEL
+        $modelo_actual = $this->findModel($id);
+        $searchModel = new AreasSearch();
+
+        //SE CREA EL DATAPROVIDER PARA EL GRIDVIEW CON LOS "HIJOS" DEL ÁREA
+        $dataProvider = $searchModel->search(['AreasSearch'=>['area_id'=>$modelo_actual->id]]);
+
+        //SE CREA EL BREADCRUMB A MOSTRAR EN LA VISTA CON LA CADENA DE "PADRES"
+        $breadcrumb_actual = $modelo_actual->areasPadres;
+
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+            'breadcrumb_actual' => $breadcrumb_actual,
         ]);
     }
 

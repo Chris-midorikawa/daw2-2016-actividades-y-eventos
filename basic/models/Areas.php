@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveQuery;
 
 /**
  * This is the model class for table "{{%areas}}".
@@ -75,6 +76,23 @@ class Areas extends \yii\db\ActiveRecord
         ];
     }
 
+    public function getAreaPadre()
+    {
+        return $this->hasOne(Areas::className(), ['id' => 'area_id']);
+    }
+
+    public function getAreasPadres()
+    {
+        $padre = $this->areaPadre;
+        $breadcrumb = array();
+        while ($padre)
+        {
+            array_unshift($breadcrumb, $padre);
+            $padre = $padre->areaPadre;
+        }
+        return $breadcrumb;
+    }
+
     /**
      * @inheritdoc
      * @return AreasQuery the active query used by this AR class.
@@ -83,4 +101,5 @@ class Areas extends \yii\db\ActiveRecord
     {
         return new AreasQuery(get_called_class());
     }
+
 }
