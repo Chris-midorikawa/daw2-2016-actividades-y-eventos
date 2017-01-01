@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $model->nombre;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <?= $this->render('_form', [
+    <?= $this->render('_form_modificar', [
         'model' => $model,
     ]) ?>
 

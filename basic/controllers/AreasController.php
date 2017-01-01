@@ -45,7 +45,7 @@ class AreasController extends Controller
         }
         $dataProvider = $searchModel->search(['AreasSearch'=>['clase_area_id'=>$params['clase_area_id']]]);
         $dataProvider->setPagination([
-            'pageSize' => 2,
+            'pageSize' => 5,
         ]);
 
         return $this->render('index', [
@@ -84,15 +84,32 @@ class AreasController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($id_padre, $clase_area_padre)
     {
+        //SE CREA UN NUEVO MODELO
         $model = new Areas();
 
+        //CASO FORMULARIO DE CREACIÓN ENVIADO (SE REDIRECCIONA A VER ÁREA)
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
+        //CASO CREACIÓN INICIAL DE LA VISTA
         } else {
+            //SE RECUPERA EL MODELO DEL ÁREA PADRE A PARTIR DEL ID
+            if ($id_padre!=-1){
+                $model_padre= Areas::find()->where(["id"=>$id_padre])->one();
+            }else {
+                $model_padre= new Areas();
+                $model_padre->nombre = "NUEVO CONTINENTE";
+            }
+            //SE GENERA EL NUEVO CLASE ÁREA ID A PARTIR DEL DEL ÁREA PADRE
+            $model->clase_area_id = ($id_padre!=-1) ? (($model_padre->clase_area_id<8) ? ($model_padre->clase_area_id)+1 : 8)
+                                                    : 1;
+            //SE GENERA EL NUEVO ÁREA ID
+            $model->area_id = ($id_padre!=-1) ? $model_padre->id : null;
+            //SE RENDERIZA LA VISTA
             return $this->render('create', [
                 'model' => $model,
+                'nombre_padre' => $model_padre->nombre,
             ]);
         }
     }

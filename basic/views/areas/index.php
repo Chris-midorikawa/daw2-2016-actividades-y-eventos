@@ -24,15 +24,8 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        //'filterModel' => $searchModel,
         'summary' => 'Mostrando {begin}-{end} de {totalCount} elementos',
         'columns' => [
-            //['class' => 'yii\grid\SerialColumn',],
-
-            //'id' ,
-            //'clase_area_id',
-            //'nombre',
-            //'area_id',
             ['attribute' => "Nombre Área",
                 'content' => function ($model, $key, $index, $column){
                     return $model->nombre;
@@ -44,5 +37,5 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
-
+    <?= Html::a('Crear Continente', ['areas/create', 'id_padre'=>-1, "clase_area_padre"=>""], ['class' => 'btn btn-success']) ?>
 </div>

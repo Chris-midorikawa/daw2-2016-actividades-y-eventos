@@ -82,6 +82,6 @@ $this->params['breadcrumbs'][] = $model->nombre;
             ],
         ]);
     }?>
-    <?= Html::a('Añadir Área', ['', 'clase_area_id'=>1], ['class' => 'btn btn-success']) ?>
+    <?= Html::a('Añadir Área', ['areas/create', 'id_padre'=>$model->id, 'clase_area_padre'=>$model->clase_area_id], ['class' => 'btn btn-success']) ?>
 
 </div>
