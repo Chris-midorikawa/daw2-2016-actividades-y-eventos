@@ -2,6 +2,9 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\base\Model;
+use yii\data\ActiveDataProvider;
+use app\models\Usuarios;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Usuarios */
@@ -26,34 +29,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'direccion')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'area_id')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'rol')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'avisos_por_correo')->textInput() ?>
-
-    <?= $form->field($model, 'avisos_agrupados')->textInput() ?>
-
-    <?= $form->field($model, 'avisos_marcar_leidos')->textInput() ?>
-
-    <?= $form->field($model, 'avisos_eliminar_borrados')->textInput() ?>
-
-    <?= $form->field($model, 'fecha_registro')->textInput() ?>
-
-    <?= $form->field($model, 'confirmado')->textInput() ?>
-
-    <?= $form->field($model, 'fecha_acceso')->textInput() ?>
-
-    <?= $form->field($model, 'num_accesos')->textInput() ?>
-
-    <?= $form->field($model, 'bloqueado')->textInput() ?>
-
-    <?= $form->field($model, 'fecha_bloqueo')->textInput() ?>
-
-    <?= $form->field($model, 'notas_bloqueo')->textarea(['rows' => 6]) ?>
-
+    
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <p>Nota: si desea ser admin o patrocinador, contacte con los admines posteriormente </p>
+        <?= Html::submitButton($model->isNewRecord ? 'Crear Usuario' : 'Modificar Usuario', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

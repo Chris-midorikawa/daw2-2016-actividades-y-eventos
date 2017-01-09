@@ -41,7 +41,7 @@ AppAsset::register($this);
             ['label' => 'Contact', 'url' => ['/site/contact']],
             ['label' => 'Áreas', 'url' => ['/areas']],
             Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
+                ['label' => 'Login/Registro', 'url' => ['/site/login']]
             ) : (
                 '<li>'
                 . Html::beginForm(['/site/logout'], 'post', ['class' => 'navbar-form'])
