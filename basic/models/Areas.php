@@ -105,6 +105,13 @@ class Areas extends \yii\db\ActiveRecord
         return $breadcrumb;
     }
 
+
+    public function getModeradores()
+    {
+        return $this->hasMany(Usuarios::className(), ['id' => 'usuario_id'])
+            ->viaTable('usuarios_area_moderacion', ['area_id' => 'id']);
+    }
+
     /**
      * @inheritdoc
      * @return AreasQuery the active query used by this AR class.

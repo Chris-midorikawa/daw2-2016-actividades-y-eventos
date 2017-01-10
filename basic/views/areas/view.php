@@ -58,6 +58,7 @@ $this->params['breadcrumbs'][] = $model->nombre;
     ]) ?>
     <?//NO MOSTRAR GRIDVIEW SI EL ÁREA NO TIENE HIJOS
     if ($dataProvider->totalCount > 0) {?>
+        <br>
         <h3><?= Html::encode("ÁREAS DERIVADAS") ?></h3>
     <?= GridView::widget([
             'dataProvider' => $dataProvider,
@@ -83,5 +84,24 @@ $this->params['breadcrumbs'][] = $model->nombre;
         ]);
     }?>
     <?= Html::a('Añadir Área', ['areas/create', 'id_padre'=>$model->id, 'clase_area_padre'=>$model->clase_area_id], ['class' => 'btn btn-success']) ?>
+    <br>
+    <br>
+    <br>
+    <h3><?= Html::encode("MODERADORES") ?></h3>
+    <?= GridView::widget([
+        'dataProvider' => $dataProviderModeradores,
+        //'filterModel' => $searchModel,
+        //'summary' => '',
+        'columns' => [
+            //['class' => 'yii\grid\SerialColumn',],
 
+            //'id' ,
+            //'clase_area_id',
+            //'nombre',
+            ['attribute' => "Nombre Moderador",
+                'content' => function ($model, $key, $index, $column){
+                    return $model->nombre;
+                }],
+        ],
+    ]); ?>
 </div>

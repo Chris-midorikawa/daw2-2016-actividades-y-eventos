@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\Areas;
 use app\models\AreasSearch;
+use yii\data\ArrayDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -68,6 +69,11 @@ class AreasController extends Controller
         //SE CREA EL DATAPROVIDER PARA EL GRIDVIEW CON LOS "HIJOS" DEL ÁREA
         $dataProvider = $searchModel->search(['AreasSearch'=>['area_id'=>$modelo_actual->id]]);
 
+        //SE CREA EL ARRAYDATAPROVIDER PARA EL GRIDVIEW DE MODERADORES
+        $dataProviderModeradores = new ArrayDataProvider([
+            'allModels' => $modelo_actual->moderadores,
+        ]);
+
         //SE CREA EL BREADCRUMB A MOSTRAR EN LA VISTA CON LA CADENA DE "PADRES"
         $breadcrumb_actual = $modelo_actual->areasPadres;
 
@@ -75,6 +81,7 @@ class AreasController extends Controller
             'model' => $this->findModel($id),
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'dataProviderModeradores' => $dataProviderModeradores,
             'breadcrumb_actual' => $breadcrumb_actual,
         ]);
     }
