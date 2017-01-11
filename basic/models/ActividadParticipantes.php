@@ -45,10 +45,10 @@ class ActividadParticipantes extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'fecha_registro' => 'Fecha y Hora de registro de participación en la actividad por parte del usuario.',
+            'fecha_registro' => 'Fecha y Hora de registro de usuario en actividad', //de participación en la actividad por parte del usuario.',
             'actividad_id' => 'Actividad relacionada',
-            'usuario_id' => 'Usuario relacionado, que participara en la actividad.',
-            'datos_participacion' => 'Datos adicionales del participante en su registro de participación. Será NULL mientras no haya un formulario de participación.',
+            'usuario_id' => 'Usuario relacionado', //, que participara en la actividad.',
+            'datos_participacion' => 'Datos adicionales', //del participante en su registro de participación. Será NULL mientras no haya un formulario de participación.',
             'fecha_cancelacion' => 'Fecha y Hora de cancelación de la participación por parte del usuario.',
             'notas_cancelacion' => 'Notas sobre el motivo de la cancelación de la participación del usuario o NULL si no lo indica o no hay.',
         ];
