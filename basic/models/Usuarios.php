@@ -39,6 +39,17 @@ class Usuarios extends \yii\db\ActiveRecord
         return '{{%usuarios}}';
     }
 
+
+    /* LISTA ROLES USUARIOS */
+    public static function ListaRoles(){
+
+        return[
+            'N'->'Normal',
+            'M'->'Moderador',
+            'P'->'Patrocinador',
+            'A'->'Administrador'
+        ];
+    }
     /**
      * @inheritdoc
      */
