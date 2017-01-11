@@ -29,8 +29,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'actividad_id',
             'usuario_id',
             'datos_participacion:ntext',
-            // 'fecha_cancelacion',
-            // 'notas_cancelacion:ntext',
+            //'fecha_cancelacion',
+            //'notas_cancelacion:ntext',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
