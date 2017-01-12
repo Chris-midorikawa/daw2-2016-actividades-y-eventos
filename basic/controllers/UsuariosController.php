@@ -64,9 +64,16 @@ class UsuariosController extends Controller
     public function actionCreate()
     {
         $model = new Usuarios();
+        $model->rol='N';
+        $model->area_id=2;
+
+
+        
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['regok']);
+              $session = Yii::$app->session;
+              $session->set('reg', 'ok');
+            return $this->goHome();
         } else {
             return $this->render('create', [
                 'model' => $model,

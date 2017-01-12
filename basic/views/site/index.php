@@ -7,7 +7,20 @@ $this->title = 'Daw2 - 2016 - Actividades y eventos';
 <div class="site-index">
 
     <div class="jumbotron">
+
+    <?php
+    $session = Yii::$app->session;
+    $reg= $session->get('reg');
+    if($reg=='ok')
+    {?>
+        <h1>Usuario creado correctamente</h1>
+        <?php $session->remove('reg');?>
+
+       <?php } else {?>
+
         <h1>Bienvenido!</h1>
+
+        <?php }?>
 
         <p class="lead">.</p>
     </div>

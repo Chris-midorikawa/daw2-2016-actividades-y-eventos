@@ -44,10 +44,10 @@ class Usuarios extends \yii\db\ActiveRecord
     public static function ListaRoles(){
 
         return[
-            'N'->'Normal',
-            'M'->'Moderador',
-            'P'->'Patrocinador',
-            'A'->'Administrador'
+            'N'=>'Normal',
+            'M'=>'Moderador',
+            'P'=>'Patrocinador',
+            'A'=>'Administrador',
         ];
     }
     /**

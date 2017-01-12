@@ -1,8 +1,9 @@
 <?php
-
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use app\models\usuarios;
+use app\models\Usuarios;
+
+
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Usuarios */
@@ -27,18 +28,24 @@ use app\models\usuarios;
 
     <?= $form->field($model, 'direccion')->textarea(['rows' => 6]) ?>
 
+
+
     <?= $form->field($model, 'area_id')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'rol')->dropDownList(usuarios::listaroles(),(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'avisos_por_correo')->checkbox($aviso_correo, $checked = true, $options = []) ?>
+   
 
-    <?= $form->field($model, 'avisos_agrupados')->checkbox($aviso_agrupado, $checked = false, $options = []) ?>
+    <?= $form->field($model, 'rol')->dropDownList(usuarios::listaroles(),(['maxlength' => true])) ?>
 
-    <?= $form->field($model, 'avisos_marcar_leidos')->checkbox($aviso_marcar_leidos, $checked = false, $options = []) ?>
+    <?= $form->field($model, 'avisos_por_correo')->checkbox($options = []) ?>
 
-    <?= $form->field($model, 'avisos_eliminar_borrados')->checkbox($aviso_eliminar_borrados, $checked = false, $options = []) ?>
-<?= /*solo moderadores , admin... controlar permisos*/ ?>
+    <?= $form->field($model, 'avisos_agrupados')->checkbox($options = []) ?>
+
+    <?= $form->field($model, 'avisos_marcar_leidos')->textInput() ?>
+
+    <?= $form->field($model, 'avisos_eliminar_borrados')->textInput() ?>
+
+    <?php /*solo moderadores , admin... controlar permisos*/ ?>
     <?= $form->field($model, 'fecha_registro')->textInput() ?>
 
     <?= $form->field($model, 'confirmado')->textInput() ?>
@@ -52,6 +59,7 @@ use app\models\usuarios;
     <?= $form->field($model, 'fecha_bloqueo')->textInput() ?>
 
     <?= $form->field($model, 'notas_bloqueo')->textarea(['rows' => 6]) ?>
+
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
