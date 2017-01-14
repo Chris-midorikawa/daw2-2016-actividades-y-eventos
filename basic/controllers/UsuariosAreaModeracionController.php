@@ -2,9 +2,12 @@
 
 namespace app\controllers;
 
+use app\models\Areas;
+use app\models\Usuarios;
 use Yii;
 use app\models\UsuariosAreaModeracion;
 use app\models\UsuariosAreaModeracionSearch;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -93,17 +96,64 @@ class UsuariosAreaModeracionController extends Controller
         }
     }
 
+
+    public function actionAddModerador($id_area)
+    {
+        $modelo_usuario_area = new UsuariosAreaModeracion();
+        $modelo_area = Areas::find()->where(['id' => $id_area])->one();
+        $modelo_usuario_area->area_id = $modelo_area->id;
+        $usuarios = ArrayHelper::map(Usuarios::find()->all(), 'id', 'nombre');
+
+        if ($modelo_usuario_area->load(Yii::$app->request->post())){
+            //Caso en que ya exista una fila en la tabla con ese id
+            if (UsuariosAreaModeracion::find()->where(["id" => $modelo_usuario_area->id])->one()){
+                $modelo_usuario_area->id = null;
+                $error = "Id ya existente";
+                Yii::$app->getSession()->setFlash("error_add_moderador", $error);
+                return $this->render('add_moderador', [
+                    'modelo_area' => $modelo_area,
+                    'modelo_usuario_area' => $modelo_usuario_area,
+                    'usuarios' => $usuarios,
+                    'error' => true,
+                ]);
+            }
+
+            //Caso en que ya exista una relación entre ese usuario y ese área
+            if (UsuariosAreaModeracion::find()->where(["usuario_id" => $modelo_usuario_area->usuario_id,
+                    "area_id" => $modelo_usuario_area->area_id])->one()){
+                $modelo_usuario_area->id = null;
+                $error = "Relación ya existente";
+                Yii::$app->getSession()->setFlash("error_add_moderador", $error);
+                return $this->render('add_moderador', [
+                    'modelo_area' => $modelo_area,
+                    'modelo_usuario_area' => $modelo_usuario_area,
+                    'usuarios' => $usuarios,
+                    'error' => true,
+                ]);
+            }
+
+            $modelo_usuario_area->save();
+            return $this->redirect(['/areas/view', 'id' => $modelo_area->id]);
+        }
+        return $this->render('add_moderador', [
+            'modelo_area' => $modelo_area,
+            'modelo_usuario_area' => $modelo_usuario_area,
+            'usuarios' => $usuarios,
+        ]);
+    }
+
+
     /**
      * Deletes an existing UsuariosAreaModeracion model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param string $id
      * @return mixed
      */
-    public function actionDelete($id)
+    public function actionDelete($id, $id_area)
     {
         $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
+        //ARREGLAR REDIRECT!!!!!!!
+        return $this->redirect(['/areas/view', 'id' => $id_area]);
     }
 
     /**
@@ -121,4 +171,7 @@ class UsuariosAreaModeracionController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+
+
 }

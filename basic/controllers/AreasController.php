@@ -2,10 +2,14 @@
 
 namespace app\controllers;
 
+use app\models\Usuarios;
+use app\models\UsuariosAreaModeracion;
+use app\models\UsuariosAreaModeracionSearch;
 use Yii;
 use app\models\Areas;
 use app\models\AreasSearch;
 use yii\data\ArrayDataProvider;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -65,14 +69,17 @@ class AreasController extends Controller
         //SE RECUPERA EL MODELO ACTUAL DE LA VISTA Y SU SEARCHMODEL
         $modelo_actual = $this->findModel($id);
         $searchModel = new AreasSearch();
+        $searchModelUsuariosAreas = new UsuariosAreaModeracionSearch();
 
         //SE CREA EL DATAPROVIDER PARA EL GRIDVIEW CON LOS "HIJOS" DEL ÁREA
         $dataProvider = $searchModel->search(['AreasSearch'=>['area_id'=>$modelo_actual->id]]);
 
         //SE CREA EL ARRAYDATAPROVIDER PARA EL GRIDVIEW DE MODERADORES
-        $dataProviderModeradores = new ArrayDataProvider([
+       /* $dataProviderModeradores = new ArrayDataProvider([
             'allModels' => $modelo_actual->moderadores,
-        ]);
+        ]);*/
+
+        $dataProviderModeradores = $searchModelUsuariosAreas->search(['UsuariosAreaModeracionSearch' =>["area_id"=>$modelo_actual->id]]);
 
         //SE CREA EL BREADCRUMB A MOSTRAR EN LA VISTA CON LA CADENA DE "PADRES"
         $breadcrumb_actual = $modelo_actual->areasPadres;
@@ -156,6 +163,8 @@ class AreasController extends Controller
 
         return $this->redirect(['index']);
     }
+
+
 
     /**
      * Finds the Areas model based on its primary key value.
