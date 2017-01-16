@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'id' => $model->referencia], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => Yii::t('app', 'Are you sure you want to delete this item?'),
+                'confirm' => Yii::t('app', 'Estas seguro que quieres eliminarlo?'),
                 'method' => 'post',
             ],
         ]) ?>
@@ -34,6 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'apellidos',
             'domFiscal',
             'domEnvio',
+            'rol',
             'notas:ntext',
             'email:email',
             'password',

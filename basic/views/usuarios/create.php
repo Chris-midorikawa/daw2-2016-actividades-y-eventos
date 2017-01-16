@@ -1,8 +1,8 @@
 <?php
 
 use yii\helpers\Html;
-
-
+/* Por defecto usuario normal */
+$rol='N';
 /* @var $this yii\web\View */
 /* @var $model app\models\Usuarios */
 
@@ -13,9 +13,17 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
+<?php /*  admin ir  a _form*/
+if(isset($model->rol)) {
+    $rol=$model->rol;
+}?>
 
-    <?= $this->render('_reg', [
-        'model' => $model,
-    ]) ?>
+<?php if($rol=='N'){
+    echo $this->render('_reg', ['model' => $model,]);
+}
+    else if($rol=='A'){
+    echo $this->render('_form', ['model' => $model,]);
+
+     }?>
 
 </div>

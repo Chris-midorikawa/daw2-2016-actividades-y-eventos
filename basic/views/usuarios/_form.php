@@ -47,7 +47,6 @@ use app\models\Usuarios;
 
     <?php /*solo moderadores , admin... controlar permisos*/ ?>
     <?= $form->field($model, 'fecha_registro')->textInput() ?>
-
     <?= $form->field($model, 'confirmado')->textInput() ?>
 
     <?= $form->field($model, 'fecha_acceso')->textInput() ?>
@@ -62,9 +61,9 @@ use app\models\Usuarios;
 
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Crear Usuario' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::a(Yii::t('app', 'Volver'), ['/site/login'], ['class' => 'btn btn-primary']) ?>
     </div>
-
     <?php ActiveForm::end(); ?>
 
 </div>
