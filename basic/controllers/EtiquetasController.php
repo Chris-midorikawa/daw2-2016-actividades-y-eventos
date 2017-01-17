@@ -5,8 +5,8 @@ namespace app\controllers;
 use Yii;
 use app\models\Etiquetas;
 use app\models\EtiquetasSearch;
-use app\models\Actividades;
-use app\models\ActividadesQuery;
+use app\models\Usuarios;
+use app\models\UsuarioAvisos;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -85,6 +85,17 @@ class EtiquetasController extends Controller
         $model = new Etiquetas();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+			$aviso=new UsuarioAvisos();
+			$aviso->fecha=date("Y/m/d");
+			$aviso->clase_aviso_id='N';
+			$aviso->texto="Nueva etiqueta creada ".$model->nombre.". URL: ".Yii::$app->request->baseURL."\etiquetas\view?id=".$model->id;
+			$aviso->destino_usuario_id=0;
+			$aviso->origen_usuario_id=0;
+			$u=Usuarios::findOne(Yii::$app->user->identity->id);
+			if($u){
+				$aviso->origen_usuario_id=$u->id;
+			}
+			$aviso->save();
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
