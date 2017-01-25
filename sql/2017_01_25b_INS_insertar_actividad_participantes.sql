@@ -1,0 +1,1 @@
+INSERT INTO daw2_actividades.actividad_participantes (fecha_registro, actividad_id, usuario_id, datos_participacion, fecha_cancelacion, notas_cancelacion) VALUES ('2017-01-25 17:37:10', 1, 1, 'asdfasdf', '2017-01-25 17:37:39', 'asdfad');
