@@ -27,19 +27,17 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'My Company',
+        'brandLabel' => 'APP Actividades',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
+            'class' => 'navbar-inverse',
         ],
     ]);
 
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about','x'=>1234]],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => 'Portada', 'url' => ['/site/index']],
             ['label' => 'Áreas', 'url' => ['/areas']],
 			['label' => 'Actividad-Participantes', 'url' => ['/actividad-participantes']],
             ['label' => 'Avisos', 'url' => ['/avisos']],
@@ -47,7 +45,6 @@ AppAsset::register($this);
             ['label' => 'Comentarios', 'url' => ['/actividadcomentarios']],
 			['label' => 'Imagenes', 'url' => ['/actividadimagenes']],
 			['label' => 'Etiquetas', 'url' => ['/etiquetas']],
-			['label' => 'Actividad-Participantes', 'url' => ['/actividad-participantes']],
 			['label' => 'Actividades', 'url' => ['/actividades']],
 			Yii::$app->user->isGuest ? (
                 ['label' => 'Login/Registro', 'url' => ['/site/login']]

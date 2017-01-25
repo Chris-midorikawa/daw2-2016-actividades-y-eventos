@@ -13,7 +13,6 @@ use yii\widgets\ActiveForm;
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($modelo_usuario_area, 'id')->textInput(['value'=>$modelo_usuario_area->id])->label("Id usuario-área:") ?>
-    <?php //$form->field($modelo_usuario_area, 'area_id')->textInput(['maxlength' => true]) ?>
     <?= $form->field($modelo_usuario_area, 'usuario_id')->dropDownList($usuarios)->label("Elija un usuario:") ?>
 
     <div class="form-group">

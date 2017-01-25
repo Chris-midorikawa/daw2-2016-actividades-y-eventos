@@ -29,7 +29,7 @@ class Areas extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'clase_area_id', 'nombre'], 'required'],
+            [[/*'id', */'clase_area_id', 'nombre'], 'required'],
             [['id', 'area_id'], 'integer'],
             [['clase_area_id'], 'string', 'max' => 1],
             [['nombre'], 'string', 'max' => 50],
