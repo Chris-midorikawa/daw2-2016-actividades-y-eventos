@@ -80,8 +80,8 @@ $this->params['breadcrumbs'][] = $model->nombre;
                     }],
                 ['class' => 'yii\grid\ActionColumn'],
             ],
-        ]);
-    } ?>
+        ]);?>
+    <? } ?>
     <?= Html::a('Añadir Área', ['areas/create', 'id_padre' => $model->id, 'clase_area_padre' => $model->clase_area_id], ['class' => 'btn btn-success']) ?>
     <br>
     <br>

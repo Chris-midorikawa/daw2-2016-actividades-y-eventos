@@ -120,6 +120,17 @@ class UsuariosController extends Controller
         return $this->redirect(['index']);
     }
 
+    /* Acción  utilizada para mostrar el perfil de un usuario*/
+    public function actionMostrarPerfil($id_usuario){
+
+        $modelo_usuario = UsuariosSearch::find()->where(['id' => $id_usuario])->one();
+
+        return $this->render('mostrar_perfil', [
+            'modelo_usuario' => $modelo_usuario,
+        ]);
+    }
+
+
     /**
      * Finds the Usuarios model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
