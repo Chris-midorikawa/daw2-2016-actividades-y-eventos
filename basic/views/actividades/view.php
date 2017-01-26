@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 
+use yii\grid\GridView;
+
 /* @var $this yii\web\View */
 /* @var $model app\models\Actividades */
 
@@ -18,5 +20,18 @@ $this->params['breadcrumbs'][] = 'View';
         'model' => $model,
 		'disabled'=>true,
     ]) ?>
+
+
+     <h3><?= Html::encode("PARTICIPANTES") ?></h3>
+    <?= GridView::widget([
+        'dataProvider' => $dataProviderParticipantes,
+        'columns' => [
+            ['attribute' => "Nombre",
+                'content' => function ($model, $key, $index, $column) {
+                    return (\app\models\Usuarios::find()->where(["id" => $model->usuario_id])->one()->nombre);
+                }],
+        ],
+    ]); ?>
+    <?= Html::a('Añadir Participante', ['actividad-participantes/add-participante', 'id_actividad' => $model->id], ['class' => 'btn btn-success']) ?>
 
 </div>

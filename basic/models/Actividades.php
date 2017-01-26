@@ -110,6 +110,13 @@ class Actividades extends \yii\db\ActiveRecord
             'notas_admin' => 'Notas Admin',
         ];
     }
+
+
+    public function getParticipantes()
+    {
+        return $this->hasMany(Usuarios::className(), ['id'=>'usuario_id'])
+                ->viaTable('actividad_participantes', ['actividad_id'=>'id']);
+    }
 	// public longLabels=[
             // 'id' => 'ID',
             // 'titulo' => 'Titulo corto o slogan para la actividad.',

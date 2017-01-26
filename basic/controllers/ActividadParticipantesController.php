@@ -3,8 +3,11 @@
 namespace app\controllers;
 
 use Yii;
+use app\models\Actividades;
+use app\models\Usuarios;
 use app\models\ActividadParticipantes;
 use app\models\ActividadParticipantesSearch;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -120,5 +123,56 @@ class ActividadParticipantesController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+
+
+    public function actionAddParticipante($id_actividad)
+    {
+        $modeloActividad = Actividades::find()->where(['id' => $id_actividad])->one();
+        $modeloParticipante = new ActividadParticipantes();
+        $modeloParticipante->actividad_id = $id_actividad;
+        $modeloParticipante->fecha_cancelacion = date("Y-m-d H:i:s");
+        $modeloParticipante->notas_cancelacion = NULL;
+        $listaUsuarios = ArrayHelper::map(Usuarios::find()->all(), 'id', 'nombre');
+        
+
+        if ($modeloParticipante->load(Yii::$app->request->post()))
+        {
+            //Caso en que ya exista una fila en la tabla con ese id
+            if (ActividadParticipantes::find()->where(["id" => $modeloParticipante->id])->one()){
+                $modeloParticipante->id = null;
+                $error = "Id ya existente";
+                Yii::$app->getSession()->setFlash("error_add_participante", $error);
+                return $this->render('add_participante', [
+                    'modeloActividad' => $modeloActividad,
+                    'modeloParticipante' => $modeloParticipante,
+                    'listaUsuarios' => $listaUsuarios,
+                    'error' => true,
+                ]);
+            }
+
+            //Caso en que ya exista una relación entre ese usuario y esa actividad
+            if (ActividadParticipantes::find()->where(["usuario_id" => $modeloParticipante->usuario_id,
+                    "actividad_id" => $modeloParticipante->actividad_id])->one()){
+               $modeloParticipante->id = null;
+                $error = "Relación ya existente";
+                Yii::$app->getSession()->setFlash("error_add_participante", $error);
+                return $this->render('add_participante', [
+                    'modeloActividad' => $modeloActividad,
+                    'modeloParticipante' => $modeloParticipante,
+                    'listaUsuarios' => $listaUsuarios,
+                    'error' => true,
+                ]);
+            }
+
+        $modeloParticipante->save();
+        return $this->redirect(['/actividades/view', 'id' => $modeloParticipante->actividad_id]);
+        }
+
+        return $this->render('add_participante', [
+                'modeloActividad' => $modeloActividad,
+                'modeloParticipante' => $modeloParticipante,
+                'listaUsuarios' => $listaUsuarios,
+        ]);
     }
 }
