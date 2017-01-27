@@ -40,6 +40,7 @@ AppAsset::register($this);
             ['label' => 'Portada', 'url' => ['/site/index']],
             ['label' => 'Áreas', 'url' => ['/areas']],
 			['label' => 'Actividad-Participantes', 'url' => ['/actividad-participantes']],
+            ['label' => 'Portal', 'url' => ['/usuarios/portal']],
             ['label' => 'Avisos', 'url' => ['/avisos']],
             ['label' => 'Configuraciones', 'url' => ['/configuraciones']],
             ['label' => 'Clasificaciones', 'url' => ['/clasificaciones']],

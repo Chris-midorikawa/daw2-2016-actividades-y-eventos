@@ -14,6 +14,6 @@ use yii\data\ActiveDataProvider;
 
 <html><p>El usuario se ha registrado correctamente</p>
 
-<?= Html::a('Volver a la portada', ['basic/web'], ['class' => 'btn btn-primary']) ?>
+<?= Html::a('Volver a la portada', ['/site'], ['class' => 'btn btn-primary']) ?>
 
 </html>
