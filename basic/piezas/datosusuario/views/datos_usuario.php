@@ -10,4 +10,5 @@ use kartik\detail\DetailView;
 
 <div>
     <h1> DATOS DE USUARIO </h1>
+    <? print_r($modelo_usuario)?>
 </div>

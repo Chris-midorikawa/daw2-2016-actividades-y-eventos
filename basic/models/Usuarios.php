@@ -152,4 +152,16 @@ var_dump($usuario);
             return true;
         }else{ return false;}
     }
+
+
+
+    /*CREADO POR ERNESTO NO BORRAR!!*/
+    public function getAvisosRecibidos(){
+        return $this->hasMany(UsuarioAvisos::className(), ['destino_usuario_id' => 'id']);
+    }
+
+    public function getAvisosEnviados(){
+        return $this->hasMany(UsuarioAvisos::className(), ['origen_usuario_id' => 'id']);
+    }
+
 }
