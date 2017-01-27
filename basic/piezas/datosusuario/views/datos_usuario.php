@@ -9,19 +9,5 @@ use kartik\detail\DetailView;
 ?>
 
 <div>
-    <?= DetailView::widget([
-        'model'=>$modelo_usuario,
-        'condensed'=>true,
-        'hover'=>true,
-        'mode'=>DetailView::MODE_VIEW,
-        'panel'=>[
-            'heading'=>'Book # ' . $modelo_usuario->id,
-            'type'=>DetailView::TYPE_INFO,
-        ],
-        'attributes'=>[
-            'id',
-            'nombre',
-            ['attribute'=>'fecha_nacimiento', 'type'=>DetailView::INPUT_DATE],
-        ]
-    ]); ?>
+    <h1> DATOS DE USUARIO </h1>
 </div>

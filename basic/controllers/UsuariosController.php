@@ -167,4 +167,15 @@ class UsuariosController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+    /* CREADO POR ERNESTO NO BORRAR!!!
+    Acción  utilizada para mostrar el perfil de un usuario*/
+    public function actionMostrarPerfil($id_usuario){
+
+            $modelo_usuario = UsuariosSearch::find()->where(['id' => $id_usuario])->one();
+
+            return $this->render('mostrar_perfil', [
+                    'modelo_usuario' => $modelo_usuario,
+                ]);
+    }
 }
