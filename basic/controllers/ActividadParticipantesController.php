@@ -125,15 +125,15 @@ class ActividadParticipantesController extends Controller
         }
     }
 
-
+    //Función para añadir un participante a una actividad
     public function actionAddParticipante($id_actividad)
     {
-        $modeloActividad = Actividades::find()->where(['id' => $id_actividad])->one();
-        $modeloParticipante = new ActividadParticipantes();
+        $modeloActividad = Actividades::find()->where(['id' => $id_actividad])->one();  //Llenamos el modelo actividad con la actividad que corresponda
+        $modeloParticipante = new ActividadParticipantes();         //Rellenamos lo que podamos de la relación actividad-particpante
         $modeloParticipante->actividad_id = $id_actividad;
-        $modeloParticipante->fecha_cancelacion = date("Y-m-d H:i:s");
+        $modeloParticipante->fecha_cancelacion = date("00-00-00 00:00:00"); //Se tomará esta fecha como que no existe fecha de cancelación
         $modeloParticipante->notas_cancelacion = NULL;
-        $listaUsuarios = ArrayHelper::map(Usuarios::find()->all(), 'id', 'nombre');
+        $listaUsuarios = ArrayHelper::map(Usuarios::find()->all(), 'id', 'nombre'); //Obtenemos una lista de de usuarios para poder añadir
         
 
         if ($modeloParticipante->load(Yii::$app->request->post()))
@@ -165,7 +165,8 @@ class ActividadParticipantesController extends Controller
                 ]);
             }
 
-        $modeloParticipante->save();
+        $modeloParticipante->fecha_registro = date("Y-m-d H:i:s");  //aquí se tomaría la fecha actual del sistema
+        $modeloParticipante->save();    //aquí se guardaría
         return $this->redirect(['/actividades/view', 'id' => $modeloParticipante->actividad_id]);
         }
 
