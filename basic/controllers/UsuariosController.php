@@ -64,19 +64,6 @@ class UsuariosController extends Controller
     public function actionCreate()
     {
         $model = new Usuarios();
-        /*Valores por defecto para recien registrados.*/
-        $model->rol='N';
-        $model->area_id=2;
-        $model->fecha_acceso=date(DATE_RFC2822);
-        $model->num_accesos=0;
-        $model->avisos_marcar_leidos=0;
-        $model->avisos_eliminar_borrados=0;
-        $model->confirmado=0;
-        $model->bloqueado=0;
-        $model->fecha_bloqueo=null;
-        $model->fecha_registro=date(DATE_RFC2822);
-        
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
               $session = Yii::$app->session;
               $session->set('reg', 'ok');
@@ -119,17 +106,6 @@ class UsuariosController extends Controller
 
         return $this->redirect(['index']);
     }
-
-    /* Acción  utilizada para mostrar el perfil de un usuario*/
-    public function actionMostrarPerfil($id_usuario){
-
-        $modelo_usuario = UsuariosSearch::find()->where(['id' => $id_usuario])->one();
-
-        return $this->render('mostrar_perfil', [
-            'modelo_usuario' => $modelo_usuario,
-        ]);
-    }
-
 
     /**
      * Finds the Usuarios model based on its primary key value.
