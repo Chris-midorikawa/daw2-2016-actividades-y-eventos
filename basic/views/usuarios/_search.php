@@ -25,9 +25,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nombre') ?>
 
-    <?php // echo $form->field($model, 'apellidos') ?>
+    <?php  echo $form->field($model, 'apellidos') ?>
 
-    <?php // echo $form->field($model, 'fecha_nacimiento') ?>
+    <?php  echo $form->field($model, 'fecha_nacimiento') ?>
 
     <?php // echo $form->field($model, 'direccion') ?>
 

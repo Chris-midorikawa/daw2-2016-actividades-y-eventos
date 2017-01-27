@@ -4,7 +4,7 @@ namespace app\models;
 
 use Yii;
 use yii\base\Model;
-
+use  yii\web\IdentityInterface;
 /**
  * LoginForm is the model behind the login form.
  *
@@ -13,7 +13,7 @@ use yii\base\Model;
  */
 class LoginForm extends Model
 {
-    public $username;
+    public $nick;
     public $password;
     public $rememberMe = true;
 
@@ -27,11 +27,10 @@ class LoginForm extends Model
     {
         return [
             // username and password are both required
-            [['username', 'password'], 'required'],
+            [['nick', 'password'], 'required'],
             // rememberMe must be a boolean value
             ['rememberMe', 'boolean'],
-            // password is validated by validatePassword()
-            ['password', 'validatePassword'],
+
         ];
     }
 
@@ -44,13 +43,14 @@ class LoginForm extends Model
      */
     public function validatePassword($attribute, $params)
     {
-        if (!$this->hasErrors()) {
-            $user = $this->getUser();
+        $hash = Yii::$app->getSecurity()->generatePasswordHash($this->password);
+            if (Yii::$app->getSecurity()->validatePassword($this->password,$hash)) {
+                $user = $this->getUser();
 
-            if (!$user || !$user->validatePassword($this->password)) {
+            } else {
                 $this->addError($attribute, 'Usuario o Contraseña no valido.');
             }
-        }
+
     }
 
     /**
@@ -59,21 +59,16 @@ class LoginForm extends Model
      */
     public function login()
     {
-        if ($this->validate()) {
-            return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600*24*30 : 0);
-        }
-        return false;
+
+            return Yii::$app->user->login( $this->getUser(), $this->rememberMe ? 3600*24*30 : 0);
+
     }
 
-    /**
-     * Finds user by [[username]]
-     *
-     * @return User|null
-     */
+    // LLAMADA A USUARIOS PARA COMPROBAR NICK Y PASSWORD "LOGIN"
     public function getUser()
     {
         if ($this->_user === false) {
-            $this->_user = User::findByUsername($this->username);
+            $this->_user = Usuarios::ValidarUsuario($this->nick,$this->password);
         }
 
         return $this->_user;

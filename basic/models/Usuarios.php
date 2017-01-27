@@ -109,4 +109,47 @@ class Usuarios extends \yii\db\ActiveRecord
     {
         return new UsuariosQuery(get_called_class());
     }
+
+    /*VALIDAR USUARIO*/
+    public static function ValidarUsuario($nick,$password)
+    {
+        $usuario=Usuarios::find()->where(['nick'=>$nick],['password'=>$password]);
+var_dump($usuario);
+        //return isset($usuario) ? new static($usuario) : null;
+    }
+    // DEVUELVE ID PARA $USER
+    public static function findIdentity($id)
+    {
+
+        $user = Usuarios::find()
+            ->Where("id=:id", ["id" => $id])
+            ->one();
+
+        return isset($user) ? new static($user) : null;
+    }
+    // FUNCION PARA DEVOLVER SI ES ADMIN O NO
+    public static function isAdmin(){
+
+        if(Yii::$app->user->identity->rol=='A'){
+            return true;
+        }else{ return false;}
+    }
+    //FUNCION PARA DEVOLVER SI ES PATROCINADOR O NO
+    public static function isPatrocinador(){
+        if(Yii::$app->user->identity->rol=='P'){
+            return true;
+        }else{ return false;}
+    }
+    //FUNCION PARA DEVOLVER SI ES MODERADOR O NO
+    public static function isModerador(){
+        if(Yii::$app->user->identity->rol=='M'){
+            return true;
+        }else{ return false;}
+    }
+    //FUNCION PARA DEVOLVER SI ES NORMAL O NO
+    public static function isNormal(){
+        if(Yii::$app->user->identity->rol=='N'){
+            return true;
+        }else{ return false;}
+    }
 }

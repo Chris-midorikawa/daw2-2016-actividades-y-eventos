@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Usuarios */
 
-$this->title = $model->id;
+$this->title = 'Mis datos';
 $this->params['breadcrumbs'][] = ['label' => 'Usuarios', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -15,20 +15,13 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
+        <?= Html::a('Actualizar datos', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+       
     </p>
 
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
             'email:email',
             'password',
             'nick',
@@ -36,16 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'apellidos',
             'fecha_nacimiento',
             'direccion:ntext',
-            'area_id',
-            'rol',
-            'avisos_por_correo',
-            'avisos_agrupados',
-            'avisos_marcar_leidos',
-            'avisos_eliminar_borrados',
             'fecha_registro',
             'confirmado',
             'fecha_acceso',
-            'num_accesos',
             'bloqueado',
             'fecha_bloqueo',
             'notas_bloqueo:ntext',

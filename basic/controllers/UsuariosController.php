@@ -38,11 +38,21 @@ class UsuariosController extends Controller
         $searchModel = new UsuariosSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+        //al index de usuarios solo accederá los admin. Se hará con el isadmin
+        /*if (Yii::$app->user->isGuest || Yii::$app->user->identity->username!='admin'){      
+            $this->goHome();
+        }
+        else 
+        {*/
+	        return $this->render('index', [
+	            'searchModel' => $searchModel,
+	            'dataProvider' => $dataProvider,
+	        ]);
+	        /*
+    	}
+    	*/
     }
+
 
     /**
      * Displays a single Usuarios model.
@@ -51,9 +61,17 @@ class UsuariosController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+    	//vista diferente para usuario normal o usuario admin. Con el isadmin
+    	if (Yii::$app->user->identity->username!='admin')
+    	{  
+	        return $this->render('vistanormal', [
+	            'model' => $this->findModel($id),]);
+    	}
+    	else
+    	{
+    		return $this->render('vistaadmin', [
+	            'model' => $this->findModel($id),]);
+    	}
     }
 
     /**
@@ -64,29 +82,32 @@ class UsuariosController extends Controller
     public function actionCreate()
     {
         $model = new Usuarios();
-        /*Valores por defecto para recien registrados.*/
-        $model->rol='N';
-        $model->area_id=2;
-        $model->fecha_acceso=date(DATE_RFC2822);
-        $model->num_accesos=0;
-        $model->avisos_marcar_leidos=0;
-        $model->avisos_eliminar_borrados=0;
-        $model->confirmado=0;
-        $model->bloqueado=0;
-        $model->fecha_bloqueo=null;
-        $model->fecha_registro=date(DATE_RFC2822);
-        
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-              $session = Yii::$app->session;
-              $session->set('reg', 'ok');
-            return $this->goHome();
+ 		return $this->render('regok');
         } else {
             return $this->render('create', [
                 'model' => $model,
             ]);
         }
     }
+
+    //funcion para el portal, que será diferente según sea usuario normal o admin
+    public function actionPortal()
+    {
+
+    	//si es usuario normal. Comprobar con el isadmin
+    	if ( Yii::$app->user->identity->username!='admin')
+    	{
+			return $this->render('portalnormal');
+		}
+		//si es admin
+		else
+		{
+			return $this->render('portaladmin');
+		}
+    }
+ 
+  
 
     /**
      * Updates an existing Usuarios model.
@@ -98,9 +119,20 @@ class UsuariosController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
+        if ($model->load(Yii::$app->request->post()) && $model->save()) 
+        {
+        	//muestra diferentes vistas. con el isadmin
+        	if (Yii::$app->user->identity->username!='admin')
+        	{
+			return $this->redirect(['view', 'id' => $model->id]);
+			}
+			else
+			{
+				return $this->redirect(['view', 'id' => $model->id]);
+			}
+        } 
+        else 
+        {
             return $this->render('update', [
                 'model' => $model,
             ]);
@@ -119,17 +151,6 @@ class UsuariosController extends Controller
 
         return $this->redirect(['index']);
     }
-
-    /* Acción  utilizada para mostrar el perfil de un usuario*/
-    public function actionMostrarPerfil($id_usuario){
-
-        $modelo_usuario = UsuariosSearch::find()->where(['id' => $id_usuario])->one();
-
-        return $this->render('mostrar_perfil', [
-            'modelo_usuario' => $modelo_usuario,
-        ]);
-    }
-
 
     /**
      * Finds the Usuarios model based on its primary key value.

@@ -2,10 +2,12 @@
 
 use yii\helpers\Html;
 
+$rol='N';
+
 /* @var $this yii\web\View */
 /* @var $model app\models\Usuarios */
 
-$this->title = 'Update Usuarios: ' . $model->id;
+$this->title = 'Actualizar Usuario: ' . $model->nick;
 $this->params['breadcrumbs'][] = ['label' => 'Usuarios', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
@@ -14,8 +16,16 @@ $this->params['breadcrumbs'][] = 'Update';
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
+    <?php//dependiendo del tipo de usuario,irá a _form o a _reg?>
+
+   
+    <?php if($rol=='N'){
+    echo $this->render('_reg', ['model' => $model,]);
+	}
+    else if($rol=='A'){
+    echo $this->render('_form', ['model' => $model,]);
+
+     }?>
+
 
 </div>
