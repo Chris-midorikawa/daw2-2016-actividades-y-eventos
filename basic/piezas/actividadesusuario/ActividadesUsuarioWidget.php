@@ -5,7 +5,7 @@ namespace app\piezas\actividadesusuario;
 
 use yii\base\Widget;
 
-class DatosUsuarioWidget extends Widget
+class ActividadesUsuarioWidget extends Widget
 {
     public $modelo_usuario;
 
