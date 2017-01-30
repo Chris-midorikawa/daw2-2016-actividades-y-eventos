@@ -16,6 +16,6 @@ class DatosUsuarioWidget extends Widget
 
     public function run()
     {
-        return $this->render('datos_usuario', ['modelo_usuario' => $this->modelo_usuario]);
+        return $this->render('actividades_usuario', ['modelo_usuario' => $this->modelo_usuario]);
     }
 }
