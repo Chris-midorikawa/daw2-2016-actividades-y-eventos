@@ -13,16 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="actividad-imagenes-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a('Modificar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Eliminar', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => '¿Está seguro de eliminar esta imagen?',
-                'method' => 'post',
-            ],
-        ]) ?>
+	
     </p>
 
     <?= DetailView::widget([
@@ -34,6 +25,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'imagen_id',
         ],
     ]) ?>
-	<img src=<?=$model->imagen_id ?> />
+	<?=Html::img(Yii::$app->request->baseUrl."/images/".$model->imagen_id,['width'=>500,'height'=>500])?>
 
 </div>

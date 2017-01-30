@@ -52,19 +52,19 @@ class ActividadComentarios extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'actividad_id' => 'Actividad relacionada',
-            'crea_usuario_id' => 'Usuario que ha creado el comentario o CERO (como si fuera NULL) si no existe o se hizo por un administrador de sistema.',
-            'crea_fecha' => 'Fecha y Hora de creación del comentario o NULL si no se conoce por algún motivo.',
-            'modi_usuario_id' => 'Usuario que ha modificado el comentario por última vez o CERO (como si fuera NULL) si no existe o se hizo por un administrador de sistema.',
-            'modi_fecha' => 'Fecha y Hora de la última modificación del comentario o NULL si no se conoce por algún motivo.',
-            'texto' => 'El texto del comentario.',
-            'comentario_id' => 'Comentario relacionado, si se permiten encadenar respuestas. Nodo padre de la jerarquia de comentarios, CERO si es nodo raiz.',
-            'cerrado' => 'Indicador de cierre de los comentarios: 0=No, 1=Si(No se puede responder al comentario)',
-            'num_denuncias' => 'Contador de denuncias del comentario o CERO si no ha tenido.',
-            'fecha_denuncia1' => 'Fecha y Hora de la primera denuncia. Debería estar a NULL si no tiene denuncias (contador a cero), o si el contador se reinicia.',
-            'bloqueado' => 'Indicador de comentario bloqueado: 0=No, 1=Si(bloqueado por denuncias), 2=Si(bloqueado por administrador), ...',
-            'fecha_bloqueo' => 'Fecha y Hora del bloqueo del comentario. Debería estar a NULL si no está bloqueado o si se desbloquea.',
-            'notas_bloqueo' => 'Notas visibles sobre el motivo del bloqueo del comentario o NULL si no hay -se muestra por defecto según indique \"bloqueado\"-.',
+            'actividad_id' => 'Actividad ID',
+            'crea_usuario_id' => 'Crea Usuario ID',
+            'crea_fecha' => 'Crea Fecha',
+            'modi_usuario_id' => 'Modi Usuario ID',
+            'modi_fecha' => 'Modi Fecha',
+            'texto' => 'Texto',
+            'comentario_id' => 'Comentario ID',
+            'cerrado' => 'Cerrado',
+            'num_denuncias' => 'Num Denuncias',
+            'fecha_denuncia1' => 'Fecha Denuncia1',
+            'bloqueado' => 'Bloqueado',
+            'fecha_bloqueo' => 'Fecha Bloqueo',
+            'notas_bloqueo' => 'Notas Bloqueo',
         ];
     }
 

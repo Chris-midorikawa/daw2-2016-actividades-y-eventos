@@ -15,7 +15,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
     <?php if($dataProvider==null){
 		echo "introduzca un id de actividad";
-		echo $this->render('_search', ['model' => $searchModel]); 
+		
+		echo $this->render('_search', ['model' => $searchModel, 'actividades'=>$actividad_id]); 
 		}else{
 			echo Html::a('Añadir Comentario', ['create?actividad_id='.$actividad_id], ['class' => 'btn btn-success'])."<p></p>";
     

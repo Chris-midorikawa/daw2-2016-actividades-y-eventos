@@ -13,7 +13,8 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="etiquetas-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php  echo $msg; ?>
+    <?php  	echo $msg;
+			$template = ($rol=='A') ? '{update} {delete}' : '';?>
 
     <p>
         <?= Html::a('Crear Etiqueta', ['create'], ['class' => 'btn btn-success']) ?>
@@ -27,7 +28,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'nombre',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn', 'template' => $template,],
         ],
     ]); ?>
 </div>
+                                                                                      

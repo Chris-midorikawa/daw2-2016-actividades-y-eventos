@@ -4,6 +4,8 @@ namespace app\controllers;
 
 use Yii;
 
+use app\models\Actividades;
+use app\models\ActividadQuery;
 use app\models\Usuarios;
 use app\models\UsuariosQuery;
 use app\models\ActividadComentarios;
@@ -22,6 +24,9 @@ class ActividadcomentariosController extends Controller
      */
     public function behaviors()
     {
+		if( Yii::$app->user->isGuest ){
+			$this->redirect(Yii::$app->request->baseURL."\site\login");
+		}			
 		
 			
         return [
@@ -40,6 +45,13 @@ class ActividadcomentariosController extends Controller
      */
     public function actionIndex()
     {
+		$u=Usuarios::findOne(Yii::$app->user->identity->id);
+		if($u)
+		{
+			if($u->rol!='A' || $u->rol!='M'){
+				$this->redirect(Yii::$app->request->baseURL."\site\login");
+			}
+		}
         $searchModel = new ActividadComentariosSearch();
      	$actividad_id="0";
 		if(isset(Yii::$app->request->queryParams['ActividadComentariosSearch'])){
@@ -47,6 +59,12 @@ class ActividadcomentariosController extends Controller
 			 $actividad_id=Yii::$app->request->queryParams['ActividadComentariosSearch']['actividad_id'];
 		}else{
 			 $dataProvider = null;
+			 $todos=Actividades::find()->all();
+			$actividad_id=array();
+			foreach($todos as $c){
+				$actividad_id[$c->id]=$c->titulo;
+				
+			}
 		}
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -111,14 +129,26 @@ class ActividadcomentariosController extends Controller
     {
         $model = $this->findModel($id);
 		$model->modi_usuario_id=0;
-		$model->modi_fecha=date("Y/m/d");
+		$model->modi_fecha=date("Y/m/d H:i:s");
 		if(!Yii::$app->user->isGuest){
 					$u=Usuarios::findOne(Yii::$app->user->identity->id);
 					if($u && $u->rol=="N"){
+						if($model->modi_usuario_id==$u->id){
+							$model->modi_usuario_id=$u->id;
+						}else{
+							return $this->redirect(['index']);
+						}
+					}
+					if($u && $u->rol=="M"){
 						$model->modi_usuario_id=$u->id;
 					}
 		}		
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) ) {
+			$viejo = $this->findModel($model->id);
+			if(!$viejo->bloqueado && $model->bloqueado)$model->fecha_bloqueo=date("Y/m/d H:i:s");
+			if($viejo->bloqueado && !$model->bloqueado){$model->fecha_bloqueo=null;$model->notas_bloqueo="";}
+			if($viejo->num_denuncias==0 && $model->num_denuncias>0)$model->fecha_denuncia1=date("Y/m/d H:i:s");
+			$model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
@@ -135,8 +165,17 @@ class ActividadcomentariosController extends Controller
      */
     public function actionDelete($id)
     {
+		if(!Yii::$app->user->isGuest){
+					$u=Usuarios::findOne(Yii::$app->user->identity->id);
+					if($u && ($u->rol=="N" || $u->rol=="P")){
+						if($model->modi_usuario_id!=$u->id){
+							
+							return $this->redirect(['index']);
+						}
+					}
+		}
         $this->findModel($id)->delete();
-
+		
         return $this->redirect(['index']);
     }
 

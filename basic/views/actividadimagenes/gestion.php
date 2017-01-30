@@ -14,12 +14,12 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="actividad-imagenes-index">
 	
-   <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= Html::encode($this->title) ?></h1>
 	
-     
-	
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+	<?= Html::img(Yii::$app->request->baseUrl."/images/surf.jpg") ?>
     <p>
-        <?= Html::a('Añadir Imagen', ['create'], ['class' => 'btn btn-success'])?>
+        <?= Html::a('Añadir Imagen', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -30,7 +30,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'actividad_id',
 			'orden',
             'imagen_id',
-			  ['class' => 'yii\grid\ActionColumn'],
+
+
+            ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 </div>

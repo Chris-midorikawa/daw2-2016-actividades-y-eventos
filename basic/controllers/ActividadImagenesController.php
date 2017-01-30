@@ -25,14 +25,8 @@ class ActividadimagenesController extends Controller
     {
 		if( Yii::$app->user->isGuest ){
 			$this->redirect(Yii::$app->request->baseURL."\site\login");
-		}else{		
-			if(Yii::$app->user->identity->username!="admin"){
-				$u=Usuarios::findOne(Yii::$app->user->identity->id);
-				if($u->rol!='A' && $u->rol!='N'){
-					$this->redirect(Yii::$app->request->baseURL."\site\login");
-				}
-			}
-		}
+		}			
+		
 
         return [
             'verbs' => [
@@ -51,9 +45,16 @@ class ActividadimagenesController extends Controller
     public function actionIndex()
     {
         $searchModel = new ActividadImagenesSearch();
+		$u=Usuarios::findOne(Yii::$app->user->identity->id);
+		if($u)
+		{
+			if($u->rol!='A'){
+				$this->redirect(Yii::$app->request->baseURL."\site\login");
+			}
+		}
+		
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        return $this->render('index', [
+		 return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
@@ -81,10 +82,10 @@ class ActividadimagenesController extends Controller
         $model = new ActividadImagenes();
 		$todos=Actividades::find()->all();
 		$actividades=array();
-		$u=new Usuarios();
-		if(Yii::$app->user->identity->username!="admin"){
-			$u=Usuarios::findOne(Yii::$app->user->identity->id);
-		}else{
+		$u=Usuarios::findOne(Yii::$app->user->identity->id);
+		if(!$u)
+		{
+			$u= new Usuarios();
 			$u->rol='A';
 		}
 		foreach($todos as $c){

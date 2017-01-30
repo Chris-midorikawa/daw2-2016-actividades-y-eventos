@@ -33,11 +33,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'num_denuncias')->textInput() ?>
 
-    <?= $form->field($model, 'fecha_denuncia1')->textInput()?>
+    <?= $form->field($model, 'fecha_denuncia1')->hiddenInput()->label(false)?>
 
     <?= $form->field($model, 'bloqueado')->checkbox() ?>
 
-    <?= $form->field($model, 'fecha_bloqueo')->textInput() ?>
+    <?= $form->field($model, 'fecha_bloqueo')->hiddenInput()->label(false) ?>
 
     <?= $form->field($model, 'notas_bloqueo')->textInput() ?>
 

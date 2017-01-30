@@ -15,16 +15,11 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'id') ?>
+   
 
-    <?= $form->field($model, 'actividad_id') ?>
+    <?= $form->field($model, 'actividad_id')->dropDownList($actividades) ?>
 
-    <?= $form->field($model, 'crea_usuario_id') ?>
-
-    <?= $form->field($model, 'crea_fecha') ?>
-
-    <?= $form->field($model, 'modi_usuario_id') ?>
-
+   
     <?php // echo $form->field($model, 'modi_fecha') ?>
 
     <?php // echo $form->field($model, 'texto') ?>

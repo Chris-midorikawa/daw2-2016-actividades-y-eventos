@@ -41,9 +41,9 @@ class ActividadImagenes extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'actividad_id' => 'Actividad relacionada',
-            'orden' => 'Orden de aparición de la imagen dentro del grupo de imagenes de la actividad. Opcional.',
-            'imagen_id' => 'Nombre identificativo (fichero interno) con la imagen para la actividad, aqui no puede ser NULL si no hay.',
+            'actividad_id' => 'Actividad ID',
+            'orden' => 'Orden',
+            'imagen_id' => 'Imagen ID',
         ];
     }
 
