@@ -3,6 +3,8 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 use app\piezas\datosusuario\DatosUsuarioWidget;
 use app\piezas\avisosusuario\AvisosUsuarioWidget;
+use app\piezas\actividadesusuario\ActividadesUsuarioWidget;
+use app\piezas\alertasusuario\AlertasUsuarioWidget;
 /* @var $this yii\web\View */
 /* @var $model app\models\Usuarios */
 /*$this->title = $modelo_usuario->nombre;
@@ -39,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;*/
             <?= AvisosUsuarioWidget::widget(['modelo_usuario' => $modelo_usuario]) ?>
         </div>
         <div id="menu_alertas_notas" class="tab-pane fade">
-            <!--AQUÍ IRÁ EL ECHO DEL WIDGET DE ALERTAS Y NOTAS-->
+            <?= AlertasUsuarioWidget::widget(['modelo_usuario' => $modelo_usuario]) ?>
         </div>
     </div>
 </div>
