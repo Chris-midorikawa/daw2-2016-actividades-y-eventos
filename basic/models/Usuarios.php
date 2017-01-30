@@ -164,4 +164,23 @@ var_dump($usuario);
         return $this->hasMany(UsuarioAvisos::className(), ['origen_usuario_id' => 'id']);
     }
 
+
+    //Obtiene las actividades creadas por ese usuario
+     public function getActividadesPropias()
+    {
+        return $this->hasMany(Actividades::className(), ['crea_usuario_id'=>'id']);
+    }
+
+    //Obtiene las actividades seguidas por ese usuario
+     public function getActividadesSeguimiento()
+    {
+        return $this->hasMany(ActividadesSeguimiento::className(), ['usuario_id'=>'id']);
+    }
+
+    //Obtiene las actividades en las que participa ese usuario
+     public function getActividadesParticipante()
+    {
+        return $this->hasMany(ActividadesParticipante::className(), ['usuario_id'=>'id']);
+    }
+
 }

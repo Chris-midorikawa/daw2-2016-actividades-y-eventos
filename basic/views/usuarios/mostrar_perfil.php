@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;*/
             <?= DatosUsuarioWidget::widget(['modelo_usuario' => $modelo_usuario]) ?>
         </div>
         <div id="menu_actividades" class="tab-pane fade">
-            <!--AQUÍ IRÁ EL ECHO DEL WIDGET DE ACTIVIDADES-->
+            <?= ActividadesUsuarioWidget::widget(['modelo_usuario' => $modelo_usuario]) ?>
         </div>
         <div id="menu_avisos_notificaciones" class="tab-pane fade">
             <?= AvisosUsuarioWidget::widget(['modelo_usuario' => $modelo_usuario]) ?>
