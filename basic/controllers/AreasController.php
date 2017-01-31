@@ -119,11 +119,12 @@ class AreasController extends Controller
             $model->clase_area_id = ($id_padre!=-1) ? (($model_padre->clase_area_id<8) ? ($model_padre->clase_area_id)+1 : 8)
                                                     : 1;
             //SE GENERA EL NUEVO ÁREA ID
-            $model->area_id = ($id_padre!=-1) ? $model_padre->id : null;
+            $model->area_id = ($id_padre!=-1) ? $model_padre->id : 0;
             //SE RENDERIZA LA VISTA
             return $this->render('create', [
                 'model' => $model,
                 'nombre_padre' => $model_padre->nombre,
+                'tipos_area' => Areas::getClasesAreas()
             ]);
         }
     }

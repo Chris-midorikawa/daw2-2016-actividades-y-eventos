@@ -27,7 +27,7 @@ class UsuariosAreaModeracion extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'usuario_id', 'area_id'], 'required'],
+            [['usuario_id', 'area_id'], 'required'],
             [['id', 'usuario_id', 'area_id'], 'integer'],
         ];
     }

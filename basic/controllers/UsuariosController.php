@@ -178,4 +178,34 @@ class UsuariosController extends Controller
                     'modelo_usuario' => $modelo_usuario,
                 ]);
     }
+
+    /* Acción para actualizar datos de usuario desde su vista de perfil*/
+    public function actionUpdateDatosPerfil($id) {
+        $modelo_usuario=$this->findModel($id);
+        $modelo_search = new UsuariosSearch($modelo_usuario);
+        $modelo_search->setIsNewRecord(false);
+
+        if ($modelo_search->load(Yii::$app->request->post()) && $modelo_search->save()) {
+            Yii::$app->session->setFlash('kv-detail-success', 'Saved record successfully');
+            // Multiple alerts can be set like below
+            //Yii::$app->session->setFlash('kv-detail-warning', 'A last warning for completing all data.');
+            //Yii::$app->session->setFlash('kv-detail-info', '<b>Note:</b> You can proceed by clicking <a href="#">this link</a>.');
+            return $this->render('mostrar_perfil', ['modelo_usuario'=>$modelo_search]);
+        }
+        return $this->render('mostrar_perfil', [
+            'modelo_usuario' => $modelo_search,
+        ]);
+        //Yii::error(print_r($modelo_search->errors, true));
+        //return ("MAL");
+    }
+    /*public function actionUpdateDatosPerfil($id)
+    {
+        $modelo_usuario = $this->findModel($id);
+
+        if ($modelo_usuario->load(Yii::$app->request->post()) && $modelo_usuario->save()) {
+            return $this->render('mostrar_perfil', [
+                'modelo_usuario' => $modelo_usuario,
+            ]);
+        }
+    }*/
 }

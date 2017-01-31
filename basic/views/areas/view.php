@@ -8,7 +8,7 @@ use yii\grid\GridView;
 /* @var $model app\models\Areas */
 
 //TÍTULO CON EL NOMBRE DEL ÁREA
-$this->title = $model->nombre;
+$this->title = "Área $model->nombre";
 
 //CREACIÓN DEL BREADCRUMB
 $this->params['breadcrumbs'][] = ['label' => 'Áreas', 'url' => ['index']];
@@ -61,6 +61,7 @@ $this->params['breadcrumbs'][] = $model->nombre;
         <h3><?= Html::encode("ÁREAS DERIVADAS") ?></h3>
         <?= GridView::widget([
             'dataProvider' => $dataProvider,
+            'summary' => 'Mostrando {begin}-{end} de {totalCount} elementos',
             //'filterModel' => $searchModel,
             //'summary' => '',
             'columns' => [
@@ -89,6 +90,7 @@ $this->params['breadcrumbs'][] = $model->nombre;
     <h3><?= Html::encode("MODERADORES") ?></h3>
     <?= GridView::widget([
         'dataProvider' => $dataProviderModeradores,
+        'summary' => 'Mostrando {begin}-{end} de {totalCount} elementos',
         'columns' => [
             ['attribute' => "Nombre Moderador",
                 'content' => function ($model, $key, $index, $column) {

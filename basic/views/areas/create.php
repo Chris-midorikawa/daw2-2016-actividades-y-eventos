@@ -17,9 +17,9 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="areas-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
-
     <?= $this->render('_form_crear', [
         'model' => $model,
+        'tipos_area' => $tipos_area
     ]) ?>
 
 </div>
