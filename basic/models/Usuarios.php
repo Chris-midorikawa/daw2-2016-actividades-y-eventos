@@ -3,6 +3,8 @@
 namespace app\models;
 
 use Yii;
+use app\models\Actividades;
+use app\models\ActividadParticipantes;
 use app\models\ActividadSeguimientos;
 
 /**
@@ -175,13 +177,15 @@ var_dump($usuario);
     //Obtiene las actividades seguidas por ese usuario
      public function getActividadesSeguimiento()
     {
-        return $this->hasMany(ActividadSeguimientos::className(), ['usuario_id'=>'id']);
+        return $this->hasMany(Actividades::className(), ['id'=>'actividad_id'])
+            ->viaTable('actividad_seguimientos', ['usuario_id'=>'id']);             
     }
 
     //Obtiene las actividades en las que participa ese usuario
      public function getActividadesParticipante()
     {
-        return $this->hasMany(ActividadParticipantes::className(), ['usuario_id'=>'id']);
+        return $this->hasMany(Actividades::className(), ['id'=>'actividad_id'])
+             ->viaTable('actividad_participantes', ['usuario_id'=>'id']);
     }
 
 }
