@@ -203,22 +203,19 @@ class Usuarios extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
       return (!Yii::$app->user->isGuest && Yii::$app->user->identity->rol == 'A');
     }
     //FUNCION PARA DEVOLVER SI ES PATROCINADOR O NO
-    public static function isPatrocinador(){
-        if(Yii::$app->user->identity->rol=='P'){
-            return true;
-        }else{ return false;}
+    public static function isPatrocinador()
+    {
+      return (!Yii::$app->user->isGuest && Yii::$app->user->identity->rol == 'P');
     }
     //FUNCION PARA DEVOLVER SI ES MODERADOR O NO
-    public static function isModerador(){
-        if(Yii::$app->user->identity->rol=='M'){
-            return true;
-        }else{ return false;}
+    public static function isModerador()
+    {
+      return (!Yii::$app->user->isGuest && Yii::$app->user->identity->rol == 'M');
     }
     //FUNCION PARA DEVOLVER SI ES NORMAL O NO
-    public static function isNormal(){
-        if(Yii::$app->user->identity->rol=='N'){
-            return true;
-        }else{ return false;}
+    public static function isNormal()
+    {      
+      return (!Yii::$app->user->isGuest && Yii::$app->user->identity->rol == 'N');
     }
 
 
