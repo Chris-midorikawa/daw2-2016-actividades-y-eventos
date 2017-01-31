@@ -39,11 +39,11 @@ class ActividadesController extends Controller
     public function actionIndex()
     {
 		$searchModel = new ActividadesSearch();
-		$rol=$this->compruebaUsuario();
-		if($rol=='A'){
+		//$rol=$this->compruebaUsuario();
+		//--if($rol=='A'){
+		if(Usuarios::isAdmin()){
 			$dataProvider=$searchModel->search("");
 		}else{
-			
 			$dataProvider = $searchModel->search(['ActividadesSearch'=>['crea_usuario_id'=>Yii::$app->user->identity->id]]);
 		}
         return $this->render('index', [

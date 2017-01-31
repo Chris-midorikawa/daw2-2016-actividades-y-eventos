@@ -32,7 +32,7 @@ use app\models\ActividadSeguimientos;
  * @property string $fecha_bloqueo
  * @property string $notas_bloqueo
  */
-class Usuarios extends \yii\db\ActiveRecord
+class Usuarios extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 {
     /**
      * @inheritdoc
@@ -116,26 +116,91 @@ class Usuarios extends \yii\db\ActiveRecord
     /*VALIDAR USUARIO*/
     public static function ValidarUsuario($nick,$password)
     {
-        $usuario=Usuarios::find()->where(['nick'=>$nick],['password'=>$password]);
-var_dump($usuario);
-        //return isset($usuario) ? new static($usuario) : null;
+        $usuario= Usuarios::find()->where(['nick'=>$nick, 'password'=>$password])->one();
+//var_dump($usuario);
+//exit();
+        return isset($usuario) ? new static($usuario) : null;
     }
     // DEVUELVE ID PARA $USER
     public static function findIdentity($id)
     {
-
         $user = Usuarios::find()
             ->Where("id=:id", ["id" => $id])
             ->one();
-
         return isset($user) ? new static($user) : null;
     }
-    // FUNCION PARA DEVOLVER SI ES ADMIN O NO
-    public static function isAdmin(){
 
-        if(Yii::$app->user->identity->rol=='A'){
-            return true;
-        }else{ return false;}
+    /* Busca la identidad del usuario a través de su token de acceso */
+    public static function findIdentityByAccessToken($token, $type = null)
+    {
+
+        $users = Usuarios::find()
+            ->where("confirmado=:confirmado", [":confirmado" => 1])
+            ->andWhere("accessToken=:accessToken", [":accessToken" => $token])
+            ->all();
+
+        foreach ($users as $user) {
+            if ($user->accessToken === $token) {
+                return new static($user);
+            }
+        }
+
+        return null;
+    }
+
+    /* Busca la identidad del usuario a través del username */
+    public static function findByUsername($nick)
+    {
+        $users = Usuarios::find()
+            ->where("confirmado=:confirmado", ["confirmado" => 1])
+            ->andWhere("nick=:nick", [":nick" => $nick])
+            ->all();
+
+        foreach ($users as $user) {
+            if (strcasecmp($user->nick, $nick) === 0) {
+                return new static($user);
+            }
+        }
+
+        return null;
+    }
+
+    /* Regresa el id del usuario */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /* Regresa la clave de autenticación */
+    public function getAuthKey()
+    {
+        return $this->authKey;
+    }
+    
+    /* Valida la clave de autenticación */
+    public function validateAuthKey($authKey)
+    {
+        return $this->authKey === $authKey;
+    }
+
+    /**
+     * Validates password
+     *
+     * @param  string  $password password to validate
+     * @return boolean if password provided is valid for current user
+     */
+    public function x_validatePassword($password)
+    {
+        /* Valida el password */
+        return $this->password === $password;
+    }
+    
+    
+    
+    // FUNCION PARA DEVOLVER SI ES ADMIN O NO
+    public static function isAdmin()
+    {
+      return (!Yii::$app->user->isGuest && Yii::$app->user->identity->rol == 'A');
     }
     //FUNCION PARA DEVOLVER SI ES PATROCINADOR O NO
     public static function isPatrocinador(){
