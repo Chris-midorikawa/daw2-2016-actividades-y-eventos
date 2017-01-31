@@ -5,6 +5,9 @@ namespace app\controllers;
 use Yii;
 use app\models\ActividadEtiquetas;
 use app\models\ActividadEtiquetasSearch;
+use app\models\Actividades;
+use app\models\Etiquetas;
+use app\models\EtiquetasQuery;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -19,6 +22,7 @@ class ActividadetiquetasController extends Controller
      */
     public function behaviors()
     {
+		
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -38,25 +42,16 @@ class ActividadetiquetasController extends Controller
 		
         $searchModel = new ActividadEtiquetasSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+		
+		$lista = ActividadEtiquetas::find()->all();
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+			'lista'=> $lista
         ]);
     }
 
-    /**
-     * Displays a single ActividadEtiquetas model.
-     * @param string $id
-     * @return mixed
-     */
-    public function actionView($id)
-    {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
-    }
-
+   
     /**
      * Creates a new ActividadEtiquetas model.
      * If creation is successful, the browser will be redirected to the 'view' page.
@@ -68,7 +63,7 @@ class ActividadetiquetasController extends Controller
         $model = new ActividadEtiquetas();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -76,26 +71,7 @@ class ActividadetiquetasController extends Controller
         }
     }
 
-    /**
-     * Updates an existing ActividadEtiquetas model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param string $id
-     * @return mixed
-     */
-    public function actionUpdate($id)
-    {
-		$this->compruebaUsuario();
-        $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
-        }
-    }
-
+  
     /**
      * Deletes an existing ActividadEtiquetas model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
@@ -127,8 +103,9 @@ class ActividadetiquetasController extends Controller
     }
 	protected function compruebaUsuario()
 	{
-		if(Yii::$app->user->isGuest){
-			$this->redirect(['index']);
+		if(Yii::$app->user->isGuest)
+		{
+			$this->redirect(Yii::$app->request->baseURL."\site\login");
 		}
 	}
 }

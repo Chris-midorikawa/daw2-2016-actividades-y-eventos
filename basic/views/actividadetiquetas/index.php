@@ -18,7 +18,10 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Etiquetar Actividad', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-    <?= GridView::widget([
+	<table>
+   <?php foreach($lista as $modelo){
+	   echo '<tr>'.$this->render('view', ['model' => $modelo,'disabled'=>'true', ]).'</tr>';
+   }/*= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
@@ -30,5 +33,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
-    ]); ?>
+    ]); */?>
+	</table>
 </div>

@@ -31,9 +31,9 @@ use app\models\ActividadesQuery;
 		}
 	?>
 
-    <?= $form->field($model, 'actividad_id')->dropDownList($actividades,['disabled'=>$disabled]) ?>
+    <?= '<td>'.$form->field($model, 'actividad_id')->dropDownList($actividades,['disabled'=>$disabled])->label(false).'</td>' ?>
 
-    <?= $form->field($model, 'etiqueta_id')->dropDownList($etiquetas,['disabled'=>$disabled]) ?>
+    <?= '<td>'.$form->field($model, 'etiqueta_id')->dropDownList($etiquetas,['disabled'=>$disabled])->label(false).'</td>' ?>
 
     <div class="form-group">
         <?php if(!$disabled)echo Html::submitButton($model->isNewRecord ? 'Crear' : 'Guardar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']);?>

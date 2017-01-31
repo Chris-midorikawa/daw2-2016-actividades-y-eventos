@@ -2,10 +2,10 @@
 
 namespace app\controllers;
 
+use Yii;
 use app\models\Actividades;
 use app\models\ActividadesSearch;
-use app\models\ActividadParticipantesSearch;
-use Yii;
+use app\models\Usuarios;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -38,10 +38,14 @@ class ActividadesController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new ActividadesSearch();
-				
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
+		$searchModel = new ActividadesSearch();
+		$rol=$this->compruebaUsuario();
+		if($rol=='A'){
+			$dataProvider=$searchModel->search("");
+		}else{
+			
+			$dataProvider = $searchModel->search(['ActividadesSearch'=>['crea_usuario_id'=>Yii::$app->user->identity->id]]);
+		}
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -55,16 +59,15 @@ class ActividadesController extends Controller
      */
     public function actionView($id)
     {
-	//Cosas necesarias para motrar los participantes de actividad (vista de actividad-participantes)
-	$modeloActual = $this->findModel($id);	
-	$searchModelActividadParticipantes = new ActividadParticipantesSearch();
-	
-		$dataProviderParticipantes = $searchModelActividadParticipantes->search(['ActividadParticipantesSearch' =>['actividad_id' => $modeloActual->id]]);
-		
-        return $this->render('view', [
-            'model' => $modeloActual,
-			'dataProviderParticipantes' => $dataProviderParticipantes,
-        ]);	
+		$model =$this->findModel($id);
+		$rol=$this->compruebaUsuario();
+		if($rol=='A' || $model->crea_usuario_id==Yii::$app->user->identity->id){
+			return $this->render('view', [
+            'model' => $model,
+			]);
+		}else{
+			$this->redirect(Yii::$app->request->baseURL."\site\login");
+		}
     }
 
     /**
@@ -95,16 +98,20 @@ class ActividadesController extends Controller
      */
     public function actionUpdate($id)
     {
-		$this->compruebaUsuario();
-        $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
-        }
+		$model =$this->findModel($id);
+		$rol=$this->compruebaUsuario();
+		if($rol=='A' || $model->crea_usuario_id==Yii::$app->user->identity->id){
+			if ($model->load(Yii::$app->request->post()) && $model->save()) {
+				return $this->redirect(['view', 'id' => $model->id]);
+			} else {
+				return $this->render('update', [
+					'model' => $model,
+				]);
+			}
+		}else{
+			$this->redirect(Yii::$app->request->baseURL."\site\login");
+		}
+		 
     }
 
     /**
@@ -115,10 +122,12 @@ class ActividadesController extends Controller
      */
     public function actionDelete($id)
     {
-		$this->compruebaUsuario();
-        $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
+		$model =$this->findModel($id);
+		$rol=$this->compruebaUsuario();
+		if($rol=='A' || $model->crea_usuario_id==Yii::$app->user->identity->id){
+            $this->$model->delete();
+        }
+		return $this->redirect(['index']);
     }
 
     /**
@@ -139,8 +148,20 @@ class ActividadesController extends Controller
 	
 	protected function compruebaUsuario()
 	{
-		if(Yii::$app->user->isGuest){
-			$this->redirect(['index']);
+		if(Yii::$app->user->isGuest)
+		{
+			$this->redirect(Yii::$app->request->baseURL."\site\login");
+			return false;
+			
+		}else{
+			$usuario=Usuarios::findOne(Yii::$app->user->identity->id);
+			if($usuario)
+			{
+				if($usuario->rol!='A'){
+					return 'N';
+				}
+			}
 		}
+		return 'A';
 	}
 }

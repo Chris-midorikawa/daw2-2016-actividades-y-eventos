@@ -7,29 +7,21 @@ use app\models\Actividades;
 /* @var $this yii\web\View */
 /* @var $model app\models\ActividadEtiquetas */
 
-$this->title = $model->id;
+$this->title = "";
 $this->params['breadcrumbs'][] = ['label' => 'Actividad Etiquetas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
 <div class="actividad-etiquetas-view">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a('Editar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Borrar', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
-
     <?= $this->render('_form', [
         'model' => $model,
 		'disabled'=>'true',
     ]) ?>
+	<?= '<td>'.Html::a('Desetiquetar', ['delete', 'id' => $model->id], [
+           'data' => [
+                'confirm' => '¿está seguro?',
+                'method' => 'post',
+            ],
+        ]).'</td>' ?>
 
 </div>
