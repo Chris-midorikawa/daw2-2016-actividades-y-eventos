@@ -40,6 +40,7 @@ class ActividadseguimientosController extends Controller
      */
     public function actionIndex()
     {
+		if(Yii::$app->user->identity){
         $searchModel = new ActividadSeguimientosSearch();
         $dataProvider = $searchModel->search(['ActividadseguimientosController'=>['usuario_id'=>Yii::$app->user->identity->id]]);
 		$seguimientos=$dataProvider->getModels();
@@ -51,6 +52,7 @@ class ActividadseguimientosController extends Controller
             'seguimientos' => $seguimientos,
             'actividades' => $actividades,
         ]);
+		}
     }
 
     /**

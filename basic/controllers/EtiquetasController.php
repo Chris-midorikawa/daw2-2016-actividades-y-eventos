@@ -3,12 +3,13 @@
 namespace app\controllers;
 
 use Yii;
+use app\models\Actividades;
 use app\models\Etiquetas;
 use app\models\EtiquetasSearch;
+use app\models\ActividadEtiquetas;
+use app\models\ActividadetiquetasSearch;
 use app\models\Usuarios;
 use app\models\UsuarioAvisos;
-use app\models\ActividadEtiquetas;
-use app\models\ActividadEtiquetasQuery;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -23,9 +24,7 @@ class EtiquetasController extends Controller
      */
     public function behaviors()
     {
-		if( Yii::$app->user->isGuest ){
-			$this->redirect(Yii::$app->request->baseURL."\site\login");
-		}					
+							
 		return [
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -42,6 +41,9 @@ class EtiquetasController extends Controller
      */
     public function actionIndex()
     {
+		if( Yii::$app->user->isGuest ){
+			$this->redirect(['busqueda']);
+		}
         $searchModel = new EtiquetasSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 		$msg="";
@@ -64,7 +66,31 @@ class EtiquetasController extends Controller
         ]);
     }
 
-
+public function actionBusqueda()
+    {
+		 
+        $datos = null;
+		$post=Yii::$app->request->post();
+        if (isset($post['Etiquetas']['id'])){
+			
+		 $searchModel = new ActividadEtiquetasSearch();
+			$dataProvider = $searchModel->search(['ActividadEtiquetasSearch'=>['etiqueta_id'=>$post['Etiquetas']['id']]]);
+			$relaciones=$dataProvider->getModels();
+			$datos=array();
+			foreach($relaciones as $r){
+				  $model = Actividades::findOne($r->actividad_id);
+				  $datos[$model->id]=$model;
+			}
+			
+		}
+			return $this->render('buscar', ['datos'=>$datos,
+           ]);
+		
+		
+       
+		
+        
+    }
     /**
      * Creates a new Etiquetas model.
      * If creation is successful, the browser will be redirected to the 'view' page.
@@ -72,6 +98,9 @@ class EtiquetasController extends Controller
      */
     public function actionCreate()
     {
+		if( Yii::$app->user->isGuest ){
+			$this->redirect(Yii::$app->request->baseURL."\site\login");
+		}
         $model = new Etiquetas();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -104,6 +133,9 @@ class EtiquetasController extends Controller
      */
     public function actionUpdate($id)
     {
+		if( Yii::$app->user->isGuest ){
+			$this->redirect(Yii::$app->request->baseURL."\site\login");
+		}
 		if(Yii::$app->user->identity){
 			$u=Usuarios::findOne(Yii::$app->user->identity->id);
 			if($u){
@@ -130,7 +162,9 @@ class EtiquetasController extends Controller
     }
 	public function actionUnifica($id)
     {
-		
+		if( Yii::$app->user->isGuest ){
+			$this->redirect(Yii::$app->request->baseURL."\site\login");
+		}
 		if(Yii::$app->user->identity){
 			$u=Usuarios::findOne(Yii::$app->user->identity->id);
 			if($u){
@@ -160,6 +194,9 @@ class EtiquetasController extends Controller
      */
     public function actionDelete($id)
     {
+		if( Yii::$app->user->isGuest ){
+			$this->redirect(Yii::$app->request->baseURL."\site\login");
+		}
 		if(Yii::$app->user->identity){
 			$u=Usuarios::findOne(Yii::$app->user->identity->id);
 			if($u){

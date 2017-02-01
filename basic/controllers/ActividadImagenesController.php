@@ -44,20 +44,22 @@ class ActividadimagenesController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new ActividadImagenesSearch();
-		$u=Usuarios::findOne(Yii::$app->user->identity->id);
-		if($u)
-		{
-			if($u->rol!='A'){
-				$this->redirect(Yii::$app->request->baseURL."\site\login");
+		if(Yii::$app->user->identity){
+			$searchModel = new ActividadImagenesSearch();
+			$u=Usuarios::findOne(Yii::$app->user->identity->id);
+			if($u)
+			{
+				if($u->rol!='A'){
+					$this->redirect(Yii::$app->request->baseURL."\site\login");
+				}
 			}
+			
+			$dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+			 return $this->render('index', [
+				'searchModel' => $searchModel,
+				'dataProvider' => $dataProvider,
+			]);
 		}
-		
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-		 return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
     }
 
     /**
@@ -79,6 +81,7 @@ class ActividadimagenesController extends Controller
      */
     public function actionCreate()
     {
+		if(Yii::$app->user->identity){
         $model = new ActividadImagenes();
 		$todos=Actividades::find()->all();
 		$actividades=array();
@@ -101,7 +104,7 @@ class ActividadimagenesController extends Controller
                 'model' => $model,
 				'actividades' => $actividades,
             ]);
-        }
+        }}
     }
 
     /**
@@ -112,6 +115,7 @@ class ActividadimagenesController extends Controller
      */
     public function actionUpdate($id)
     {
+		if(Yii::$app->user->identity){
         $model = $this->findModel($id);
 		$actividad = Actividades::findOne($model->actividad_id);
 		$u=new Usuarios();
@@ -139,7 +143,7 @@ class ActividadimagenesController extends Controller
                 'model' => $model,
 				'actividades' => $actividades,
             ]);
-        }
+        }}
     }
 
     /**
@@ -150,6 +154,7 @@ class ActividadimagenesController extends Controller
      */
     public function actionDelete($id)
     {
+		if(Yii::$app->user->identity){
         $model=$this->findModel($id);
 		$actividad = Actividades::findOne($model->actividad_id);
 		$u=new Usuarios();
@@ -162,7 +167,7 @@ class ActividadimagenesController extends Controller
 			$u->rol='A';
 		}
 		$model->delete();
-
+		}
         return $this->redirect(['index']);
     }
 

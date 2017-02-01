@@ -37,6 +37,35 @@ class ActividadesController extends Controller
             ],
         ];
     }
+	
+	/*** GRUPO3 - NO BORRAR
+	Pieza pública de visualización del formulario de Búsqueda detallada de Actividades. 
+	Acción para el Filtrado de resultados por los datos introducidos en la búsqueda y 
+	mostrar los resultados usando la pieza realizada de la lista de Actividades con 
+	"ficha resumida".
+	****/
+	
+	
+	public function actionBusqueda()
+    {
+		$resultado=array();
+		$modelo = new Actividades();
+		if(isset(Yii::$app->request->queryparams['Actividades'])){
+			$searchModel = new ActividadesSearch();
+			$dataProvider=$searchModel->search(Yii::$app->request->queryparams);
+			$resultado= $dataProvider->getModels();
+		}
+			
+			return $this->render('buscar', [
+            'resultado' => $resultado,
+			'modelo'=>$modelo,
+			]);
+		
+    }
+	
+	/***
+	FIN-GRUPO3
+	**/
 
     /**
      * Lists all Actividades models.
@@ -148,6 +177,7 @@ class ActividadesController extends Controller
             ]);
         }
     }
+
 
     /**
      * Updates an existing Actividades model.

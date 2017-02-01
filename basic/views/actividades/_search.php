@@ -11,7 +11,7 @@ use yii\widgets\ActiveForm;
 <div class="actividades-search">
 
     <?php $form = ActiveForm::begin([
-        'action' => ['index'],
+        'action' => ['busqueda'],
         'method' => 'get',
     ]); ?>
 

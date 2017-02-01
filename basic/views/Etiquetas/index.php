@@ -18,6 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Crear Etiqueta', ['create'], ['class' => 'btn btn-success']) ?>
+		<?= Html::a('Buscar por Etiqueta', ['busqueda'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

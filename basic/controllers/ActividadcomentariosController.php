@@ -45,6 +45,7 @@ class ActividadcomentariosController extends Controller
      */
     public function actionIndex()
     {
+		if(Yii::$app->user->identity) {
 		$u=Usuarios::findOne(Yii::$app->user->identity->id);
 		if($u)
 		{
@@ -71,6 +72,7 @@ class ActividadcomentariosController extends Controller
             'dataProvider' => $dataProvider,
 			'actividad_id'=>$actividad_id,
         ]);
+		}
     }
 
     /**
@@ -133,7 +135,7 @@ class ActividadcomentariosController extends Controller
 		if(!Yii::$app->user->isGuest){
 					$u=Usuarios::findOne(Yii::$app->user->identity->id);
 					if($u && $u->rol=="N"){
-						if($model->modi_usuario_id==$u->id){
+						if($model->crea_usuario_id==$u->id){
 							$model->modi_usuario_id=$u->id;
 						}else{
 							return $this->redirect(['index']);
