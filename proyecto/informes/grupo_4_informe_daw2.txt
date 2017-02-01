@@ -72,5 +72,5 @@
 					Se muestran las actividades que sigue el usuario teniendo éste la opcion de VER.
 				- Actividades como Participante
 					Se muestran las actividades que sigue el usuario teniendo éste la opcion de VER.
-				- Comentarios en Actividades =>
+				- Comentarios en Actividades => SIN HACER
 			- Alertas y Notas => SIN HACER
