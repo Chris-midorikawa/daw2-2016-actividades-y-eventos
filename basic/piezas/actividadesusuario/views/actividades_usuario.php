@@ -100,4 +100,33 @@ use kartik\detail\DetailView;
     }
     ?>
     </div>
+
+
+     <h1 class="col-md-12 text-center">COMENTARIOS EN ACTIVIDADES</h1>
+    <?php 
+    //print("<pre>".print_r($modelo_usuario->comentarios,true)."</pre>");
+    ?>
+    <div class="col-md-12">
+    <?php
+     foreach($modelo_usuario->comentarios as $comentario)
+    {?>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-block">
+                    <h2 class="card-title text-center"><?= $comentario->crea_fecha?></h2>
+                </div>
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>COMENTARIO: </strong><?= $comentario->texto?></li>
+                </ul>
+
+                <div class="card-block">
+                <?= Html::a('VER ACTIVIDAD COMENTADA', ['actividades/viewnormal', 'id' => $comentario->actividad_id], ['class' => 'btn btn-success']) //Pongo esto ya que no está hecha la parte de comentarios?>
+                </div>
+            </div>
+        </div>
+    <?php 
+    }
+    ?>
+    </div>
 </div>

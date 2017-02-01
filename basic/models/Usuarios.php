@@ -6,6 +6,7 @@ use Yii;
 use app\models\Actividades;
 use app\models\ActividadParticipantes;
 use app\models\ActividadSeguimientos;
+use app\models\ActividadComentarios;
 
 /**
  * This is the model class for table "{{%usuarios}}".
@@ -248,6 +249,12 @@ class Usuarios extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
     {
         return $this->hasMany(Actividades::className(), ['id'=>'actividad_id'])
              ->viaTable('actividad_participantes', ['usuario_id'=>'id']);
+    }
+
+    //Obtiene los comentarios en actividades de este participante
+     public function getComentarios()
+    {
+        return $this->hasMany(ActividadComentarios::className(), ['crea_usuario_id'=>'id']);
     }
 
 }
