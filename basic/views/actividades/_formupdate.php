@@ -76,7 +76,7 @@ use app\models\AreasQuery;
 
     <?php echo $form->field($model, 'fecha_bloqueo')->hiddenInput(['disabled'=>$disabled]);
 
-    echo $form->field($model, 'notas_bloqueo')->hiddenInput(['rows' => 6,'disabled'=>$disabled]);}?>
+    echo $form->field($model, 'notas_bloqueo')->hiddenInput(['rows' => 6,'disabled'=>$disabled]);?>
 
     <?= $form->field($model, 'max_participantes')->textInput(['disabled'=>$disabled]) ?>
 
