@@ -64,13 +64,16 @@
 					Se mostrarán dos columnas de alerts bootstrap personalizados: una para los avisos por 
 						leer y otra para los leídos. En los avisos por leer, se dispone de un botón para 
 						marcarlos como leídos (rellenar el campo de fecha_lectura con la fecha actual).
-			- Actividades:
-				- Actividades Propias => HECHO
+			- Actividades:=> HECHO
+				- Actividades Propias 
 					Se muestran las actividades creadas por el propio usuario teniendo éste las opciones 
 						de VER y de MODIFICAR dichas actividades
 				- Actividades en Seguimiento
 					Se muestran las actividades que sigue el usuario teniendo éste la opcion de VER.
 				- Actividades como Participante
 					Se muestran las actividades que sigue el usuario teniendo éste la opcion de VER.
-				- Comentarios en Actividades => SIN HACER
+				- Comentarios en Actividades 
+					Se muestran los comentarios poniendo énfasis en su fecha (se podría hacer una ordenación y
+						mostrar solo una cantidad determinada de ellos) dando la posibilidad de ver la actividad
+						relacionada (ya que la parte de comentarios no estaba hecha y no pude relacionarlo con ella).
 			- Alertas y Notas => SIN HACER
