@@ -27,7 +27,10 @@ use yii\helpers\Url;
             'nick',
             'nombre',
             'apellidos',
-            ['attribute'=>'fecha_nacimiento', 'type'=>DetailView::INPUT_DATE],
+            [
+                    'attribute'=>'fecha_nacimiento',
+                    'type'=>DetailView::INPUT_DATETIME,
+            ],
             'direccion',
             'area_id',
             ['attribute'=>'rol'],

@@ -1,0 +1,65 @@
+*** INFORME PRÁCTICA DAW2 ***
+
+
+** Autores
+	Grupo 4:
+		Ernesto Boado Moreira
+		Adrián Rodríguez
+
+
+** Funcionalidades Implementadas
+
+	F4:
+		- Mantenimiento de Áreas => HECHO.
+			+ Lista de funcionalidades: 
+				Vista principal en la que se muestran las diferentes áreas separadas por los 
+					distintos tipos (continentes, países, regiones, etc...). Desde esta vista
+					se puede acceder a la de creación de un nuevo continente, tipo de área que
+					no deriva a nivel práctico de ninguna otra.
+					En cada tabla de tipo de área se mostrarán las distintas áreas, con enlaces
+					para acceder a sus detalles, edición y eliminación.
+				Vista con los detalles de una área particular, donde se pueden ver sus
+					características principales, una tabla con las áreas que derivan de la
+					misma (que la tienen como área padre) y otra con la lista de usuarios que 
+					actúan como moderadores del área.
+					Debajo de las tablas hay botones para añadir áreas derivadas y moderadores.
+				Vista de creación de una nueva área derivada de otra.
+				Vista de adición de un usuario como moderador a una área.
+			+ Notas:
+				En cada vista de esta parte se muestra un sistema de breadcrumbs con los enlaces
+					organizados jerárquicamente.
+
+		- Lista fija de clases de Área => HECHO.
+			+ Notas:
+				Disponibles métodos estáticos y de instancia para la recuperación del nombre completo
+					del tipo de área.
+
+		- Mantenimiento de Áreas de moderación para Usuarios => HECHO.
+			+ Notas:
+				Integrado en la visualización de una área determinada.
+
+		- Mantenimiento de Participantes en Actividades => HECHO.
+
+
+	T4:
+		- Mi Perfil:
+			+ Notas:
+				La vista de Mi Perfil constará de una serie de pestañas para cada una de las partes en las
+					que se mostrarán los widgets correspondientes (piezas requeridas).
+			- Datos de Usuario => HECHO.
+				+ Lista de funcionalidades:
+					Utilizando el widget externo kartik-v/DetailView se muestra una tabla con los datos
+						principales del usuario. La tabla dispone de un botón de editar para cambiar a 
+						modo edición, realizar las modificaciones correspondientes y guardarlas pulsando
+						otro botón destinado a ello.
+			- Avisos del Usuario => Falta la acción de cambiar aviso a leído.
+				+ Lista de funcionalidades:
+					Se mostrarán dos columnas de alerts bootstrap personalizados: una para los avisos por 
+						leer y otra para los leídos. En los avisos por leer, se dispone de un botón para 
+						marcarlos como leídos (rellenar el campo de fecha_lectura con la fecha actual).
+			- Actividades:
+				- Actividades Propias =>
+				- Actividades en Seguimiento =>
+				- Actividades como Participante =>
+				- Comentarios en Actividades =>
+			- Alertas y Notas => SIN HACER

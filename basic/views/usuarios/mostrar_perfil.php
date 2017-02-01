@@ -5,11 +5,8 @@ use app\piezas\datosusuario\DatosUsuarioWidget;
 use app\piezas\avisosusuario\AvisosUsuarioWidget;
 use app\piezas\actividadesusuario\ActividadesUsuarioWidget;
 use app\piezas\alertasusuario\AlertasUsuarioWidget;
-/* @var $this yii\web\View */
-/* @var $model app\models\Usuarios */
-/*$this->title = $modelo_usuario->nombre;
-$this->params['breadcrumbs'][] = ['label' => 'Usuarios', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;*/
+
+$this->title = "MI PERFIL";
 ?>
 
 
