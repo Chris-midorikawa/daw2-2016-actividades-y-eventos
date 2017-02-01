@@ -1,5 +1,5 @@
 <?php
-
+use app\models\Actividades;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use app\models\Areas;
@@ -44,7 +44,7 @@ use app\models\AreasQuery;
 
     <?= $form->field($model, 'url')->textarea(['rows' => 1,'disabled'=>$disabled]) ?>
 
-    <?= $form->field($model, 'imagen_id')->textInput(['maxlength' => true,'disabled'=>$disabled]]) ?>
+    <?= $form->field($model, 'imagen_id')->textInput(['maxlength' => true,'disabled'=>$disabled]) ?>
 
     <?= $form->field($model, 'edad_id')->dropDownList(Actividades::edades(),['disabled'=>$disabled]) ?>
 

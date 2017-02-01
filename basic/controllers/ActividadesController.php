@@ -10,6 +10,11 @@ use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\ActividadImagenes;
+use app\models\ActividadImagenesSearch;
+use app\models\ActividadComentarios;
+use app\models\ActividadComentariosSearch;
+
 
 /**
  * ActividadesController implements the CRUD actions for Actividades model.
@@ -40,18 +45,40 @@ class ActividadesController extends Controller
     public function actionIndex()
     {
 		$searchModel = new ActividadesSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-		//$rol=$this->compruebaUsuario();
+        //$rol=$this->compruebaUsuario();
 		//--if($rol=='A'){
 		if(Usuarios::isAdmin()){
-			$dataProvider=$searchModel->search("");
-		}else{
-			$dataProvider = $searchModel->search(['ActividadesSearch'=>['crea_usuario_id'=>Yii::$app->user->identity->id]]);
-		}
-        return $this->render('index', [
+			$dataProvider=$searchModel->search(Yii::$app->request->queryparams);
+			return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-        ]);
+			'template' => '{view}{update}{delete}',
+			]);
+		}else{ if(!Yii::$app->user->isGuest){
+		$dataProvider = $searchModel->search(['ActividadesSearch'=>['crea_usuario_id'=>Yii::$app->user->identity->id]]);
+				return $this->render('index', [
+				'searchModel' => $searchModel,
+				'dataProvider' => $dataProvider,
+				'template' => '{view}{update}{delete}',
+						]);
+						
+				}else{
+					return $this->redirect(['indexpublico']);
+				}
+		}
+        
+    }
+	public function actionIndexpublico()
+    {
+		$searchModel = new ActividadesSearch();
+		
+			$dataProvider = $searchModel->search(['ActividadesSearch'=>['visible'=>1,'bloqueada'=>0]]);
+				return $this->render('indexpublica', [
+				'searchModel' => $searchModel,
+				'dataProvider' => $dataProvider,
+				'template' => '{view}',]);
+			
+        
     }
 
     /**
@@ -68,15 +95,30 @@ class ActividadesController extends Controller
         $dataProviderParticipantes = $searchModelActividadParticipantes->search(['ActividadParticipantesSearch' =>['actividad_id' => $modeloActual->id]]);
  		
 		$rol=$this->compruebaUsuario();
-		if($rol=='A' || $modeloActual->crea_usuario_id==Yii::$app->user->identity->id){
-			return $this->render('view', [
-            'model' => $modeloActual,
-            'dataProviderParticipantes' => $dataProviderParticipantes,
-			]);
-		}else{
-			$this->redirect(Yii::$app->request->baseURL."\site\login");
+		if(Yii::$app->user->isGuest || isset($_GET['publica'])){
+				 $searchModel = new ActividadImagenesSearch();
+			$dataProvider = $searchModel->search(['ActividadImagenesSearch'=>['actividad_id'=>$id]]);
+			$imagenes = $dataProvider->getModels();
+			$searchModel = new ActividadComentariosSearch();
+			$dataProvider = $searchModel->search(['ActividadComentariosSearch'=>['actividad_id'=>$id]]);
+			$comentarios = $dataProvider->getModels();
+			return $this->render('viewpublica', [
+				'model' => $modeloActual,
+				'imagenes'=>$imagenes,
+				'comentarios'=>$comentarios,
+				]);
+		
+			
+		}else{	if($rol=='A' || $modeloActual->crea_usuario_id==Yii::$app->user->identity->id){
+					return $this->render('view', [
+					'model' => $modeloActual,
+					'dataProviderParticipantes' => $dataProviderParticipantes,
+					]);
+			}else{
+				$this->redirect(Yii::$app->request->baseURL."\site\login");
+			}
 		}
-    }
+	}
 
     /**
      * Creates a new Actividades model.
@@ -106,15 +148,21 @@ class ActividadesController extends Controller
      */
     public function actionUpdate($id)
     {
-		$model =$this->findModel($id);
+		$antes =$this->findModel($id);
+		$model= new Actividades();
 		$rol=$this->compruebaUsuario();
-		if($rol=='A' || $model->crea_usuario_id==Yii::$app->user->identity->id){
-			if ($model->load(Yii::$app->request->post()) && $model->save()) {
+		if($rol=='A' || $antes->crea_usuario_id==Yii::$app->user->identity->id){
+			if ($model->load(Yii::$app->request->post())) {
+				if(!$antes->bloqueada && $model->bloqueada){
+					$model->fecha_bloqueo=date('Y/m/d H:i:s');
+				}
+				$model->save();
 				return $this->redirect(['view', 'id' => $model->id]);
 			} else {
 				return $this->render('update', [
-					'model' => $model,
+					'model' => $antes,'rol'=>$rol,
 				]);
+
 			}
 		}else{
 			$this->redirect(Yii::$app->request->baseURL."\site\login");
@@ -128,6 +176,62 @@ class ActividadesController extends Controller
      * @param string $id
      * @return mixed
      */
+	 
+	 public function actionDenunciar($id)
+    {
+		$model =$this->findModel($id);
+		$model->num_denuncias++;
+		if($model->num_denuncias==1){
+			$model->fecha_denuncia1=date('Y/m/d H:i:s');
+		}
+		
+			$model->save();
+				return $this->redirect(['view', 'id' => $model->id,'publica'=>1]);
+			
+		
+		 
+    }
+	public function actionDenunciacomentario($id,$comentario_id)
+    {
+		$model =ActividadComentarios::findOne($comentario_id);
+		$model->num_denuncias++;
+		if($model->num_denuncias==1){
+			$model->fecha_denuncia1=date('Y/m/d H:i:s');
+		}
+		
+			$model->save();
+				return $this->redirect(['view', 'id' => $id,'publica'=>1]);
+			
+		
+		 
+    }
+	public function actionVotarok($id)
+    {
+		$model =$this->findModel($id);
+		$model->votosOK++;
+		
+			$model->save();
+				return $this->redirect(['view', 'id' => $model->id,'publica'=>1]);
+			
+		
+		 
+    }
+	public function actionVotarko($id)
+    {
+		$model =$this->findModel($id);
+		$model->votosKO++;
+		if($model->num_denuncias==1){
+			$model->fecha_denuncia1=date('Y/m/d H:i:s');
+		}
+		
+			$model->save();
+				return $this->redirect(['view', 'id' => $model->id,'publica'=>1]);
+			
+		
+		 
+    }
+
+	 
     public function actionDelete($id)
     {
 		$model =$this->findModel($id);

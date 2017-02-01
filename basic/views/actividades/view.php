@@ -15,11 +15,16 @@ $this->params['breadcrumbs'][] = 'View';
 
     <h1><?= Html::encode($this->title) ?></h1>
 <?= Html::a('Modificar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+  <?= Html::a('Ficha pública', ['view', 'id' => $model->id,'publica'=>1], ['class' => 'btn btn-primary']) ?>
         
-    <?= $this->render('_form', [
+    <?= $this->render('_formview', [
         'model' => $model,
 		'disabled'=>true,
     ]) ?>
+	
+  
+	
+	
 
     <h3><?= Html::encode("PARTICIPANTES") ?></h3>
      <?= GridView::widget([
