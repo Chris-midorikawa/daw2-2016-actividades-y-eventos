@@ -2,10 +2,11 @@
 
 namespace app\controllers;
 
-use Yii;
 use app\models\Actividades;
 use app\models\ActividadesSearch;
+use app\models\ActividadParticipantesSearch;
 use app\models\Usuarios;
+use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -39,6 +40,7 @@ class ActividadesController extends Controller
     public function actionIndex()
     {
 		$searchModel = new ActividadesSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 		//$rol=$this->compruebaUsuario();
 		//--if($rol=='A'){
 		if(Usuarios::isAdmin()){
@@ -59,11 +61,17 @@ class ActividadesController extends Controller
      */
     public function actionView($id)
     {
-		$model =$this->findModel($id);
+    //Cosas necesarias para motrar los participantes de actividad (vista de actividad-participantes)
+ 	
+		$modeloActual = $this->findModel($id);	
+ 	    $searchModelActividadParticipantes = new ActividadParticipantesSearch();
+        $dataProviderParticipantes = $searchModelActividadParticipantes->search(['ActividadParticipantesSearch' =>['actividad_id' => $modeloActual->id]]);
+ 		
 		$rol=$this->compruebaUsuario();
-		if($rol=='A' || $model->crea_usuario_id==Yii::$app->user->identity->id){
+		if($rol=='A' || $modeloActual->crea_usuario_id==Yii::$app->user->identity->id){
 			return $this->render('view', [
-            'model' => $model,
+            'model' => $modeloActual,
+            'dataProviderParticipantes' => $dataProviderParticipantes,
 			]);
 		}else{
 			$this->redirect(Yii::$app->request->baseURL."\site\login");

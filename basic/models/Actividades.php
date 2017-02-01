@@ -69,6 +69,12 @@ class Actividades extends \yii\db\ActiveRecord
         return 'actividades';
     }
 
+    public function getParticipantes()
+    {
+        return $this->hasMany(Usuarios::className(), ['id'=>'usuario_id'])
+               ->viaTable('actividad_participantes', ['actividad_id'=>'id']);
+     }
+
     /**
      * @inheritdoc
      */

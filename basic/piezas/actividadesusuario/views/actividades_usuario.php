@@ -15,7 +15,8 @@ use kartik\detail\DetailView;
     //print("<pre>".print_r($modelo_usuario->actividadesPropias,true)."</pre>"); //Si se descomenta se ve el array de objetos actividad
 
     foreach($modelo_usuario->actividadesPropias as $actividad)
-    {?>
+    {
+    ?>
         <div class="col-md-4">
             <div class="card">
                 <div class="card-block">
@@ -40,8 +41,54 @@ use kartik\detail\DetailView;
     ?>
 
     <h1 class="col-md-12">ACTIVIDADES EN SEGUIMIENTO</h1>
-    <?php print("<pre>".print_r($modelo_usuario->actividadesSeguimiento,true)."</pre>");?>
+    <?php 
+    //print("<pre>".print_r($modelo_usuario->actividadesSeguimiento,true)."</pre>");
+    
+    foreach($modelo_usuario->actividadesSeguimiento as $actividad)
+    {?>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-block">
+                    <h2 class="card-title text-center"><?= $actividad->titulo?></h2>
+                </div>
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>DESCRIPCIÓN: </strong><?= $actividad->descripcion?></li>
+                    <li class="list-group-item"><strong>FECHA:</strong> <?= $actividad->fecha_celebracion?></li>
+                </ul>
+
+                <div class="card-block">
+                <a href="#" class="card-link"> VER</a>
+                </div>
+            </div>
+        </div>
+    <?php 
+    }
+    ?>
 
      <h1 class="col-md-12">ACTIVIDADES EN LAS QUE PARTICIPA</h1>
-    <?php print("<pre>".print_r($modelo_usuario->actividadesParticipante,true)."</pre>");?>
+    <?php 
+    //print("<pre>".print_r($modelo_usuario->actividadesParticipante,true)."</pre>");
+    
+     foreach($modelo_usuario->actividadesParticipante as $actividad)
+    {?>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-block">
+                    <h2 class="card-title text-center"><?= $actividad->titulo?></h2>
+                </div>
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>DESCRIPCIÓN: </strong><?= $actividad->descripcion?></li>
+                    <li class="list-group-item"><strong>FECHA:</strong> <?= $actividad->fecha_celebracion?></li>
+                </ul>
+
+                <div class="card-block">
+                <a href="#" class="card-link"> VER</a>
+                </div>
+            </div>
+        </div>
+    <?php 
+    }
+    ?>
 </div>
