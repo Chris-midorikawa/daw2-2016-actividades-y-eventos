@@ -4,7 +4,7 @@
 ** Autores
 	Grupo 4:
 		Ernesto Boado Moreira
-		Adrián Rodríguez
+		Adrián Rodríguez Carneiro
 
 
 ** Funcionalidades Implementadas
@@ -39,6 +39,13 @@
 				Integrado en la visualización de una área determinada.
 
 		- Mantenimiento de Participantes en Actividades => HECHO.
+			+ Lista de funcionalidades: 
+				Vista principal (solo debería ser visible para los administradores) en la que se muestra 
+					la tabla relacionando las actividades y participantes. En cada fila de la tabla se mostrarán enlaces
+					para acceder a sus detalles, edición y eliminación.
+				Incorporación de la posibilidad de agregar participante a la actividad (integrado en la visualización 
+					de una actividad determinada) ya que para quitar a un participante de la actividad solo habría que modificar
+					la "Fecha y Hora de cancelación de la participación por parte del usuario" correpondiente poniendo una fecha.
 
 
 	T4:
@@ -58,8 +65,12 @@
 						leer y otra para los leídos. En los avisos por leer, se dispone de un botón para 
 						marcarlos como leídos (rellenar el campo de fecha_lectura con la fecha actual).
 			- Actividades:
-				- Actividades Propias =>
-				- Actividades en Seguimiento =>
-				- Actividades como Participante =>
+				- Actividades Propias => HECHO
+					Se muestran las actividades creadas por el propio usuario teniendo éste las opciones 
+						de VER y de MODIFICAR dichas actividades
+				- Actividades en Seguimiento
+					Se muestran las actividades que sigue el usuario teniendo éste la opcion de VER.
+				- Actividades como Participante
+					Se muestran las actividades que sigue el usuario teniendo éste la opcion de VER.
 				- Comentarios en Actividades =>
 			- Alertas y Notas => SIN HACER
