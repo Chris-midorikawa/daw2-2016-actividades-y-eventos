@@ -39,7 +39,6 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Portada', 'url' => ['/site/index']],
             ['label' => 'Áreas', 'url' => ['/areas']],
-			['label' => 'Actividad-Participantes', 'url' => ['/actividad-participantes']],
             ['label' => 'Portal', 'url' => ['/usuarios/portal']],
             ['label' => 'Avisos', 'url' => ['/avisos']],
             ['label' => 'Configuraciones', 'url' => ['/configuraciones']],
@@ -53,13 +52,31 @@ AppAsset::register($this);
                 ['label' => 'Login/Registro', 'url' => ['/site/login']]
             ) : (
                 '<li>'
+                . Html::beginForm(['/actividad-participantes'], 'post', ['class' => 'navbar-form'])
+                . Html::submitButton(
+                    'Actividad-Participantes',
+                    ['class' => 'btn btn-link']
+                )
+                . Html::endForm().
+                '</li>'.
+
+                '<li>'
+                . Html::beginForm(['/usuarios/mostrar-perfil?id_usuario='.Yii::$app->user->identity->id.''], 'get', ['class' => 'navbar-form'])
+                . Html::submitButton(
+                    'Mi Perfil',
+                    ['class' => 'btn btn-link']
+                )
+                . Html::endForm().
+                '</li>'
+
+                .'<li>'
                 . Html::beginForm(['/site/logout'], 'post', ['class' => 'navbar-form'])
                 . Html::submitButton(
                     'Logout (' . Yii::$app->user->identity->nombre . ')',
                     ['class' => 'btn btn-link']
                 )
-                . Html::endForm()
-                . '</li>'
+                . Html::endForm().
+                '</li>'
             )
         ],
     ]);

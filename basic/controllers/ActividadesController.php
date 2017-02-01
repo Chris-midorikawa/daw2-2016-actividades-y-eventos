@@ -119,6 +119,15 @@ class ActividadesController extends Controller
 			}
 		}
 	}
+	
+	 //vista de las Actividades de un usuario normal
+     public function actionViewnormal($id)
+    {
+        $modeloActual = $this->findModel($id);
+        return $this->render('viewnormal', [
+            'model' => $modeloActual,
+			]);
+    } 
 
     /**
      * Creates a new Actividades model.
