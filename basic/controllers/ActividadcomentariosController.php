@@ -49,7 +49,7 @@ class ActividadcomentariosController extends Controller
 		$u=Usuarios::findOne(Yii::$app->user->identity->id);
 		if($u)
 		{
-			if($u->rol!='A' || $u->rol!='M'){
+			if($u->rol!='A' && $u->rol!='M'){
 				$this->redirect(Yii::$app->request->baseURL."\site\login");
 			}
 		}
