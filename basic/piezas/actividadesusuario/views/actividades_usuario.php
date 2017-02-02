@@ -13,6 +13,13 @@ use kartik\detail\DetailView;
     <h1 class="col-md-12 text-center">ACTIVIDADES PROPIAS</h1>
     <?php 
     //print("<pre>".print_r($modelo_usuario->actividadesPropias,true)."</pre>"); //Si se descomenta se ve el array de objetos actividad
+    if(empty($modelo_usuario->actividadesPropias))
+    {?>
+        <div class="alert alert-warning col-md-12 text-center">
+        <strong>No hay actividades Propias</strong>
+        </div>
+   <?php 
+    }
     ?>
     <div class="col-md-12">
     <?php 
@@ -46,6 +53,14 @@ use kartik\detail\DetailView;
     <h1 class="col-md-12 text-center">ACTIVIDADES EN SEGUIMIENTO</h1>
     <?php 
     //print("<pre>".print_r($modelo_usuario->actividadesSeguimiento,true)."</pre>");
+
+    if(empty($modelo_usuario->actividadesSeguimiento))
+    {?>
+        <div class="alert alert-warning col-md-12 text-center">
+        <strong>No hay actividades en seguimiento</strong>
+        </div>
+   <?php 
+    }
     ?>
     <div class="col-md-12">
     <?php
@@ -75,6 +90,13 @@ use kartik\detail\DetailView;
      <h1 class="col-md-12 text-center">ACTIVIDADES EN LAS QUE PARTICIPA</h1>
     <?php 
     //print("<pre>".print_r($modelo_usuario->actividadesParticipante,true)."</pre>");
+    if(empty($modelo_usuario->actividadesParticipante))
+    {?>
+        <div class="alert alert-warning col-md-12 text-center">
+        <strong>No hay actividades en la que participe</strong>
+        </div>
+   <?php 
+    }
     ?>
     <div class="col-md-12">
     <?php
