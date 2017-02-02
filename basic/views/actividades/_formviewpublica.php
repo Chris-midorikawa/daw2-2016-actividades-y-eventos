@@ -43,7 +43,7 @@ use app\models\AreasQuery;
     <?= $form->field($model, 'notas')->textarea(['rows' => 6,'disabled'=>$disabled]) ?>
 
     <?= $form->field($model, 'url')->textarea(['rows' => 1,'disabled'=>$disabled]) ?>
-	<?=Html::img(Yii::$app->request->baseUrl."/images/".$model->imagen_id)?>
+	<?=Html::img(Yii::$app->request->baseUrl."/images/".$model->imagen_id,['width'=>800,'height'=>800])?>
 	<?php foreach($imagenes as $i){
 		echo '<p>'.Html::img(Yii::$app->request->baseUrl."/images/".$i->imagen_id).'</p>';
 	}
