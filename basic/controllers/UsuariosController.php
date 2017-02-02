@@ -168,14 +168,14 @@ class UsuariosController extends Controller
         }
     }
 
-    /* CREADO POR ERNESTO NO BORRAR!!!
-    Acción  utilizada para mostrar el perfil de un usuario*/
-    public function actionMostrarPerfil($id_usuario){
+    /* Acción  utilizada para mostrar el perfil de un usuario*/
+    public function actionMostrarPerfil($id_usuario, $active_tab="tab_datos"){
 
             $modelo_usuario = UsuariosSearch::find()->where(['id' => $id_usuario])->one();
 
             return $this->render('mostrar_perfil', [
                     'modelo_usuario' => $modelo_usuario,
+                    'active_tab' => $active_tab,
                 ]);
     }
 
@@ -186,26 +186,12 @@ class UsuariosController extends Controller
         $modelo_search->setIsNewRecord(false);
 
         if ($modelo_search->load(Yii::$app->request->post()) && $modelo_search->save()) {
-            Yii::$app->session->setFlash('kv-detail-success', 'Saved record successfully');
-            // Multiple alerts can be set like below
-            //Yii::$app->session->setFlash('kv-detail-warning', 'A last warning for completing all data.');
-            //Yii::$app->session->setFlash('kv-detail-info', '<b>Note:</b> You can proceed by clicking <a href="#">this link</a>.');
-            return $this->render('mostrar_perfil', ['modelo_usuario'=>$modelo_search]);
+            Yii::$app->session->setFlash('kv-detail-success', 'Datos guardados correctament');
+            return $this->redirect(['/usuarios/mostrar-perfil',
+                'id_usuario' =>$id,
+                'active_tab' => "tab_datos"]);
         }
-        return $this->render('mostrar_perfil', [
-            'modelo_usuario' => $modelo_search,
-        ]);
-        //Yii::error(print_r($modelo_search->errors, true));
-        //return ("MAL");
-    }
-    /*public function actionUpdateDatosPerfil($id)
-    {
-        $modelo_usuario = $this->findModel($id);
 
-        if ($modelo_usuario->load(Yii::$app->request->post()) && $modelo_usuario->save()) {
-            return $this->render('mostrar_perfil', [
-                'modelo_usuario' => $modelo_usuario,
-            ]);
-        }
-    }*/
+        return ("ERROR EN LA ACTUALIZACIÓN");
+    }
 }

@@ -31,7 +31,10 @@ use app\models\Usuarios;
                         ->where(["id" => $avisoRecibido->origen_usuario_id])->one()->nick ?><br></strong>
                 <?= $avisoRecibido->texto?>
             </div>
-            <?= Html::a('Marcar como leído', ['/controller/action', "id_aviso" => $avisoRecibido->id], ['class'=>'btn btn-primary']) ?>
+            <div class="col-xs-12"></div>
+            <div class="col-xs-12">
+                <?= Html::a('Marcar como leído', ['/avisos/marcar-como-leido', "id_aviso" => $avisoRecibido->id], ['class'=>'btn btn-primary']) ?>
+            </div>
         </div>
         <?php }?>
     </div>

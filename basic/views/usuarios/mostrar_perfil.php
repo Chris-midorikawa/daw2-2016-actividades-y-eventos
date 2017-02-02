@@ -1,12 +1,11 @@
 <?php
-use yii\helpers\Html;
-use yii\widgets\DetailView;
+
 use app\piezas\datosusuario\DatosUsuarioWidget;
 use app\piezas\avisosusuario\AvisosUsuarioWidget;
 use app\piezas\actividadesusuario\ActividadesUsuarioWidget;
 use app\piezas\alertasusuario\AlertasUsuarioWidget;
 
-$this->title = "MI PERFIL";
+$this->title = "Mi Perfil";
 ?>
 
 
@@ -20,24 +19,32 @@ $this->title = "MI PERFIL";
 <div>
     <!-- TABS DEL MENÚ -->
     <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#menu_mis_datos">MIS DATOS</a></li>
-        <li><a data-toggle="tab" href="#menu_actividades">ACTIVIDADES</a></li>
-        <li><a data-toggle="tab" href="#menu_avisos_notificaciones">AVISOS Y NOTIFICACIONES</a></li>
-        <li><a data-toggle="tab" href="#menu_alertas_notas">ALERTAS Y NOTAS</a></li>
+        <li class="<?php if ($active_tab==="tab_datos") {echo "active";}?>">
+            <a data-toggle="tab" href="#menu_mis_datos">MIS DATOS</a>
+        </li>
+        <li class="<?php if ($active_tab==="tab_actividades") {echo "active";}?>">
+            <a data-toggle="tab" href="#menu_actividades">ACTIVIDADES</a>
+        </li>
+        <li class="<?php if ($active_tab==="tab_avisos") {echo "active";}?>">
+            <a data-toggle="tab" href="#menu_avisos_notificaciones">AVISOS Y NOTIFICACIONES</a>
+        </li>
+        <li class="<?php if ($active_tab==="tab_alertas") {echo "active";}?>">
+            <a data-toggle="tab" href="#menu_alertas_notas">ALERTAS Y NOTAS</a>
+        </li>
     </ul>
 
     <!-- CONTENIDO DE LOS TABS -->
     <div class="tab-content">
-        <div id="menu_mis_datos" class="tab-pane fade in active">
+        <div id="menu_mis_datos" class="tab-pane fade in <?php if ($active_tab==="tab_datos") {echo "active";}?>">
             <?= DatosUsuarioWidget::widget(['modelo_usuario' => $modelo_usuario]) ?>
         </div>
-        <div id="menu_actividades" class="tab-pane fade">
+        <div id="menu_actividades" class="tab-pane fade in <?php if ($active_tab==="tab_actividades") {echo "active";}?>">
             <?= ActividadesUsuarioWidget::widget(['modelo_usuario' => $modelo_usuario]) ?>
         </div>
-        <div id="menu_avisos_notificaciones" class="tab-pane fade">
+        <div id="menu_avisos_notificaciones" class="tab-pane fade in <?php if ($active_tab==="tab_avisos") {echo "active";}?>">
             <?= AvisosUsuarioWidget::widget(['modelo_usuario' => $modelo_usuario]) ?>
         </div>
-        <div id="menu_alertas_notas" class="tab-pane fade">
+        <div id="menu_alertas_notas" class="tab-pane fade in <?php if ($active_tab==="tab_alertas") {echo "active";}?>">
             <?= AlertasUsuarioWidget::widget(['modelo_usuario' => $modelo_usuario]) ?>
         </div>
     </div>

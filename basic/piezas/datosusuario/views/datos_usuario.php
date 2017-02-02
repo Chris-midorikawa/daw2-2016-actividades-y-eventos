@@ -1,6 +1,5 @@
 <?php
 
-use yii\helpers\Html;
 use kartik\detail\DetailView;
 use yii\helpers\Url;
 
@@ -19,6 +18,7 @@ use yii\helpers\Url;
             'heading'=>'MIS DATOS',
             'type'=>DetailView::TYPE_INFO,
         ],
+        'buttons1' => "{update}",
         'attributes'=> [
             //'id',
             ['attribute'=>'id', 'visible'=>false],

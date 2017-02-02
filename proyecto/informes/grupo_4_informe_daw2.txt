@@ -59,7 +59,7 @@
 						principales del usuario. La tabla dispone de un botón de editar para cambiar a 
 						modo edición, realizar las modificaciones correspondientes y guardarlas pulsando
 						otro botón destinado a ello.
-			- Avisos del Usuario => Falta la acción de cambiar aviso a leído.
+			- Avisos del Usuario => HECHO.
 				+ Lista de funcionalidades:
 					Se mostrarán dos columnas de alerts bootstrap personalizados: una para los avisos por 
 						leer y otra para los leídos. En los avisos por leer, se dispone de un botón para 

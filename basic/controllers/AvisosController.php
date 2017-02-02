@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use app\models\UsuarioAvisos;
+use app\models\Usuarios;
 use Yii;
 use app\models\Avisos;
 use app\models\AvisosSearch;
@@ -125,6 +127,25 @@ class AvisosController extends Controller
             ]);
         }
     }
+
+
+    /* Acción que marca como leído un aviso recibido por un usuario, es decir,
+     * inicializa la fecha de lectura con la actual. Después redirecciona a
+     * mostrar-perfil.
+     */
+    public function actionMarcarComoLeido($id_aviso){
+        $modelo_aviso = $this->findModel($id_aviso);
+
+        $modelo_aviso->fecha_lectura = date('Y-m-d H:i:s');
+        if ($modelo_aviso->save()){
+            return $this->redirect(['/usuarios/mostrar-perfil',
+                                    'id_usuario' =>$modelo_aviso->destino_usuario_id,
+                                    'active_tab' => "tab_avisos"]);
+        } else{
+            return ("Error al marcar como leído el aviso");
+        }
+    }
+
 
     /**
      * Finds the Avisos model based on its primary key value.
