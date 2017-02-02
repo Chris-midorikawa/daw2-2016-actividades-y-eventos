@@ -42,8 +42,6 @@ AppAsset::register($this);
             ['label' => 'Áreas', 'url' => ['/areas']],
             ['label' => 'Portal', 'url' => ['/usuarios/portal']],
             ['label' => 'Avisos', 'url' => ['/avisos']],
-            ['label' => 'Configuraciones', 'url' => ['/configuraciones']],
-            ['label' => 'Clasificaciones', 'url' => ['/clasificaciones']],
             ['label' => 'Comentarios', 'url' => ['/actividadcomentarios']],
 			['label' => 'Imagenes', 'url' => ['/actividadimagenes']],
 			['label' => 'Etiquetas', 'url' => ['/etiquetas']],
@@ -72,7 +70,7 @@ AppAsset::register($this);
                 '<li>'
                 . Html::beginForm(['/usuarios/portal'], 'post', ['class' => 'navbar-form'])
                 . Html::submitButton(
-                    'Mi Perfil Ok',
+                    'Portal del Usuario',
                     ['class' => 'btn btn-link']
                 )
                 . Html::endForm().

@@ -1,8 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-
-$rol='N';
+use app\models\Usuarios; //para abajo poder usar los isAdmin
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Usuarios */
@@ -16,16 +15,18 @@ $this->params['breadcrumbs'][] = 'Update';
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <?php//dependiendo del tipo de usuario,irá a _form o a _reg?>
 
-   
-    <?php if($rol=='N'){
-    echo $this->render('_reg', ['model' => $model,]);
-	}
-    else if($rol=='A'){
+<?php
+//si es admin va al formulario completo, si no al de registro
+ if(Usuarios::isAdmin())
+{
     echo $this->render('_form', ['model' => $model,]);
-
-     }?>
+}
+else
+{
+	echo $this->render('_reg', ['model' => $model,]);
+}
+?>
 
 
 </div>

@@ -8,6 +8,7 @@ use app\models\ConfiguracionesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\Usuarios; //para abajo poder usar los isAdmin
 
 /**
  * ConfiguracionesController. controlador para la parte de configuraciones
@@ -19,14 +20,15 @@ class ConfiguracionesController extends Controller
      */
     public function behaviors()
     {
-        /* para que solo puedan acceder los admins a esta parte. Se comprobará con Yii::$app->user->isAdmin o Yii::$app->user->identity->rol == 'A' */ 
+      
+      //solo podrán acceder los admins
 
         
        if (Yii::$app->user->isGuest || Usuarios::isNormal()){
             $this->goHome();
         }
         else if( Usuarios::isAdmin()){
-            $a=1;
+            $a=1; //variable para no dejarlo en blaco el if y que funcione
         }
         
         return [

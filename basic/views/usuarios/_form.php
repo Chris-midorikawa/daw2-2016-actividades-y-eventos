@@ -31,7 +31,7 @@ use app\models\Usuarios;
     <?= $form->field($model, 'notas_bloqueo')->textarea(['rows' => 6]) ?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Crear Usuario' : 'Modificar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-        <?= Html::a(Yii::t('app', 'Volver'), ['/site/login'], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a(Yii::t('app', 'Volver'), ['/usuarios/index'], ['class' => 'btn btn-primary']) ?>
     </div>
     <?php ActiveForm::end(); ?>
 

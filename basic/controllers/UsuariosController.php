@@ -34,24 +34,29 @@ class UsuariosController extends Controller
      * Lists all Usuarios models.
      * @return mixed
      */
+
+    //al index solo podrán acceder los admin
     public function actionIndex()
     {
-        $searchModel = new UsuariosSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        //al index de usuarios solo accederá los admin. Se hará con el isadmin
-        /*if (Yii::$app->user->isGuest || Yii::$app->user->identity->username!='admin'){      
+
+    	if (Yii::$app->user->isGuest || Usuarios::isNormal()){
             $this->goHome();
         }
-        else 
-        {*/
-	        return $this->render('index', [
-	            'searchModel' => $searchModel,
-	            'dataProvider' => $dataProvider,
-	        ]);
-	        /*
-    	}
-    	*/
+    	else if(Usuarios::isAdmin())
+    	{
+	        $searchModel = new UsuariosSearch();
+	        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+	      
+		        return $this->render('index', [
+		            'searchModel' => $searchModel,
+		            'dataProvider' => $dataProvider,
+		        ]);
+		      
+	    	
+	    }
+
     }
 
 
