@@ -33,7 +33,7 @@ use kartik\detail\DetailView;
                 </ul>
 
                 <div class="card-block">
-                <?= Html::a('VER', ['actividades/viewnormal', 'id' => $actividad->id], ['class' => 'btn btn-success']) ?>
+                <?= Html::a('VER', ['actividades/view', 'id' => $actividad->id, 'publica' =>1], ['class' => 'btn btn-success']) ?>
                 <?= Html::a('MODIFICAR', ['actividades/update', 'id' => $actividad->id], ['class' => 'btn btn-success']) ?>
                 </div>
             </div>
@@ -63,7 +63,7 @@ use kartik\detail\DetailView;
                 </ul>
 
                 <div class="card-block">
-                <?= Html::a('VER', ['actividades/viewnormal', 'id' => $actividad->id], ['class' => 'btn btn-success']) ?>
+                <?= Html::a('VER', ['actividades/view', 'id' => $actividad->id, 'publica' =>1], ['class' => 'btn btn-success']) ?>
                 </div>
             </div>
         </div>
@@ -92,7 +92,7 @@ use kartik\detail\DetailView;
                 </ul>
 
                 <div class="card-block">
-                <?= Html::a('VER', ['actividades/viewnormal', 'id' => $actividad->id], ['class' => 'btn btn-success']) ?>
+                <?= Html::a('VER', ['actividades/view', 'id' => $actividad->id, 'publica' =>1], ['class' => 'btn btn-success']) ?>
                 </div>
             </div>
         </div>
@@ -121,7 +121,7 @@ use kartik\detail\DetailView;
                 </ul>
 
                 <div class="card-block">
-                <?= Html::a('VER ACTIVIDAD COMENTADA', ['actividades/viewnormal', 'id' => $comentario->actividad_id], ['class' => 'btn btn-success']) //Pongo esto ya que no está hecha la parte de comentarios?>
+                <?= Html::a('VER ACTIVIDAD COMENTADA', ['actividades/view', 'id' => $comentario->actividad_id, 'publica' =>1], ['class' => 'btn btn-success']) //Pongo esto ya que no está hecha la parte de comentarios?>
                 </div>
             </div>
         </div>
