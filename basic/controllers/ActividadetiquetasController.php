@@ -42,7 +42,7 @@ class ActividadetiquetasController extends Controller
 		
         $searchModel = new ActividadEtiquetasSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-		
+		//obtengo la lista de actividades etiquetas como array porque no voy a utilizar el Grid
 		$lista = ActividadEtiquetas::find()->all();
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -80,10 +80,13 @@ class ActividadetiquetasController extends Controller
      */
     public function actionDelete($id)
     {
-		$this->compruebaUsuario();
-        $this->findModel($id)->delete();
+		if($this->compruebaUsuario()){
+			$this->findModel($id)->delete();
+			return $this->redirect(['index']);
+		}
+        
 
-        return $this->redirect(['index']);
+        
     }
 
     /**
@@ -106,6 +109,8 @@ class ActividadetiquetasController extends Controller
 		if(Yii::$app->user->isGuest)
 		{
 			$this->redirect(Yii::$app->request->baseURL."\site\login");
+			return false;
 		}
+		return true;
 	}
 }

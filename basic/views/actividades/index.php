@@ -63,7 +63,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'modi_fecha',
             // 'notas_admin:ntext',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn'], 'template'=>$template],
         ],
     ]); ?>
 </div>

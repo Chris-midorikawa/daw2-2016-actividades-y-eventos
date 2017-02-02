@@ -77,6 +77,7 @@ class ActividadesController extends Controller
         //$rol=$this->compruebaUsuario();
 		//--if($rol=='A'){
 		if(Usuarios::isAdmin()){
+			//realiza la búsqueda si tenemos parámetros en el get, sino muestra todos
 			$dataProvider=$searchModel->search(Yii::$app->request->queryparams);
 			return $this->render('index', [
             'searchModel' => $searchModel,
@@ -84,6 +85,7 @@ class ActividadesController extends Controller
 			'template' => '{view}{update}{delete}',
 			]);
 		}else{ if(!Yii::$app->user->isGuest){
+		//no busca por el get, directamente muestra solo las actividades creadas por el usuario no admin logueado 
 		$dataProvider = $searchModel->search(['ActividadesSearch'=>['crea_usuario_id'=>Yii::$app->user->identity->id]]);
 				return $this->render('index', [
 				'searchModel' => $searchModel,
@@ -100,7 +102,7 @@ class ActividadesController extends Controller
 	public function actionIndexpublico()
     {
 		$searchModel = new ActividadesSearch();
-		
+			//no busca por el get, busca las visibles no bloqueadas
 			$dataProvider = $searchModel->search(['ActividadesSearch'=>['visible'=>1,'bloqueada'=>0]]);
 				return $this->render('indexpublica', [
 				'searchModel' => $searchModel,
@@ -118,16 +120,18 @@ class ActividadesController extends Controller
     public function actionView($id)
     {
     //Cosas necesarias para motrar los participantes de actividad (vista de actividad-participantes)
- 	
+ 	//mostrará la view pública si el usuario no está logueado o si se viene del botón de ficha pública, que añade al get el parámetro pública
 		$modeloActual = $this->findModel($id);	
  	    $searchModelActividadParticipantes = new ActividadParticipantesSearch();
         $dataProviderParticipantes = $searchModelActividadParticipantes->search(['ActividadParticipantesSearch' =>['actividad_id' => $modeloActual->id]]);
  		
 		$rol=$this->compruebaUsuario();
 		if(Yii::$app->user->isGuest || isset($_GET['publica'])){
+			//buscamos las imágenes por actividad
 				 $searchModel = new ActividadImagenesSearch();
 			$dataProvider = $searchModel->search(['ActividadImagenesSearch'=>['actividad_id'=>$id]]);
 			$imagenes = $dataProvider->getModels();
+			//buscamos los comentarios por actividad
 			$searchModel = new ActividadComentariosSearch();
 			$dataProvider = $searchModel->search(['ActividadComentariosSearch'=>['actividad_id'=>$id]]);
 			$comentarios = $dataProvider->getModels();
@@ -139,6 +143,7 @@ class ActividadesController extends Controller
 		
 			
 		}else{	if($rol=='A' || $modeloActual->crea_usuario_id==Yii::$app->user->identity->id){
+			//se ven los datos de la tabla actividades
 					return $this->render('view', [
 					'model' => $modeloActual,
 					'dataProviderParticipantes' => $dataProviderParticipantes,
@@ -148,15 +153,15 @@ class ActividadesController extends Controller
 			}
 		}
 	}
-	
-	 //vista de las Actividades de un usuario normal
+	/*
+	//vista de las Actividades de un usuario normal
      public function actionViewnormal($id)
     {
         $modeloActual = $this->findModel($id);
         return $this->render('viewnormal', [
             'model' => $modeloActual,
 			]);
-    } 
+    } */
 
     /**
      * Creates a new Actividades model.
@@ -167,7 +172,7 @@ class ActividadesController extends Controller
     {
 		$this->compruebaUsuario();
         $model = new Actividades();
-		
+		//crea una actividad después de comprobar el usuario
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -187,6 +192,7 @@ class ActividadesController extends Controller
      */
     public function actionUpdate($id)
     {
+		//cargo los datos en dos modelos para, si vengo del formulario, poder comparar los datos anteriores con los nuevos
 		$antes =$this->findModel($id);
 		$model= new Actividades();
 		$rol=$this->compruebaUsuario();
@@ -197,7 +203,7 @@ class ActividadesController extends Controller
 				}
 				$model->save();
 				return $this->redirect(['view', 'id' => $model->id]);
-			} else {
+			} else {//al mostrar el formulario, le paso a la vista el rol para que muestre el update de admin o el de los demás
 				return $this->render('update', [
 					'model' => $antes,'rol'=>$rol,
 				]);
@@ -299,12 +305,15 @@ class ActividadesController extends Controller
 	
 	protected function compruebaUsuario()
 	{
+		//si  no está logueado devuelve falso y redirige al loguin
 		if(Yii::$app->user->isGuest)
 		{
 			$this->redirect(Yii::$app->request->baseURL."\site\login");
 			return false;
 			
 		}else{
+			//si está logueado, con el modelo de Usuarios busca el usuario y devuelve el rol
+			//en el caso de que el usuario no esté en la base de datos, es un usuario de prueba y devuelve administrador
 			$usuario=Usuarios::findOne(Yii::$app->user->identity->id);
 			if($usuario)
 			{

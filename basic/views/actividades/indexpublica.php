@@ -18,7 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Crear Actividad', ['create'], ['class' => 'btn btn-success']) ?>
 
-        <?= Html::a('Etiquetar Actividad', ["actividadetiquetas/index"], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Ver Actividades etiquetadas', ["actividadetiquetas/index"], ['class' => 'btn btn-success']) ?>
     </p>
     
     <?= GridView::widget([

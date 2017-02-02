@@ -14,7 +14,9 @@ $this->params['breadcrumbs'][] = 'View';
 
     <h1><?= Html::encode($this->title) ?></h1>
 <?= Html::a('Denunciar', ['denunciar', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+&nbsp
 <?= Html::a('Votar OK', ['votarok', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+&nbsp
 <?= Html::a('Votar KO', ['votarko', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>        
     <?= $this->render('_formviewpublica', [
         'model' => $model,

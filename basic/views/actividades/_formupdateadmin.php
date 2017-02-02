@@ -56,27 +56,27 @@ use app\models\AreasQuery;
 
     <?= $form->field($model, 'url')->textarea(['rows' => 1,'disabled'=>$disabled]) ?>
 
-    <?= $form->field($model, 'imagen_id')->textInput(['maxlength' => true])->label(false) ?>
+    <?= $form->field($model, 'imagen_id')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'edad_id')->dropDownList(Actividades::edades(),['disabled'=>$disabled]) ?>
 
-    <?= $form->field($model, 'publica')->hiddenInput(['disabled'=>$disabled]) ?>
+    <?= $form->field($model, 'publica')->checkbox(['disabled'=>$disabled]) ?>
 
-    <?= $form->field($model, 'visible')->hiddenInput(['disabled'=>$disabled]) ?>
+    <?= $form->field($model, 'visible')->checkbox(['disabled'=>$disabled]) ?>
 
-    <?= $form->field($model, 'terminada')->hiddenInput(['disabled'=>$disabled])  ?>
-	<?php 
-		echo $form->field($model, 'fecha_terminacion')->hiddenInput(['disabled'=>$disabled]);
-		echo $form->field($model, 'notas_terminacion')->hiddenInput(['rows' => 6,'disabled'=>$disabled]); ?>
+    <?= $form->field($model, 'terminada')->dropDownList(Actividades::terminada(),['disabled'=>$disabled])  ?>
+
+		<?= $form->field($model, 'fecha_terminacion')->textInput(['disabled'=>$disabled])?>
+		<?= $form->field($model, 'notas_terminacion')->textarea(['rows' => 6,'disabled'=>$disabled]) ?>
     <?= $form->field($model, 'num_denuncias')->textInput(['disabled'=>$disabled]) ?>
 
-    <?php if($model->num_denuncias>0) echo $form->field($model, 'fecha_denuncia1')->textInput(['disabled'=>$disabled]); ?>
+    <?= $form->field($model, 'fecha_denuncia1')->textInput(['disabled'=>$disabled]) ?>
 
-    <?= $form->field($model, 'bloqueada')->hiddenInput(['disabled'=>$disabled]) ?>
+    <?= $form->field($model, 'bloqueada')->checkbox(['disabled'=>$disabled]) ?>
 
-    <?php echo $form->field($model, 'fecha_bloqueo')->hiddenInput(['disabled'=>$disabled]);
+    <?= $form->field($model, 'fecha_bloqueo')->textInput(['disabled'=>$disabled])?>
 
-    echo $form->field($model, 'notas_bloqueo')->hiddenInput(['rows' => 6,'disabled'=>$disabled]);?>
+    <?= $form->field($model, 'notas_bloqueo')->textarea(['rows' => 6,'disabled'=>$disabled])?>
 
     <?= $form->field($model, 'max_participantes')->textInput(['disabled'=>$disabled]) ?>
 
@@ -86,21 +86,19 @@ use app\models\AreasQuery;
 
     <?= $form->field($model, 'formulario_participacion')->textarea(['rows' => 6, 'disabled'=>$disabled]) ?>
 
-    <?= $form->field($model, 'votosOK')->hiddenInput(['disabled'=>$disabled])->label(false) ?>
+    <?= $form->field($model, 'votosOK')->textInput(['disabled'=>$disabled]) ?>
 
-    <?= $form->field($model, 'votosKO')->hiddenInput(['disabled'=>$disabled])->label(false) ?>
+    <?= $form->field($model, 'votosKO')->textInput(['disabled'=>$disabled]) ?>
 		<?php 
-	
-	echo $form->field($model, 'crea_usuario_id')->hiddenInput()->label(false);
+    echo $form->field($model, 'crea_usuario_id')->textInput(['maxlength' => true,'disabled'=>true]);
 
-    echo $form->field($model, 'crea_fecha')->hiddenInput()->label(false);
+    echo $form->field($model, 'crea_fecha')->textInput(['disabled'=>true]) ;
 
-    echo $form->field($model, 'modi_usuario_id')->hiddenInput()->label(false);
+    echo $form->field($model, 'modi_usuario_id')->textInput(['maxlength' => true,'disabled'=>true]);
 
-    echo $form->field($model, 'modi_fecha')->hiddenInput()->label(false);
+    echo $form->field($model, 'modi_fecha')->textInput(['disabled'=>true]);
 
-    	
-		echo $form->field($model, 'notas_admin')->hiddenInput(['rows' => 6,'disabled'=>$disabled]);
+		echo $form->field($model, 'notas_admin')->textarea(['rows' => 6,'disabled'=>$disabled]);
 	?>
 
     <div class="form-group">
