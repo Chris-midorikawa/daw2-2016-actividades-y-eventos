@@ -45,7 +45,7 @@ class ActividadseguimientosController extends Controller
         $dataProvider = $searchModel->search(['ActividadseguimientosController'=>['usuario_id'=>Yii::$app->user->identity->id]]);
 		$seguimientos=$dataProvider->getModels();
 		$actividades=array();
-		foreach($seguimientos as $s){
+		foreach($seguimientos as $s){														/*Buscamos las actividades que sigue el usuario registrado*/
 			$actividades[$s->id]=Actividades::findOne($s->actividad_id);
 		}	
         return $this->render('index', [
@@ -81,16 +81,16 @@ class ActividadseguimientosController extends Controller
         } else {
 			$todos=Actividades::find()->all();
 			$seguimientos=ActividadSeguimientos::find()->all();
-			$actividades=array();
+			$actividades=array();																			/*Buscamos las actividades que aun no sigue el usuario*/
 			foreach($todos as $c){
 				$repetido = 0;
 				foreach($seguimientos as $s){
-					if($s->actividad_id==$c->id && $s->usuario_id==Yii::$app->user->identity->id){
+					if($s->actividad_id==$c->id && $s->usuario_id==Yii::$app->user->identity->id){		
 						$repetido=true;
 						break;
 					}
 				}
-				if(!$repetido){
+				if(!$repetido){				/*Si no la sigue...*/
 					$actividades[$c->id]=$c->titulo;
 				}
 			}

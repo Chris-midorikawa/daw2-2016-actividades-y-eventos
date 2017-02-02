@@ -5,7 +5,7 @@ use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Etiquetas */
-
+//ver detalles de una etiqueta
 $this->title = $model->nombre;
 $this->params['breadcrumbs'][] = ['label' => 'Etiquetas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;

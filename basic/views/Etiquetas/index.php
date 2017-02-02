@@ -14,13 +14,14 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php  	echo $msg;
+    //permitir modificiar y eliminar solo a administradores
 			$template = ($rol=='A') ? '{update} {delete}' : '';?>
 
     <p>
         <?= Html::a('Crear Etiqueta', ['create'], ['class' => 'btn btn-success']) ?>
 		<?= Html::a('Buscar por Etiqueta', ['busqueda'], ['class' => 'btn btn-success']) ?>
     </p>
-    <?= GridView::widget([
+    <?= GridView::widget([/*crear tabla*/
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [

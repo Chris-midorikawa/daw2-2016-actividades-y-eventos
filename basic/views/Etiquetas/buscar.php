@@ -7,6 +7,9 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\EtiquetasSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
+//vista detallada de una etieueta si llegan datos
+//sino no llegan datos llama a formulario de busqueda
+
 $this->title = 'Búsqueda por etiqueta';
 $this->params['breadcrumbs'][] = $this->title;
 ?>

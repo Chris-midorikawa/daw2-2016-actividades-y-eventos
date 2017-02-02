@@ -4,6 +4,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\ActividadImagenes */
+//actualiar llama a la vista de formulario
 
 $this->title = 'Modificar  Imagen: ';
 $this->params['breadcrumbs'][] = ['label' => 'Actividad Imagenes', 'url' => ['index']];

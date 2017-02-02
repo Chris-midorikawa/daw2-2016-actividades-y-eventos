@@ -6,6 +6,7 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\models\ActividadImagenes */
 /* @var $form yii\widgets\ActiveForm */
+//formulario para la carga de imagenes y vincularla a una actividad
 ?>
 
 <div class="actividad-imagenes-form">

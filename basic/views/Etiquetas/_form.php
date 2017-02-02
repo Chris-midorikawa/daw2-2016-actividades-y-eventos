@@ -6,6 +6,10 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\models\Etiquetas */
 /* @var $form yii\widgets\ActiveForm */
+//formulario de creacion/modificacion de una etiqueta
+//depende de si es una nuevo elemento o no
+
+//permite acceder a la vista de unificacion de etiquetas
 ?>
 
 <div class="etiquetas-form">

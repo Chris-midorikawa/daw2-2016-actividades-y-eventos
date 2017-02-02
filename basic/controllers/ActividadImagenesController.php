@@ -21,6 +21,7 @@ class ActividadimagenesController extends Controller
     /**
      * @inheritdoc
      */
+    //se realiza lo primero de todo, redirige a login a los no registrados
     public function behaviors()
     {
 		if( Yii::$app->user->isGuest ){
@@ -49,7 +50,7 @@ class ActividadimagenesController extends Controller
 			$u=Usuarios::findOne(Yii::$app->user->identity->id);
 			if($u)
 			{
-				if($u->rol!='A'){
+				if($u->rol!='A'){//solo los administradores puede acceder a la vista global de imagenes
 					$this->redirect(Yii::$app->request->baseURL."\site\login");
 				}
 			}
@@ -92,15 +93,16 @@ class ActividadimagenesController extends Controller
 			$u->rol='A';
 		}
 		foreach($todos as $c){
-			if($u->rol=='A' || ($u->rol=='N' && $u->id==$c->crea_usuario_id) )
-				$actividades[$c->id]=$c->titulo;
+			if($u->rol=='A' || ($u->rol=='N' && $u->id==$c->crea_usuario_id) )//si el usuario es admin, moderador o ha creado esa actividad
+				$actividades[$c->id]=$c->titulo;//incluir el titulo de la actividad
 		}
 
-
+        //redirigir a la vista de ver si recibe datos, sino a la vista crear
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            return $this->render('create', [
+            return $this->render('create', [//se llama a crear con la lista de actividades que tiene acceso ese usuaario
+                //todas si son admin o mod, y las propietaria en caso de usuario normal (bucle foreach)
                 'model' => $model,
 				'actividades' => $actividades,
             ]);
@@ -121,7 +123,7 @@ class ActividadimagenesController extends Controller
 		$u=new Usuarios();
 		if(Yii::$app->user->identity->username!="admin"){
 			$u=Usuarios::findOne(Yii::$app->user->identity->id);
-			if($u->id!=$actividad->crea_usuario_id){
+			if($u->id!=$actividad->crea_usuario_id){//si el usuario no es el que creo la actividad, redirigir a index
 				return $this->redirect(['index']);
 			}
 		}else{
@@ -129,7 +131,7 @@ class ActividadimagenesController extends Controller
 		}
 		
 		$todos=Actividades::find()->all();
-		$actividades=array();
+		$actividades=array();//array para almacenar los titulos de las actividades
 		
 		foreach($todos as $c){
 			if($u->rol=='A' || ($u->rol=='N' && $u->id==$c->crea_usuario_id) )
@@ -152,6 +154,8 @@ class ActividadimagenesController extends Controller
      * @param string $id
      * @return mixed
      */
+
+    //solo pueden eliminar los admin o el usuario que ha creado esa actividad
     public function actionDelete($id)
     {
 		if(Yii::$app->user->identity){

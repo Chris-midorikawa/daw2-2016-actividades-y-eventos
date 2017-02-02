@@ -5,6 +5,7 @@ use yii\widgets\ActiveForm;
 use app\models\Areas;
 use app\models\AreasQuery;
 
+
 ?>
 
 <div class="actividades-form">
@@ -39,7 +40,7 @@ use app\models\AreasQuery;
     
     <?= $form->field($model, 'area_id')->dropDownList($areas,['disabled'=>$disabled]) ?>
 
-    
+    <!--buscar imagen en la carpeta de imagenes con ancho y alto fijo -->
     <?= $form->field($model, 'url')->textarea(['rows' => 1,'disabled'=>$disabled]) ?>
 	<?=Html::img(Yii::$app->request->baseUrl."/images/".$model->imagen_id,['width'=>500,'height'=>500])?>
 	
