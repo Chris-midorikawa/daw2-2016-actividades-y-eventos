@@ -23,6 +23,16 @@ class ComposerStaticInite7bbc9e18f4d13c4675486b0c8f56260
             'yii\\bootstrap\\' => 14,
             'yii\\' => 4,
         ),
+        'k' => 
+        array (
+            'kartik\\switchinput\\' => 19,
+            'kartik\\helpers\\' => 15,
+            'kartik\\dialog\\' => 14,
+            'kartik\\detail\\' => 14,
+            'kartik\\datetime\\' => 16,
+            'kartik\\date\\' => 12,
+            'kartik\\base\\' => 12,
+        ),
         'c' => 
         array (
             'cebe\\markdown\\' => 14,
@@ -65,6 +75,34 @@ class ComposerStaticInite7bbc9e18f4d13c4675486b0c8f56260
         'yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
+        ),
+        'kartik\\switchinput\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-switchinput',
+        ),
+        'kartik\\helpers\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-helpers',
+        ),
+        'kartik\\dialog\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-dialog',
+        ),
+        'kartik\\detail\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-detail-view',
+        ),
+        'kartik\\datetime\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-datetimepicker',
+        ),
+        'kartik\\date\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-datepicker',
+        ),
+        'kartik\\base\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-krajee-base',
         ),
         'cebe\\markdown\\' => 
         array (

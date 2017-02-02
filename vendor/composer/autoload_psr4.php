@@ -14,6 +14,13 @@ return array(
     'yii\\codeception\\' => array($vendorDir . '/yiisoft/yii2-codeception'),
     'yii\\bootstrap\\' => array($vendorDir . '/yiisoft/yii2-bootstrap'),
     'yii\\' => array($vendorDir . '/yiisoft/yii2'),
+    'kartik\\switchinput\\' => array($vendorDir . '/kartik-v/yii2-widget-switchinput'),
+    'kartik\\helpers\\' => array($vendorDir . '/kartik-v/yii2-helpers'),
+    'kartik\\dialog\\' => array($vendorDir . '/kartik-v/yii2-dialog'),
+    'kartik\\detail\\' => array($vendorDir . '/kartik-v/yii2-detail-view'),
+    'kartik\\datetime\\' => array($vendorDir . '/kartik-v/yii2-widget-datetimepicker'),
+    'kartik\\date\\' => array($vendorDir . '/kartik-v/yii2-widget-datepicker'),
+    'kartik\\base\\' => array($vendorDir . '/kartik-v/yii2-krajee-base'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
     'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
 );

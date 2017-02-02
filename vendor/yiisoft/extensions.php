@@ -57,4 +57,67 @@ return array (
       '@yii/faker' => $vendorDir . '/yiisoft/yii2-faker',
     ),
   ),
+  'kartik-v/yii2-krajee-base' => 
+  array (
+    'name' => 'kartik-v/yii2-krajee-base',
+    'version' => '1.8.7.0',
+    'alias' => 
+    array (
+      '@kartik/base' => $vendorDir . '/kartik-v/yii2-krajee-base',
+    ),
+  ),
+  'kartik-v/yii2-widget-datepicker' => 
+  array (
+    'name' => 'kartik-v/yii2-widget-datepicker',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@kartik/date' => $vendorDir . '/kartik-v/yii2-widget-datepicker',
+    ),
+  ),
+  'kartik-v/yii2-widget-datetimepicker' => 
+  array (
+    'name' => 'kartik-v/yii2-widget-datetimepicker',
+    'version' => '1.4.3.0',
+    'alias' => 
+    array (
+      '@kartik/datetime' => $vendorDir . '/kartik-v/yii2-widget-datetimepicker',
+    ),
+  ),
+  'kartik-v/yii2-widget-switchinput' => 
+  array (
+    'name' => 'kartik-v/yii2-widget-switchinput',
+    'version' => '1.3.1.0',
+    'alias' => 
+    array (
+      '@kartik/switchinput' => $vendorDir . '/kartik-v/yii2-widget-switchinput',
+    ),
+  ),
+  'kartik-v/yii2-dialog' => 
+  array (
+    'name' => 'kartik-v/yii2-dialog',
+    'version' => '1.0.1.0',
+    'alias' => 
+    array (
+      '@kartik/dialog' => $vendorDir . '/kartik-v/yii2-dialog',
+    ),
+  ),
+  'kartik-v/yii2-helpers' => 
+  array (
+    'name' => 'kartik-v/yii2-helpers',
+    'version' => '1.3.6.0',
+    'alias' => 
+    array (
+      '@kartik/helpers' => $vendorDir . '/kartik-v/yii2-helpers',
+    ),
+  ),
+  'kartik-v/yii2-detail-view' => 
+  array (
+    'name' => 'kartik-v/yii2-detail-view',
+    'version' => '1.7.5.0',
+    'alias' => 
+    array (
+      '@kartik/detail' => $vendorDir . '/kartik-v/yii2-detail-view',
+    ),
+  ),
 );
