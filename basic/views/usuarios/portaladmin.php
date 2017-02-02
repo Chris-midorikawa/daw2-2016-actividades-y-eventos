@@ -13,19 +13,20 @@ $this->title = 'Portal del admin';
 
     <?php //los botones de momento no enlazan ?>
     <p> 
-        <?= Html::a('Usuarios', ['view',] /* 'id' => Yii::$app->user->identity->id] */, ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Usuarios', ['/usuarios/index',] , ['class' => 'btn btn-primary']) ?>
     </p>
     <p>
-        <?= Html::a('Configuraciones', ['notificaciones',/* 'id' => Yii::$app->user->identity->id */] , ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Configuraciones', ['/configuraciones',] , ['class' => 'btn btn-primary']) ?>
     </p>
     <p>
-        <?= Html::a('Actividades', ['actividad-participantes',/* 'id' => Yii::$app->user->identity->id */] , ['class' => 'btn btn-primary']) ?>
+        <?= Html::a(Yii::t('app', 'Actividades'), ['/actividades',], ['class' => 'btn btn-primary']) ?>
     </p>
      <p>
-        <?= Html::a('Avisos', ['avisos',/* 'id' => Yii::$app->user->identity->id */] , ['class' => 'btn btn-primary']) ?>
+         <?= Html::a(Yii::t('app', 'Avisos'), ['/avisos',], ['class' => 'btn btn-primary']) ?>
     </p>
      <p>
-        <?= Html::a('Copias de Seguridad', ['actividad-participantes',/* 'id' => Yii::$app->user->identity->id */] , ['class' => 'btn btn-primary']) ?>
+   
+        <?=  Html::a('Copias de Seguridad', ['/copias'] , ['class' => 'btn btn-primary']) ?>
     </p>
      
 

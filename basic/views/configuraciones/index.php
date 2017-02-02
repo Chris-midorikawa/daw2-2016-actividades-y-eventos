@@ -7,7 +7,11 @@ use yii\grid\GridView;
 
 $this->title = 'Variables de Configuración';
 $this->params['breadcrumbs'][] = $this->title;
+
+
 ?>
+
+ <?= Html::a(Yii::t('app', 'Volver'), ['/usuarios/portal'], ['class' => 'btn btn-primary']) ?>
 <div class="configuraciones-index">
 
     <h1><?= Html::encode($this->title) ?></h1>

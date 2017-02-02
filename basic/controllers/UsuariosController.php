@@ -112,7 +112,12 @@ class UsuariosController extends Controller
 		}
     }
  
-  
+    //accion para mostrar la configuracion de las notificaciones de un usuario
+    public function actionNotificaciones()
+    {
+        return $this->render('notificaciones');
+    }
+   
 
     /**
      * Updates an existing Usuarios model.
