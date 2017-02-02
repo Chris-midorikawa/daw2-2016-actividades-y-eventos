@@ -24,7 +24,7 @@ use app\models\Usuarios;
                            ->where(['fecha_lectura' => null])->all() as $avisoRecibido){?>
         <div class="alert alert-info col-xs-12">
             <div class="col-xs-12">
-                <h4><?=$avisoRecibido->clase_aviso_id?></h4>
+                <h4><?=$avisoRecibido->claseAvisoInstancia?></h4>
             </div>
             <div class="col-xs-12">
                 <strong>Aviso de <?= Usuarios::find()
@@ -46,7 +46,7 @@ use app\models\Usuarios;
             ->where(['not', ['fecha_lectura' => null]])->all() as $avisoRecibido){?>
         <div class="alert alert-success col-xs-12">
             <div class="col-xs-12">
-                <h4><?=$avisoRecibido->clase_aviso_id?></h4>
+                <h4><?=$avisoRecibido->claseAvisoInstancia?></h4>
             </div>
             <div class="col-xs-12">
                 <strong>Aviso de <?= Usuarios::find()

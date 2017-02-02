@@ -63,6 +63,43 @@ class UsuarioAvisos extends \yii\db\ActiveRecord
         ];
     }
 
+
+    /*Función que devuelve la lista fija de clases de avisos*/
+    /*Códigos de clase de aviso: A=Aviso, N=Notificación, D=Denuncia, C=Consulta, M=Mensaje Genérico,...*/
+    public static function getClasesAvisos()
+    {
+        return [
+            'A' => 'Aviso',
+            'N' => 'Notificación',
+            'D' => 'Denuncia',
+            'C' => 'Consulta',
+            'M' => 'Mensaje',
+        ];
+    }
+
+    /*A partir de un id_clase_aviso, devuelve el nombre de la clase*/
+    public static function getClaseAviso($id_clase_aviso)
+    {
+        $clases_aviso = self::getClasesAvisos();
+        if (isset($clases_aviso[$id_clase_aviso])){
+            return $clases_aviso[$id_clase_aviso];
+        } else {
+            return false;
+        }
+    }
+
+    /*Devuelve el nombre de la clase de aviso de la instancia actual*/
+    public function getClaseAvisoInstancia()
+    {
+        $clases_aviso = self::getClasesAvisos();
+        if (isset($clases_aviso[$this->clase_aviso_id])) {
+            return $clases_aviso[$this->clase_aviso_id];
+        } else {
+            return false;
+        }
+    }
+
+
     /**
      * @inheritdoc
      * @return UsuarioAvisosQuery the active query used by this AR class.
