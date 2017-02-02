@@ -22,10 +22,10 @@ class ConfiguracionesController extends Controller
         /* para que solo puedan acceder los admins a esta parte. Se comprobará con Yii::$app->user->isAdmin o Yii::$app->user->identity->rol == 'A' */ 
 
         
-       if (Yii::$app->user->isGuest || Yii::$app->user->identity->username!='admin'){      
+       if (Yii::$app->user->isGuest || Usuarios::isNormal()){
             $this->goHome();
         }
-        else if( Yii::$app->user->identity->username=='admin'){
+        else if( Usuarios::isAdmin()){
             $a=1;
         }
         

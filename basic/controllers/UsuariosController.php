@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
+
 /**
  * UsuariosController implements the CRUD actions for Usuarios model.
  */
@@ -62,12 +63,12 @@ class UsuariosController extends Controller
     public function actionView($id)
     {
     	//vista diferente para usuario normal o usuario admin. Con el isadmin
-    	if (Yii::$app->user->identity->username!='admin')
+    	if (Usuarios::isNormal())
     	{  
 	        return $this->render('vistanormal', [
 	            'model' => $this->findModel($id),]);
     	}
-    	else
+    	if(Usuarios::isAdmin())
     	{
     		return $this->render('vistaadmin', [
 	            'model' => $this->findModel($id),]);
@@ -96,12 +97,11 @@ class UsuariosController extends Controller
     {
 
     	//si es usuario normal. Comprobar con el isadmin
-    	if ( Yii::$app->user->identity->username!='admin')
+    	if ( Usuarios::isNormal())
     	{
 			return $this->render('portalnormal');
 		}
-		//si es admin
-		else
+		if(Usuarios::isAdmin())
 		{
 			return $this->render('portaladmin');
 		}
@@ -122,7 +122,7 @@ class UsuariosController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) 
         {
         	//muestra diferentes vistas. con el isadmin
-        	if (Yii::$app->user->identity->username!='admin')
+        	if (Usuarios::isAdmin())
         	{
 			return $this->redirect(['view', 'id' => $model->id]);
 			}

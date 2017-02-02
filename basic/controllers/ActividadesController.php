@@ -85,7 +85,7 @@ class ActividadesController extends Controller
 			'template' => '{view}{update}{delete}',
 			]);
 		}else{ if(!Yii::$app->user->isGuest){
-		//no busca por el get, directamente muestra solo las actividades creadas por el usuario no admin logueado 
+			//no busca por el get, directamente muestra solo las actividades creadas por el usuario no admin logueado 
 		$dataProvider = $searchModel->search(['ActividadesSearch'=>['crea_usuario_id'=>Yii::$app->user->identity->id]]);
 				return $this->render('index', [
 				'searchModel' => $searchModel,
@@ -94,6 +94,7 @@ class ActividadesController extends Controller
 						]);
 						
 				}else{
+					//no logueados, al index publico
 					return $this->redirect(['indexpublico']);
 				}
 		}
@@ -102,7 +103,7 @@ class ActividadesController extends Controller
 	public function actionIndexpublico()
     {
 		$searchModel = new ActividadesSearch();
-			//no busca por el get, busca las visibles no bloqueadas
+		//no busca por el get, busca las visibles no bloqueadas
 			$dataProvider = $searchModel->search(['ActividadesSearch'=>['visible'=>1,'bloqueada'=>0]]);
 				return $this->render('indexpublica', [
 				'searchModel' => $searchModel,
@@ -120,7 +121,8 @@ class ActividadesController extends Controller
     public function actionView($id)
     {
     //Cosas necesarias para motrar los participantes de actividad (vista de actividad-participantes)
- 	//mostrará la view pública si el usuario no está logueado o si se viene del botón de ficha pública, que añade al get el parámetro pública
+	//mostrará la view pública si el usuario no está logueado o si se viene del botón de ficha pública, que añade al get el parámetro pública
+ 	
 		$modeloActual = $this->findModel($id);	
  	    $searchModelActividadParticipantes = new ActividadParticipantesSearch();
         $dataProviderParticipantes = $searchModelActividadParticipantes->search(['ActividadParticipantesSearch' =>['actividad_id' => $modeloActual->id]]);
@@ -128,7 +130,7 @@ class ActividadesController extends Controller
 		$rol=$this->compruebaUsuario();
 		if(Yii::$app->user->isGuest || isset($_GET['publica'])){
 			//buscamos las imágenes por actividad
-				 $searchModel = new ActividadImagenesSearch();
+			$searchModel = new ActividadImagenesSearch();
 			$dataProvider = $searchModel->search(['ActividadImagenesSearch'=>['actividad_id'=>$id]]);
 			$imagenes = $dataProvider->getModels();
 			//buscamos los comentarios por actividad
@@ -153,15 +155,7 @@ class ActividadesController extends Controller
 			}
 		}
 	}
-	/*
-	//vista de las Actividades de un usuario normal
-     public function actionViewnormal($id)
-    {
-        $modeloActual = $this->findModel($id);
-        return $this->render('viewnormal', [
-            'model' => $modeloActual,
-			]);
-    } */
+	
 
     /**
      * Creates a new Actividades model.
@@ -194,7 +188,7 @@ class ActividadesController extends Controller
     {
 		//cargo los datos en dos modelos para, si vengo del formulario, poder comparar los datos anteriores con los nuevos
 		$antes =$this->findModel($id);
-		$model= new Actividades();
+		$model= $this->findModel($id);
 		$rol=$this->compruebaUsuario();
 		if($rol=='A' || $antes->crea_usuario_id==Yii::$app->user->identity->id){
 			if ($model->load(Yii::$app->request->post())) {
@@ -265,9 +259,6 @@ class ActividadesController extends Controller
     {
 		$model =$this->findModel($id);
 		$model->votosKO++;
-		if($model->num_denuncias==1){
-			$model->fecha_denuncia1=date('Y/m/d H:i:s');
-		}
 		
 			$model->save();
 				return $this->redirect(['view', 'id' => $model->id,'publica'=>1]);
@@ -282,7 +273,7 @@ class ActividadesController extends Controller
 		$model =$this->findModel($id);
 		$rol=$this->compruebaUsuario();
 		if($rol=='A' || $model->crea_usuario_id==Yii::$app->user->identity->id){
-            $this->$model->delete();
+            $model->delete();
         }
 		return $this->redirect(['index']);
     }
