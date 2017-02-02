@@ -102,7 +102,7 @@ use kartik\detail\DetailView;
     </div>
 
 
-     <h1 class="col-md-12 text-center">COMENTARIOS EN ACTIVIDADES</h1>
+     <!--<h1 class="col-md-12 text-center">COMENTARIOS EN ACTIVIDADES</h1>
     <?php 
     //print("<pre>".print_r($modelo_usuario->comentarios,true)."</pre>");
     ?>
@@ -128,5 +128,5 @@ use kartik\detail\DetailView;
     <?php 
     }
     ?>
-    </div>
+    </div>-->
 </div>
