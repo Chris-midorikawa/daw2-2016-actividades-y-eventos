@@ -8,6 +8,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use app\models\usuarios;
 
 AppAsset::register($this);
 ?>
@@ -67,9 +68,15 @@ AppAsset::register($this);
                     ['class' => 'btn btn-link']
                 )
                 . Html::endForm().
+                '</li>'.
+                '<li>'
+                . Html::beginForm(['/usuarios/portal'], 'post', ['class' => 'navbar-form'])
+                . Html::submitButton(
+                    'Mi Perfil Ok',
+                    ['class' => 'btn btn-link']
+                )
+                . Html::endForm().
                 '</li>'
-
-                .'<li>'
                 . Html::beginForm(['/site/logout'], 'post', ['class' => 'navbar-form'])
                 . Html::submitButton(
                     'Logout (' . Yii::$app->user->identity->nombre . ')',
@@ -78,6 +85,9 @@ AppAsset::register($this);
                 . Html::endForm().
                 '</li>'
             )
+
+
+
         ],
     ]);
     NavBar::end();
