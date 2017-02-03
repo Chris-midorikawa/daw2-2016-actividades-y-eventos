@@ -61,10 +61,12 @@ class Usuarios extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
     {
         return [
             [['email', 'password', 'nick', 'nombre', 'apellidos', 'rol','fecha_nacimiento'], 'required'],
-            [['fecha_nacimiento', 'fecha_registro', 'fecha_acceso', 'fecha_bloqueo'], 'safe'],
+            [['fecha_nacimiento','fecha_registro', 'fecha_acceso', 'fecha_bloqueo'],'safe'],
+            [['fecha_nacimiento'], 'date', 'format' => 'yyyy-mm-dd', 'message'=>'Fecha no valida.'],
             [['direccion', 'notas_bloqueo'], 'string'],
             [['area_id', 'avisos_por_correo', 'avisos_agrupados', 'avisos_marcar_leidos', 'avisos_eliminar_borrados', 'confirmado', 'num_accesos', 'bloqueado'], 'integer'],
-            [['email'], 'string', 'max' => 255],
+            ['email', 'match', 'pattern' => "/^.{5,255}$/", 'message' => 'Mínimo 5 y máximo 80 caracteres'],
+            ['email', 'email', 'message' => 'Formato no válido'],
             [['password'], 'string', 'max' => 60],
             [['nick'], 'string', 'max' => 25],
             [['nombre'], 'string', 'max' => 50],
@@ -89,7 +91,7 @@ class Usuarios extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
             'apellidos' => 'Apellidos',
             'fecha_nacimiento' => 'Fecha de nacimiento',
             'direccion' => 'Direccion',
-            'area_id' => 'Area/Zona de localización',
+            'area_id' => 'Localizacion',
             'rol' => 'Rol. Por defecto N',
             'avisos_por_correo' => 'Avisos por correo',
             'avisos_agrupados' => 'Avisos agrupados',
@@ -117,7 +119,7 @@ class Usuarios extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
     /*VALIDAR USUARIO*/
     public static function ValidarUsuario($nick,$password)
     {
-        $usuario= Usuarios::find()->where(['nick'=>$nick, 'password'=>$password])->one();
+        $usuario= Usuarios::find()->where(['nick'=>$nick, 'password'=>$password, 'confirmado'=>'1', 'bloqueado'=>'0'])->one();
 //var_dump($usuario);
 //exit();
         return isset($usuario) ? new static($usuario) : null;
@@ -134,19 +136,7 @@ class Usuarios extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
     /* Busca la identidad del usuario a través de su token de acceso */
     public static function findIdentityByAccessToken($token, $type = null)
     {
-
-        $users = Usuarios::find()
-            ->where("confirmado=:confirmado", [":confirmado" => 1])
-            ->andWhere("accessToken=:accessToken", [":accessToken" => $token])
-            ->all();
-
-        foreach ($users as $user) {
-            if ($user->accessToken === $token) {
-                return new static($user);
-            }
-        }
-
-        return null;
+        
     }
 
     /* Busca la identidad del usuario a través del username */
