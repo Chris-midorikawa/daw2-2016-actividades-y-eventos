@@ -68,16 +68,11 @@ class UsuariosController extends Controller
     public function actionView($id)
     {
     	//vista diferente para usuario normal o usuario admin. Con el isadmin
-    	if (Usuarios::isNormal())
-    	{  
-	        return $this->render('vistanormal', [
-	            'model' => $this->findModel($id),]);
-    	}
     	if(Usuarios::isAdmin())
     	{
     		return $this->render('vistaadmin', [
 	            'model' => $this->findModel($id),]);
-    	}
+    	}else return $this->goHome();
     }
 
     /**
@@ -104,7 +99,7 @@ class UsuariosController extends Controller
     	//si es usuario normal. Comprobar con el isadmin
     	if ( Usuarios::isNormal())
     	{
-			return $this->render('portalnormal');
+			return $this->goHome();
 		}
 		if(Usuarios::isAdmin())
 		{
