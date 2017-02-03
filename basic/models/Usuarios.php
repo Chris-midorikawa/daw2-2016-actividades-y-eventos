@@ -62,7 +62,7 @@ class Usuarios extends \yii\db\ActiveRecord implements \yii\web\IdentityInterfac
         return [
             [['email', 'password', 'nick', 'nombre', 'apellidos', 'rol','fecha_nacimiento'], 'required'],
             [['fecha_nacimiento','fecha_registro', 'fecha_acceso', 'fecha_bloqueo'],'safe'],
-            [['fecha_nacimiento'], 'date', 'format' => 'yyyy-mm-dd', 'message'=>'Fecha no valida.'],
+            [['fecha_nacimiento'], 'date', 'format' => 'yyyy-mm-dd', 'message'=>'Fecha no valida.(2000-12-31)'],
             [['direccion', 'notas_bloqueo'], 'string'],
             [['area_id', 'avisos_por_correo', 'avisos_agrupados', 'avisos_marcar_leidos', 'avisos_eliminar_borrados', 'confirmado', 'num_accesos', 'bloqueado'], 'integer'],
             ['email', 'match', 'pattern' => "/^.{5,255}$/", 'message' => 'Mínimo 5 y máximo 80 caracteres'],
