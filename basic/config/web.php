@@ -52,6 +52,9 @@ $config = [
         //---*/
     ],//components
     'modules' => [
+    'crud' => [
+                'class' => 'spanjeta\modules\backup\Module',
+            ],
       'demo'=> 'app\modules\demo\Module',
     ],//modules
 

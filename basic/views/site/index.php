@@ -1,9 +1,21 @@
 <?php
 
-/* @var $this yii\web\View */
+use yii\helpers\Html;
+use yii\grid\GridView;
+use app\models\ActividadesSearch;
+use app\models\Areas;
+use app\models\AreasQuery;
 
-$this->title = 'Daw2 - 2016 - Actividades y eventos';
+/* @var $this yii\web\View */
+/* @var $searchModel app\models\ActividadesSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+
+
 ?>
+
+
+
+
 <div class="site-index">
 
     <div class="jumbotron">
@@ -41,4 +53,55 @@ $this->title = 'Daw2 - 2016 - Actividades y eventos';
         </div>
 
     </div>
+
+
+<div class="actividades-index">
+
+    <h1>Actividades Públicas</h1>
+    
+    <?php
+    $searchModel = new ActividadesSearch();
+    $dataProvider = $searchModel->search(['ActividadesSearch'=>['publica'=>'1',]]);
+    ?>
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'columns' => [
+            
+
+            'titulo:ntext',
+            'descripcion:ntext',
+            'fecha_celebracion',
+            'duracion_estimada',
+
+        ],
+    ]); ?>
+</div>
+
+
+<div class="actividades-index">
+
+    <h1>Actividades para todos los públicos</h1>
+    
+    <?php
+    $searchModel2 = new ActividadesSearch();
+    $dataProvider2 = $searchModel2->search(['ActividadesSearch'=>['publica'=>'1','edad_id'=>'0']]);
+    ?>
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider2,
+        'columns' => [
+            
+
+            'titulo:ntext',
+            'descripcion:ntext',
+            'fecha_celebracion',
+            'duracion_estimada',
+
+        ],
+    ]); ?>
+</div>
+
+
+
 </div>

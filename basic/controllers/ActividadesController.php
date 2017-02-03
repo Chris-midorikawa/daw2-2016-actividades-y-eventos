@@ -113,6 +113,8 @@ class ActividadesController extends Controller
         
     }
 
+    
+
     /**
      * Displays a single Actividades model.
      * @param string $id
