@@ -2,6 +2,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use app\models\Usuarios;
+use app\models\areas;
 
 /*MODELO REGISTRO PARA ADMINS*/
 ?>
@@ -16,13 +17,13 @@ use app\models\Usuarios;
     <?= $form->field($model, 'apellidos')->textInput(['maxlength' => true]) ?>
     <?= $form->field($model, 'fecha_nacimiento')->textInput() ?>
     <?= $form->field($model, 'direccion')->textarea(['rows' => 6]) ?>
-    <?= $form->field($model, 'area_id')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'area_id')->dropDownList(areas::getClasesAreas(),(['maxlength' => true])) ?>
     <?= $form->field($model, 'rol')->dropDownList(usuarios::listaroles(),(['maxlength' => true])) ?>
     <?= $form->field($model, 'avisos_por_correo')->checkbox($options = []) ?>
     <?= $form->field($model, 'avisos_agrupados')->checkbox($options = []) ?>
     <?= $form->field($model, 'avisos_marcar_leidos')->textInput() ?>
     <?= $form->field($model, 'avisos_eliminar_borrados')->textInput() ?>
-    <?= $form->field($model, 'fecha_registro')->textInput() ?>
+    <?= $form->field($model, 'fecha_registro')->textInput(/*yii::$app->user->identity->fecha_registro*/(['maxlength' => true]),(['readonly'=>true])) ?>
     <?= $form->field($model, 'confirmado')->textInput() ?>
     <?= $form->field($model, 'fecha_acceso')->textInput() ?>
     <?= $form->field($model, 'num_accesos')->textInput() ?>
