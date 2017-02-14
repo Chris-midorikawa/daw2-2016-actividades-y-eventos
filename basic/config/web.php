@@ -56,6 +56,8 @@ $config = [
                 'class' => 'spanjeta\modules\backup\Module',
             ],
       'demo'=> 'app\modules\demo\Module',
+      'backup' => [
+            'class' => 'app\modules\backup\Module',],
     ],//modules
 
     'params' => $params,

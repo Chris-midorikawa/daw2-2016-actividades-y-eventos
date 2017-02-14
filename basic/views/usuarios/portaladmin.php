@@ -26,7 +26,7 @@ $this->title = 'Portal del admin';
     </p>
      <p>
    
-        <?=  Html::a('Copias de Seguridad', ['/copias'] , ['class' => 'btn btn-primary']) ?>
+        <?=  Html::a('Copias de Seguridad', ['/default'] , ['class' => 'btn btn-primary']) ?>
     </p>
      
 

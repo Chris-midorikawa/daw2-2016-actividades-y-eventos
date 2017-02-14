@@ -21,7 +21,9 @@
         "kartik-v/yii2-detail-view": "*",
         "kartik-v/yii2-widget-datepicker": "@dev",
         "kartik-v/yii2-widget-switchinput": "@dev",
-        "kartik-v/yii2-widget-datetimepicker": "@dev"
+        "kartik-v/yii2-widget-datetimepicker": "@dev",
+        "yiisoft/yii2-backup": "*",
+      
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
