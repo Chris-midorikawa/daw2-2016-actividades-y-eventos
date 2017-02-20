@@ -1,6 +1,11 @@
+
+
 <div class="backup-default-index">
 
 <?php
+use yii\helpers\Html;
+use yii\grid\GridView;
+
 $this->params ['breadcrumbs'] [] = [ 
 		'label' => 'Manage',
 		'url' => array (
@@ -14,7 +19,7 @@ $this->params ['breadcrumbs'] [] = [
 	<?php echo Yii::$app->session->getFlash('success'); ?>
 </div>
 <?php endif; ?>
-
+	<?= Html::a(Yii::t('app', 'Volver'), ['/usuarios/portal'], ['class' => 'btn btn-primary']) ?>
 <h1>Copias de Seguridad</h1>
 
 	<div class="row">

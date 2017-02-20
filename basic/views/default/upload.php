@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][]= [
 'url'	=> array('upload'),
 ];?>
 
-<h1>Upload</h1>
+<h1>Subida de Archivos</h1>
 
 
 <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][]= [
 
 <div class="form-group">
     <?=
-    Html::submitButton( 'Save' ,
+    Html::submitButton( 'Subir' ,
         ['class' => 'btn btn-success']
     ) ?>
 </div>
