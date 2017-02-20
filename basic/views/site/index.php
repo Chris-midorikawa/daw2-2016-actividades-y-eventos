@@ -14,51 +14,8 @@ use app\piezas\busquedaActividades\BusquedaActividadesWidget;
 
 ?>
 
+        <h1 class="col-md-12 text-center">BIENVENIDO A NUESTRA WEB!</h1><br/><BR/><BR/><BR/>
 
-
-
-<div class="site-index">
-
-    <div class="jumbotron">
-
-    
-
-        <h1>Bienvenido!</h1>
-
-
-        <p class="lead">.</p>
-    </div>
-
-    <div class="body-content">
-
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Noticia 1.</p>
-
-                  </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Noticia 2.</p>
-
-                
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Noticia 3.</p>
-                
-            </div>
-        </div>
-
-    </div>
-
-
-</br>
-</br>
-</br>
 
 <?php $modelo_actividades = ActividadesSearch::find()->where(['publica'=> '1', 'visible' => '1'])->orderBy(['fecha_celebracion' =>SORT_DESC]) ->limit(10) ->all();  
 $active_tab="tab_datos"; 
@@ -74,26 +31,30 @@ $active_tab3="tab_datos";
 
     <!-- CONTENIDO DE LOS TABS -->
  <div class="tab-content">
-        <h1 class="col-md-12 text-center"> 10 Actividades públicas recientes (visibles)</h1>
+     <?php if($modelo_actividades ){ ?>
+        <h1 class="col-md-12 text-center"> <u>Actividades públicas recientes</u></h1>
         <div id="menu_mis_datos" class="tab-pane fade in <?php if ($active_tab==="tab_datos") {echo "active";}?>">
             <?= BusquedaActividadesWidget::widget(['modelo_actividades' => $modelo_actividades]) ?>
         </div>
+     <?php } ?>
         </br>
         </br>
         </br>
-         <h1 class="col-md-12 text-center"> 30 Actividades públicas recientes (visibles) para todos los públicos</h1>
+     <?php if($modelo_actividades2){ ?>
+         <h1 class="col-md-12 text-center"><u> Actividades públicas recientes para todos los públicos</u></h1>
         <div id="menu_mis_datos" class="tab-pane fade in <?php if ($active_tab2==="tab_datos") {echo "active";}?>">
             <?= BusquedaActividadesWidget::widget(['modelo_actividades' => $modelo_actividades2]) ?>
         </div>
+     <?php } ?>
         </br>
         </br>
         </br>
-
-         <h1 class="col-md-12 text-center"> Las 10 actividades mas votadas</h1>
+     <?php if($modelo_actividades3){ ?>
+         <h1 class="col-md-12 text-center"><u> Las Actividades mas votadas</u></h1>
         <div id="menu_mis_datos" class="tab-pane fade in <?php if ($active_tab3==="tab_datos") {echo "active";}?>">
             <?= BusquedaActividadesWidget::widget(['modelo_actividades' => $modelo_actividades3]) ?>
         </div>
-        
+     <?php } ?>
 </div>        
         
 
