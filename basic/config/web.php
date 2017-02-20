@@ -6,6 +6,7 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'vendorPath' => dirname(dirname(__DIR__)).'/vendor',
+    'language'=>'es',
     'bootstrap' => ['log'],
     'catchAll' => false, //['/site/apagado'],
     'components' => [

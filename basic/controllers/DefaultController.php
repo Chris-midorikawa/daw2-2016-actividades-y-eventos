@@ -54,14 +54,16 @@ class DefaultController extends Controller {
 		return $this->_path;
 	}
 	public function execSqlFile($sqlFile) {
-		$message = "ok";
+		$message = "ko";
 		
 		if (file_exists ( $sqlFile )) {
 			$sqlArray = file_get_contents ( $sqlFile );
-			
+//echo '<pre>'; print_r( $sqlArray); echo '</pre>';
 			$cmd = Yii::$app->db->createCommand ( $sqlArray );
 			try {
-				$cmd->execute ();
+//echo '<pre>'; print_r( $cmd); echo '</pre>';
+				$cmd->execute();
+        $message = "ok";
 			} catch ( Exception $e ) {
 				$message = $e->getMessage ();
 			}
@@ -106,7 +108,7 @@ class DefaultController extends Controller {
 			$valueString = "('" . $valueString . "'),";
 			$values = "\n" . $valueString;
 			if ($values != "") {
-				$data_string .= "INSERT INTO `$tableName` (`$items`) VALUES" . rtrim ( $values, "," ) . ";;;" . PHP_EOL;
+				$data_string .= "INSERT INTO `$tableName` (`$items`) VALUES" . rtrim ( $values, "," ) . ";" . PHP_EOL;
 			}
 			if ($this->fp) {
 				fwrite ( $this->fp, $data_string );
@@ -225,11 +227,13 @@ class DefaultController extends Controller {
 				'index' 
 		) );
 	}
-	public function actionDelete($id) {
-		$list = $this->getFileList ();
+	public function actionDelete($file) {
+		/*---*X/
+    $list = $this->getFileList ();
 		$list = array_merge ( $list, $this->getFileList ( '*.zip' ) );
 		$list = array_reverse($list);
 		$file = $list [$id];
+    //---*/
 		$this->updateMenuItems ();
 		if (isset ( $file )) {
 			$sqlFile = $this->path . basename ( $file );
@@ -300,10 +304,13 @@ class DefaultController extends Controller {
 		$this->updateMenuItems ();
 		$message = 'OK. Done';
 		$sqlZipFile = $this->path . basename ( $filename );
-		$sqlFile = $this->unzip ( $sqlZipFile );
-		$status = $this->execSqlFile ( $sqlFile );
-		if ($status) {
+    $sqlFile = $this->unzip( $sqlZipFile );
+    $descomprimido= ($sqlFile != false);
+    if (!$descomprimido) $sqlFile= $sqlZipFile;
+		$status = $this->execSqlFile( $sqlFile );
+		if ($status=='ok') {
 			Yii::$app->session->setFlash ( 'success', Yii::t ( 'app', 'Backup restored successfully.' ) );
+      //if ($descomprimido) unlink( $sqlFile);
 			return $this->redirect ( [ 
 					'index' 
 			] );
@@ -374,7 +381,9 @@ class DefaultController extends Controller {
 	private function unzip($sqlZipFile) {
 		if (file_exists ( $sqlZipFile )) {
 			$zip = new \ZipArchive ();
-			if ($zip->open ( $sqlZipFile )) {
+      $abierto= $zip->open( $sqlZipFile);
+      $sqlZipFile = false;
+			if ($abierto === true) {
 				$zip->extractTo ( dirname ( $sqlZipFile ) );
 				$zip->close ();
 				$sqlZipFile = str_replace ( ".zip", "", $sqlZipFile );

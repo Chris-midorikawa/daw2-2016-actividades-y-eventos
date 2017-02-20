@@ -14,6 +14,7 @@ use app\models\EtiquetasQuery;
     <?php $form = ActiveForm::begin();
     //se cargan todas las etiquetas
 	$e=Etiquetas::find()->all();
+  $etiquetas= [];
 	foreach($e as $modelo){
 			$etiquetas[$modelo->id]=$modelo->nombre;
 		}

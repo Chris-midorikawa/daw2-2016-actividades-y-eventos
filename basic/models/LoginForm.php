@@ -28,6 +28,8 @@ class LoginForm extends Model
         return [
             // username and password are both required
             [['nick', 'password'], 'required'],
+            // rememberMe must be a boolean value
+            ['rememberMe', 'boolean'],
 
         ];
     }
@@ -57,9 +59,15 @@ class LoginForm extends Model
      */
     public function login()
     {
-        if($this->getUser()) {
-            return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
-        }else { echo "Usuario o contraseña no valido."; return false;}
+      //NO:return Yii::$app->user->login( $this->getUser(), $this->rememberMe ? 3600*24*30 : 0);
+      $usr= $this->getUser();
+      if ($usr !== null) {
+        return Yii::$app->user->login( $usr, $this->rememberMe ? 3600*24*30 : 0);
+      } else {
+        $this->addError('nick', 'Usuario o Contraseña no valido.');
+        $this->addError('password', 'Usuario o Contraseña no valido.');
+        return false;
+      }
     }
 
     // LLAMADA A USUARIOS PARA COMPROBAR NICK Y PASSWORD "LOGIN"
