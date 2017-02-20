@@ -19,10 +19,10 @@ use yii\base\Model;
 class BackupFile extends Model
 {
 	public $id ;
-	public $name ;
-	public $size ;
-	public $create_time ;
-	public $modified_time ;
+	public $Nombre ;
+	public $Tamano ;
+	public $Fecha_creacion ;
+	public $Fecha_modificacion ;
 	/**
 	 * Declares the validation rules.
 	 * The rules state that username and password are required,
@@ -31,7 +31,7 @@ class BackupFile extends Model
 	public function rules()
 	{
 		return array(
-				array(['id','name','size','create_time','modified_time'], 'required'),
+				array(['id','Nombre','Tamano','Fecha_creacion','modified_time'], 'required'),
 		);
 	}
 
@@ -41,10 +41,10 @@ class BackupFile extends Model
 	public function attributeLabels()
 	{
 		return array(
-				'name'=>'File Name',
-				'size'=>'File Size',
-				'create_time'=>'Create Time',
-				'modified_time'=>'Modified Time',
+				'Nombre'=>'Nombre de Archivo',
+				'Tamano'=>'Tamano',
+				'Fecha_creacion'=>'Fecha de Creacion',
+				'Fecha_modificacion'=>'Fecha de Modificacion',
 		);
 	}
 	public static function label($n = 1) {

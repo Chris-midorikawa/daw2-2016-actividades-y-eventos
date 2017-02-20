@@ -42,7 +42,7 @@ class UploadForm extends Model
 	public function attributeLabels()
 	{
 		return array(
-				'upload_file'=>'Upload File',
+				'upload_file'=>'Subir Archivo',
 		);
 	}
 	public static function label($n = 1) {
