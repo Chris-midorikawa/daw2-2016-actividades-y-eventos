@@ -70,7 +70,7 @@ AppAsset::register($this);
                 '<li>'
                 . Html::beginForm(['/usuarios/portal'], 'post', ['class' => 'navbar-form'])
                 . Html::submitButton(
-                    'Portal del Usuario',
+                    'Mantenimiento',
                     ['class' => 'btn btn-link']
                 )
                 . Html::endForm().
