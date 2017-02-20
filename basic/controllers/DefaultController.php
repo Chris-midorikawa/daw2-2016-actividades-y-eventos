@@ -10,7 +10,8 @@ use yii\web\HttpException;
 use yii\db\Exception;
 use yii\helpers\ArrayHelper;
 use app\models\Usuarios;
-
+use yii\helpers\Html;
+use yii\grid\GridView;
 
 class DefaultController extends Controller {
 	public $menu = [ ];
@@ -94,7 +95,7 @@ class DefaultController extends Controller {
 		$dataReader = $cmd->query ();
 		
 		if ($this->fp) {
-			$this->writeComment ( 'TABLE DATA ' . $tableName );
+			if( $dataReader->rowCount >0 )$this->writeComment ( 'TABLE DATA ' . $tableName );
 		}
 		
 		foreach ( $dataReader as $data ) {
@@ -114,11 +115,11 @@ class DefaultController extends Controller {
 				fwrite ( $this->fp, $data_string );
 			}
 		}
-		
+
 		if ($this->fp) {
-			$this->writeComment ( 'TABLE DATA ' . $tableName );
+			if( $dataReader->rowCount >0 ){$this->writeComment ( 'TABLE DATA ' . $tableName );
 			$final = PHP_EOL . PHP_EOL . PHP_EOL;
-			fwrite ( $this->fp, $final );
+			fwrite ( $this->fp, $final );}
 		}
 	}
 	public function getTables($dbName = null) {
@@ -142,7 +143,6 @@ class DefaultController extends Controller {
 		fwrite ( $this->fp, 'SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;' . PHP_EOL );
 		fwrite ( $this->fp, 'SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;' . PHP_EOL );
 		fwrite ( $this->fp, '-- -------------------------------------------' . PHP_EOL );
-		$this->writeComment ( 'START BACKUP' );
 		return true;
 	}
 	public function EndBackup($addcheck = true) {
@@ -154,7 +154,6 @@ class DefaultController extends Controller {
 			fwrite ( $this->fp, 'COMMIT;' . PHP_EOL );
 		}
 		fwrite ( $this->fp, '-- -------------------------------------------' . PHP_EOL );
-		$this->writeComment ( 'END BACKUP' );
 		fclose ( $this->fp );
 		$this->fp = null;
 		if ($this->enableZip) {
@@ -163,9 +162,11 @@ class DefaultController extends Controller {
 		}
 	}
 	public function writeComment($string) {
-		fwrite ( $this->fp, '-- -------------------------------------------' . PHP_EOL );
-		fwrite ( $this->fp, '-- ' . $string . PHP_EOL );
-		fwrite ( $this->fp, '-- -------------------------------------------' . PHP_EOL );
+
+			fwrite($this->fp, '-- -------------------------------------------' . PHP_EOL);
+			fwrite($this->fp, '-- ' . $string . PHP_EOL);
+			fwrite($this->fp, '-- -------------------------------------------' . PHP_EOL);
+
 	}
 	public function actionCreate() {
 		$tables = $this->getTables ();
@@ -275,13 +276,13 @@ class DefaultController extends Controller {
 		foreach ( $list as $id => $filename ) {
 			$columns = array ();
 			$columns ['id'] = $id;
-			$columns ['name'] = basename ( $filename );
-			$columns ['size'] = filesize ( $this->path . $filename );
+			$columns ['Nombre'] = basename ( $filename );
+			$columns ['Tamano'] = filesize ( $this->path . $filename );
 			
-			$columns ['create_time'] = date ( 'Y-m-d H:i:s', filectime ( $this->path . $filename ) );
-			$columns ['modified_time'] = date ( 'Y-m-d H:i:s', filemtime ( $this->path . $filename ) );
+			$columns ['Fecha_creacion'] = date ( 'Y-m-d H:i:s', filectime ( $this->path . $filename ) );
+			$columns ['Fecha_modificacion'] = date ( 'Y-m-d H:i:s', filemtime ( $this->path . $filename ) );
 			if (date ( 'M-d-Y' . ' \a\t ' . ' g:i A', filemtime ( $this->path . $filename ) ) > date ( 'M-d-Y' . ' \a\t ' . ' g:i A', filectime ( $this->path . $filename ) )) {
-				$columns ['modified_time'] = date ( 'M-d-Y' . ' \a\t ' . ' g:i A', filemtime ( $this->path . $filename ) );
+				$columns ['Fecha_modificacion'] = date ( 'M-d-Y' . ' \a\t ' . ' g:i A', filemtime ( $this->path . $filename ) );
 			}
 			
 			$dataArray [] = $columns;
@@ -291,7 +292,7 @@ class DefaultController extends Controller {
 				'allModels' => array_reverse ( $dataArray ),
 				'sort' => [ 
 						'attributes' => [ 
-								'modified_time' => SORT_ASC 
+								'Fecha_modificacion' => SORT_ASC 
 						] 
 				] 
 		] );
@@ -400,24 +401,24 @@ class DefaultController extends Controller {
 			case 'restore' :
 				{
 					$this->menu [] = array (
-							'label' => Yii::t ( 'app', 'View Site' ),
+							'label' => Yii::t ( 'app', 'Inicio' ),
 							'url' => Yii::$app->HomeUrl 
 					);
 				}
 			case 'create' :
 				{
 					$this->menu [] = array (
-							'label' => Yii::t ( 'app', 'List Backup' ),
+							'label' => Yii::t ( 'app', 'Lista de Copias de Seguridad' ),
 							'url' => array (
-									'index' 
-							) 
+									'index'
+							)
 					);
 				}
 				break;
 			case 'upload' :
 				{
 					$this->menu [] = array (
-							'label' => Yii::t ( 'app', 'Create Backup' ),
+							'label' => Yii::t ( 'app', 'Crear Copia de Seguridad' ),
 							'url' => array (
 									'create' 
 							) 
@@ -427,33 +428,20 @@ class DefaultController extends Controller {
 			default :
 				{
 					$this->menu [] = array (
-							'label' => Yii::t ( 'app', 'List Backup' ),
-							'url' => array (
-									'index' 
-							) 
-					);
-					$this->menu [] = array (
-							'label' => Yii::t ( 'app', 'Create Backup' ),
+							'label' => Yii::t ( 'app', 'Crear Copia de Seguridad' ),
 							'url' => array (
 									'create' 
-							) 
+							)
 					);
 					$this->menu [] = array (
-							'label' => Yii::t ( 'app', 'Upload Backup' ),
+							'label' => Yii::t ( 'app', 'Subir Copia de Seguridad' ),
 							'url' => array (
 									'upload' 
-							) 
-					);
-					// $this->menu[] = array('label'=>Yii::t('app', 'Restore Backup') , 'url'=>array('restore'));
-					$this->menu [] = array (
-							'label' => Yii::t ( 'app', 'Clean Database' ),
-							'url' => array (
-									'clean' 
-							) 
+							)
 					);
 					$this->menu [] = array (
-							'label' => Yii::t ( 'app', 'View Site' ),
-							'url' => Yii::$app->HomeUrl 
+							'label' => Yii::t ( 'app', 'Inicio' ),
+							'url' => Yii::$app->HomeUrl
 					);
 				}
 				break;
