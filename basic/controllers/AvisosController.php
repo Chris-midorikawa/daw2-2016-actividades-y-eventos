@@ -2,9 +2,9 @@
 
 namespace app\controllers;
 
-use app\models\UsuarioAvisos;
-use app\models\Usuarios;
 use Yii;
+
+use app\models\Usuarios;
 use app\models\Avisos;
 use app\models\AvisosSearch;
 use yii\web\Controller;
@@ -21,6 +21,10 @@ class AvisosController extends Controller
      */
     public function behaviors()
     {
+        //si es un usuario invitado sera redirigido al login
+        if( Yii::$app->user->isGuest )
+            $this->redirect(Yii::$app->request->baseURL."\site\login");
+
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -45,7 +49,10 @@ class AvisosController extends Controller
         if (!isset($params['clase_aviso_id'])) {
             $params['clase_aviso_id'] = 'A';
         }
-        $dataProvider = $searchModel->search(['AvisosSearch'=>['clase_aviso_id'=>$params['clase_aviso_id']]]);
+
+        //filtro para que solo aparezcan los avisos del usuario que tiene iniciada sesion 
+        $params['destino_usuario_id'] = Yii::$app->user->identity->id;
+        $dataProvider = $searchModel->searchRecibidos($params);
         $dataProvider->setPagination([
             'pageSize' => 5,
         ]);
@@ -58,27 +65,59 @@ class AvisosController extends Controller
 
     /**
      * Displays a single Avisos model.
-     * @param integer $id
+     * @param string $id
      * @return mixed
      */
     public function actionView($id)
     {
-        //SE RECUPERA EL MODELO ACTUAL DE LA VISTA Y SU SEARCHMODEL
-        $modelo_actual = $this->findModel($id);
-        $searchModel = new AvisosSearch();
+     $model = $this->findModel($id);
 
-        //SE CREA EL DATAPROVIDER PARA EL GRIDVIEW CON LOS AVISOS
-        $dataProvider = $searchModel->search(['AvisosSearch'=>['clase_aviso_id'=>$modelo_actual->id]]);
+        if ($model->load(Yii::$app->request->post()) ) {
 
-        //SE CREA EL BREADCRUMB A MOSTRAR EN LA VISTA
-        $breadcrumb_actual = $modelo_actual->ClaseAvisoInstancia;
+            $post = Yii::$app->request->post();
 
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-            'breadcrumb_actual' => $breadcrumb_actual,
-        ]);
+            if(isset($post['noleido'])) {
+                $model->fecha_lectura=null;
+            }
+
+            if(isset($post['aceptado'])) {
+
+                $model->fecha_aceptado=date("Y/m/d H:i:s");
+
+                if($model->destino_usuario_id == null) {
+                    $model->destino_usuario_id = Yii::$app->user->identity->id;
+                }
+            }
+
+            if(isset($post['borrar'])) {
+                $model->fecha_borrado=date("Y/m/d H:i:s");    
+            }
+            $model->save();
+            return $this->redirect(['index']);
+        }
+        else
+        {
+            if($model->fecha_lectura==null) {
+                $model->fecha_lectura= date("Y/m/d H:i:s");
+                $model->save();
+            }
+            return $this->render('update', [
+                'model' => $model,
+                'usuarios' => $this->vistaUsuarios(),
+            ]);
+        }
+    }
+
+    //funcion para mostrar todos los usuarios
+    public function vistaUsuarios()
+    {
+            $filas = Usuarios::find()->all();
+            $usuarios = array();
+            $usuarios["0"]= "Para todos";
+            foreach ($filas as $fila) {
+                $usuarios[$fila->id]=$fila->nick;
+            }
+            return $usuarios;
     }
 
     /**
@@ -86,71 +125,98 @@ class AvisosController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate($id)
+    public function actionCreate()
     {
         //SE CREA UN NUEVO MODELO
         $model = new Avisos();
 
         //CASO FORMULARIO DE CREACIÓN ENVIADO (SE REDIRECCIONA A VER ÁREA)
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post()) ) {
+            $model->fecha = date("Y/m/d H:i:s");
+            $model->origen_usuario_id = Yii::$app->user->identity->id;
+            $model->destino_usuario_id = $model->destino_usuario_id==0 ? null : $model->destino_usuario_id;
+            $model->actividad_id = null;
+            $model->comentario_id = null;
+            $model->fecha_lectura = null;
+            $model->fecha_borrado = null;
+            $model->fecha_aceptado = null;
+            if($model->save() )
+                       return $this->redirect(['index']);
+            else{
+                var_dump($model);
+            }
         //CASO CREACIÓN INICIAL DE LA VISTA
         } else {
             //SE GENERA EL NUEVO ÁREA ID
-            $model->id;
-            //SE RENDERIZA LA VISTA
             return $this->render('create', [
                 'model' => $model,
+                'usuarios' => $this->vistaUsuarios(),
             ]);
         }
     }
 
     /**
-     * Updates an existing Areas model.
+     * Updates an existing Avisos model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
+     * @param string $id
      * @return mixed
      */
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
 
-        //SE CREA EL BREADCRUMB
-        $breadcrumb_actual = $model->ClaseAvisoInstancia;
+        if ($model->load(Yii::$app->request->post()) ) {
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
+            $post = Yii::$app->request->post();
+
+            if(isset($post['noleido'])) {
+                $model->fecha_lectura=null;
+            }
+
+            if(isset($post['aceptado'])) {
+                
+                $model->fecha_aceptado=date("Y/m/d H:i:s");
+                
+                if($model->destino_usuario_id == null) {
+                    $model->destino_usuario_id = Yii::$app->user->identity->id;
+                }
+            }
+
+            if(isset($post['borrar'])) {
+                $model->fecha_borrado=date("Y/m/d H:i:s");
+            }
+            $model->save();
+            return $this->redirect(['index']);
+        }
+        else 
+        {
+            if($model->fecha_lectura==null) {
+                $model->fecha_lectura= date("Y/m/d H:i:s");
+                $model->save();
+            }
             return $this->render('update', [
                 'model' => $model,
-                'breadcrumb_actual' => $breadcrumb_actual,
+                'usuarios' => $this->vistaUsuarios(),
             ]);
         }
     }
 
-
-    /* Acción que marca como leído un aviso recibido por un usuario, es decir,
-     * inicializa la fecha de lectura con la actual. Después redirecciona a
-     * mostrar-perfil.
+    /**
+     * Deletes an existing Avisos model.
+     * If deletion is successful, the browser will be redirected to the 'index' page.
+     * @param string $id
+     * @return mixed
      */
-    public function actionMarcarComoLeido($id_aviso){
-        $modelo_aviso = $this->findModel($id_aviso);
-
-        $modelo_aviso->fecha_lectura = date('Y-m-d H:i:s');
-        if ($modelo_aviso->save()){
-            return $this->redirect(['/usuarios/mostrar-perfil',
-                                    'id_usuario' =>$modelo_aviso->destino_usuario_id,
-                                    'active_tab' => "tab_avisos"]);
-        } else{
-            return ("Error al marcar como leído el aviso");
-        }
+    public function actionDelete($id)
+    {
+        $this->findModel($id)->delete();
+        return $this->redirect(['index']);
     }
-
 
     /**
      * Finds the Avisos model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
+     * @param string $id
      * @return Avisos the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */

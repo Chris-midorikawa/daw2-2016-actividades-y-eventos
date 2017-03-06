@@ -18,8 +18,8 @@ class AvisosSearch extends Avisos
     public function rules()
     {
         return [
-            [['id'], 'integer'],
-            [['clase_aviso_id'], 'safe'],
+            [['id', 'destino_usuario_id', 'origen_usuario_id', 'actividad_id', 'comentario_id'], 'integer'],
+            [['fecha', 'clase_aviso_id', 'texto', 'fecha_lectura', 'fecha_borrado', 'fecha_aceptado'], 'safe'],
         ];
     }
 
@@ -43,6 +43,8 @@ class AvisosSearch extends Avisos
     {
         $query = Avisos::find();
 
+        // add conditions that should always apply here
+
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
@@ -55,16 +57,36 @@ class AvisosSearch extends Avisos
             return $dataProvider;
         }
 
-        // grid filtering conditions7
-        /*
+        // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'fecha' => $this->fecha,
+            'destino_usuario_id' => $this->destino_usuario_id,
+            'origen_usuario_id' => $this->origen_usuario_id,
+            'actividad_id' => $this->actividad_id,
+            'comentario_id' => $this->comentario_id,
+            'fecha_lectura' => $this->fecha_lectura,
+            'fecha_borrado' => $this->fecha_borrado,
+            'fecha_aceptado' => $this->fecha_aceptado,
         ]);
-        */
 
-        $query->andFilterWhere(['like', 'clase_aviso_id', $this->clase_aviso_id]);
+        $query->andFilterWhere(['like', 'clase_aviso_id', $this->clase_aviso_id])
+            ->andFilterWhere(['like', 'texto', $this->texto]);
 
         return $dataProvider;
+    }
+ 
+    //funcion para buscar los recibidos
+    public function searchRecibidos($params){
+        $query = Avisos::find()->where("clase_aviso_id='".$params['clase_aviso_id']."' and (destino_usuario_id=".$params['destino_usuario_id']." or destino_usuario_id IS NULL) and fecha_borrado IS NULL order by fecha desc");
+
+        // add conditions that should always apply here
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
+        return $dataProvider;        
     }
     
 }

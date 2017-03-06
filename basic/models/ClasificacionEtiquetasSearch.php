@@ -5,12 +5,12 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\models\Clasificaciones;
+use app\models\ClasificacionEtiquetas;
 
 /**
- * ClasificacionesSearch represents the model behind the search form about `app\models\Clasificaciones`.
+ * ClasificacionEtiquetasSearch represents the model behind the search form about `app\models\ClasificacionEtiquetas`.
  */
-class ClasificacionesSearch extends Clasificaciones
+class ClasificacionEtiquetasSearch extends ClasificacionEtiquetas
 {
     /**
      * @inheritdoc
@@ -18,8 +18,7 @@ class ClasificacionesSearch extends Clasificaciones
     public function rules()
     {
         return [
-            [['id'], 'integer'],
-            [['nombre', 'descripcion'], 'safe'],
+            [['id', 'clasificacion_id', 'etiqueta_id', 'clasificacion_etiqueta_id'], 'integer'],
         ];
     }
 
@@ -41,7 +40,7 @@ class ClasificacionesSearch extends Clasificaciones
      */
     public function search($params)
     {
-        $query = Clasificaciones::find();
+        $query = ClasificacionEtiquetas::find();
 
         // add conditions that should always apply here
 
@@ -60,10 +59,10 @@ class ClasificacionesSearch extends Clasificaciones
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'clasificacion_id' => $this->clasificacion_id,
+            'etiqueta_id' => $this->etiqueta_id,
+            'clasificacion_etiqueta_id' => $this->clasificacion_etiqueta_id,
         ]);
-
-        $query->andFilterWhere(['like', 'nombre', $this->nombre])
-            ->andFilterWhere(['like', 'descripcion', $this->descripcion]);
 
         return $dataProvider;
     }

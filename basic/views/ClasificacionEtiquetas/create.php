@@ -4,19 +4,18 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Avisos */
+/* @var $model app\models\ClasificacionEtiquetas */
 
-$this->title = 'Create Avisos';
-$this->params['breadcrumbs'][] = ['label' => 'Avisos', 'url' => ['index']];
+$this->title = 'Create Clasificacion Etiquetas';
+$this->params['breadcrumbs'][] = ['label' => 'Clasificacion Etiquetas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="avisos-create">
+<div class="clasificacion-etiquetas-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
         'model' => $model,
-        'usuarios' => $usuarios
     ]) ?>
 
 </div>

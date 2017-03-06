@@ -3,27 +3,22 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\Usuarios;
-use app\models\Clasificaciones;
-use app\models\ClasificacionesSearch;
+use app\models\ClasificacionEtiquetas;
+use app\models\ClasificacionEtiquetasSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * ClasificacionesController implements the CRUD actions for Clasificaciones model.
+ * ClasificacionEtiquetasController implements the CRUD actions for ClasificacionEtiquetas model.
  */
-class ClasificacionesController extends Controller
+class ClasificacionEtiquetasController extends Controller
 {
     /**
      * @inheritdoc
      */
     public function behaviors()
     {
-
-        if( Yii::$app->user->isGuest )
-            $this->redirect(Yii::$app->request->baseURL."\site\login");
-
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -35,12 +30,12 @@ class ClasificacionesController extends Controller
     }
 
     /**
-     * Lists all Clasificaciones models.
+     * Lists all ClasificacionEtiquetas models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new ClasificacionesSearch();
+        $searchModel = new ClasificacionEtiquetasSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -50,7 +45,7 @@ class ClasificacionesController extends Controller
     }
 
     /**
-     * Displays a single Clasificaciones model.
+     * Displays a single ClasificacionEtiquetas model.
      * @param string $id
      * @return mixed
      */
@@ -62,16 +57,16 @@ class ClasificacionesController extends Controller
     }
 
     /**
-     * Creates a new Clasificaciones model.
+     * Creates a new ClasificacionEtiquetas model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Clasificaciones();
+        $model = new ClasificacionEtiquetas();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -80,7 +75,7 @@ class ClasificacionesController extends Controller
     }
 
     /**
-     * Updates an existing Clasificaciones model.
+     * Updates an existing ClasificacionEtiquetas model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param string $id
      * @return mixed
@@ -90,7 +85,7 @@ class ClasificacionesController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -99,7 +94,7 @@ class ClasificacionesController extends Controller
     }
 
     /**
-     * Deletes an existing Clasificaciones model.
+     * Deletes an existing ClasificacionEtiquetas model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param string $id
      * @return mixed
@@ -112,15 +107,15 @@ class ClasificacionesController extends Controller
     }
 
     /**
-     * Finds the Clasificaciones model based on its primary key value.
+     * Finds the ClasificacionEtiquetas model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param string $id
-     * @return Clasificaciones the loaded model
+     * @return ClasificacionEtiquetas the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Clasificaciones::findOne($id)) !== null) {
+        if (($model = ClasificacionEtiquetas::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

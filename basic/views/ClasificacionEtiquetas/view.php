@@ -4,16 +4,13 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Clasificaciones */
+/* @var $model app\models\ClasificacionEtiquetas */
 
-$this->title = $model->nombre;
-
-//CREACIÓN DEL BREADCRUMB
-$this->params['breadcrumbs'][] = ['label' => 'Clasificaciones', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $model->nombre;
+$this->title = $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Clasificacion Etiquetas', 'url' => ['index']];
+$this->params['breadcrumbs'][] = $this->title;
 ?>
-
-<div class="clasificaciones-view">
+<div class="clasificacion-etiquetas-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -31,14 +28,10 @@ $this->params['breadcrumbs'][] = $model->nombre;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            [
-                'label' => 'Id',
-                'value' => $model->id,
-            ],
-            [
-                'label' => 'Clasificación',
-                'value' => $model->nombre,
-            ],
+            'id',
+            'clasificacion_id',
+            'etiqueta_id',
+            'clasificacion_etiqueta_id',
         ],
     ]) ?>
 

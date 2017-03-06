@@ -3,13 +3,13 @@
 namespace app\models;
 
 use Yii;
-use yii\db\ActiveQuery;
 
 /**
- * This is the model class for table "{{%clasificaciones}}".
+ * This is the model class for table "clasificaciones".
  *
- * @property integer $id
+ * @property string $id
  * @property string $nombre
+ * @property string $descripcion
  */
 class Clasificaciones extends \yii\db\ActiveRecord
 {
@@ -18,7 +18,7 @@ class Clasificaciones extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return '{{%clasificaciones}}';
+        return 'clasificaciones';
     }
 
     /**
@@ -27,8 +27,7 @@ class Clasificaciones extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'nombre'], 'required'],
-            [['id'], 'integer'],
+            [['descripcion'], 'string'],
             [['nombre'], 'string', 'max' => 25],
         ];
     }
@@ -41,7 +40,16 @@ class Clasificaciones extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'nombre' => 'Nombre de la Clasificación',
+            //'descripcion' => 'Descripcion',
         ];
     }
 
+    /**
+     * @inheritdoc
+     * @return ClasificacionesQuery the active query used by this AR class.
+     */
+    public static function find()
+    {
+        return new ClasificacionesQuery(get_called_class());
+    }
 }

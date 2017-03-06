@@ -27,13 +27,13 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'summary' => 'Mostrando {begin}-{end} de {totalCount} elementos',
-        'columns' => [
+        'columns' => [ 'fecha',
              'claseAvisoInstancia', //atributos virtuales
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn', 'template' => '{view}' ],
         ],
     ]);
     ?>
 
-    <?= Html::a('Crear Aviso', ['avisos/create', 'id'=>''], ['class' => 'btn btn-success']) ?>
+    <?= Html::a('Crear Aviso', ['avisos/create'], ['class' => 'btn btn-success']) ?>
 
 </div>

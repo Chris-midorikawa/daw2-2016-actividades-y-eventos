@@ -3,10 +3,9 @@
 namespace app\models;
 
 use Yii;
-use yii\db\ActiveQuery;
 
 /**
- * This is the model class for table "{{%usuario_avisos}}".
+ * This is the model class for table "usuario_avisos".
  *
  * @property string $id
  * @property string $fecha
@@ -18,9 +17,8 @@ use yii\db\ActiveQuery;
  * @property string $comentario_id
  * @property string $fecha_lectura
  * @property string $fecha_borrado
- * @property string $fecha_aceptado
+ * @p   roperty string $fecha_aceptado
  */
-
 class Avisos extends \yii\db\ActiveRecord
 {
     /**
@@ -28,7 +26,7 @@ class Avisos extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return '{{%usuario_avisos}}';
+        return 'usuario_avisos';
     }
 
     /**
@@ -37,17 +35,15 @@ class Avisos extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'fecha', 'clase_aviso_id', 'texto', 'destino_usuario_id', 'origen_usuario_id'], 'required'],
-            [['id', 'destino_usuario_id', 'origen_usuario_id', 'actividad_id', 'comentario_id'], 'integer'],
+            [['fecha'], 'required'],
             [['fecha', 'fecha_lectura', 'fecha_borrado', 'fecha_aceptado'], 'safe'],
+            [['texto'], 'string'],
+            [['destino_usuario_id', 'origen_usuario_id', 'actividad_id', 'comentario_id'], 'integer'],
             [['clase_aviso_id'], 'string', 'max' => 1],
-            [['texto'], 'string', 'max' => 140],
         ];
     }
 
-    /*Función que devuelve la lista fija de clases de avisos*/
-    /*Códigos de clase de aviso: A=Aviso, N=Notificación, D=Denuncia, C=Consulta, M=Mensaje Genérico,...*/
-    public static function getClasesAvisos()
+public static function getClasesAvisos()
     {
         return [
             'A' => 'Avisos',
@@ -87,18 +83,25 @@ class Avisos extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'fecha' => 'Fecha y Hora',
+            'fecha' => 'Fecha',
             'clase_aviso_id' => 'Clase Aviso ID',
-            'texto' => 'Mensaje',
-            'destino_usuario_id' => 'Destino',
-            'origen_usuario_id' => 'Origen',
-            'claseAvisoInstancia' => 'Clase Aviso', //variable virtual
-            'actividad_id' => 'Actividad relacionada',
-            'comentario_id' => 'Comentario relacionado',
-            'fecha_lectura' => 'Fecha y Hora de lectura',
-            'fecha_borrado' => 'Fecha y Hora de la marca de borrado',
-            'fecha_aceptado' => 'Fecha y Hora de aceptación del aviso',
+            'texto' => 'Texto',
+            'destino_usuario_id' => 'Destino Usuario ID',
+            'origen_usuario_id' => 'Origen Usuario ID',
+            'actividad_id' => 'Actividad ID',
+            'comentario_id' => 'Comentario ID',
+            'fecha_lectura' => 'Fecha Lectura',
+            'fecha_borrado' => 'Fecha Borrado',
+            'fecha_aceptado' => 'Fecha Aceptado',
         ];
     }
 
+    /**
+     * @inheritdoc
+     * @return UsuarioAvisosQuery the active query used by this AR class.
+     */
+    public static function find()
+    {
+        return new UsuarioAvisosQuery(get_called_class());
+    }
 }
