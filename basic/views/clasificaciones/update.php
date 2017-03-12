@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Avisos */
@@ -20,5 +21,21 @@ $this->params['breadcrumbs'][] = $model->nombre;
     <?= $this->render('_form_modificar', [
         'model' => $model,
     ]) ?>
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+            'id',
+            'clasificacion_id',
+            'etiqueta_id',
+            //'clasificacion_etiqueta_id',
+
+            ['class' => 'yii\grid\ActionColumn', 'template' => '{delete}'],
+        ],
+    ]); ?>
+
+    <?= Html::a('Añadir etiqueta a la clasificación', ['createrelacion' , 'id' => $model->id], ['class' => 'btn btn-success']) ?>
 
 </div>

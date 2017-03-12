@@ -4,8 +4,11 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Usuarios;
+use app\models\Etiquetas;
 use app\models\Clasificaciones;
 use app\models\ClasificacionesSearch;
+use app\models\ClasificacionEtiquetas;
+use app\models\ClasificacionEtiquetasSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -78,7 +81,39 @@ class ClasificacionesController extends Controller
             ]);
         }
     }
+public function actionCreaterelacion($id)
+    {
+        $model = new ClasificacionEtiquetas();
 
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect('index');
+        } else {
+            $model->clasificacion_id = $id;
+            $tabla=Etiquetas::find()->all();
+            $existentes=ClasificacionEtiquetas::find()->where('clasificacion_id='.$id)->all();
+            $etiquetas = array();
+            foreach($tabla as $fila){
+                $repetida = false;
+                foreach ($existentes as $existente) {
+                    
+                    if($existente->etiqueta_id==$fila->id and $existente->clasificacion_id==$id){
+                        $repetida=true;
+                        break;
+                    }
+
+                }
+                if(!$repetida) $etiquetas[$fila->id]=$fila->nombre;
+                    
+            }
+             $modeloClasificacion = $this->findModel($id);
+
+            return $this->render('createrelacion', [
+                'model' => $model,
+                'etiquetas' => $etiquetas,
+                'nombreClasificacion' => $modeloClasificacion->nombre,
+            ]);
+        }
+    }
     /**
      * Updates an existing Clasificaciones model.
      * If update is successful, the browser will be redirected to the 'view' page.
@@ -92,9 +127,17 @@ class ClasificacionesController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['index']);
         } else {
+                $searchModel = new ClasificacionEtiquetasSearch();
+                $params = Yii::$app->request->queryParams;
+                $params['ClasificacionEtiquetasSearch']['clasificacion_id']=$id;
+                $dataProvider = $searchModel->search($params);
+
+
             return $this->render('update', [
                 'model' => $model,
-            ]);
+                'dataProvider' => $dataProvider,
+        ]);
+           
         }
     }
 
@@ -107,6 +150,13 @@ class ClasificacionesController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
+
+        return $this->redirect(['index']);
+    }
+
+    public function actionDeleterelacion($id)
+    {
+        ClasificacionEtiquetas::findOne($id)-delete();
 
         return $this->redirect(['index']);
     }
